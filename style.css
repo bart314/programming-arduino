@@ -1,0 +1,9 @@
+body { background-image:url('imgs/background.jpeg'); font-family:Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; }
+section { width:80vw; padding-left:10vw; font-size:1rem; line-height:1.8rem; }
+h1 { text-align:center; }
+section h1 { text-align:left; margin-bottom:0; }
+table { width:100%; border-collapse:collapse; }
+td, th { padding:2vh 0; border-bottom:solid blue 1px; vertical-align:top; }
+tr.header { border-bottom:double blue; }
+img { width:50%; }
+p.center { text-align:center; }
