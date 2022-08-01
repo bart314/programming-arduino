@@ -14,7 +14,10 @@
 
   <section id="preperation">
     <h1>Preparation</h1>
-    <p>In order to prepare for the workshop, read <a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-1/voltage-current/">this introduction on voltages and currents</a>. To give a clear and neat overview of the concepts described in this introduction (and some more), we have provided the following table:</p>
+    <ol>
+      <li>In order to prepare for the workshop, read <a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-1/voltage-current/">this introduction on voltages and currents</a>.</li>
+      <li>To give a clear and neat overview of the concepts described in this introduction (and some more), we have provided the following table. Study this table and make sure you understand what is being stated in it.</li>
+    </ol>
 
     <table>
         <tr class="header">
@@ -66,7 +69,9 @@
         </tr>
     </table>
 
-    <p>Using Ohm's law, we can actually transform all of these units into each other:</p>
+    <ol start="3">
+      <li>Using Ohm's law, we can actually transform all of these units into each other. Using the table above, study this so-called <i>Ohm's Law Wheel</i>.</li>
+    </ol>
     <p class="center"><img src="imgs/ohms-law-wheel.png" alt="Ohm's Law Wheel"></p>
     </p>
 
@@ -77,15 +82,67 @@
 
   <section id="excercises">
     <h1>Excercises</h1>
+    <h2>Part 1: Getting to know the breadboard</h2>
+    <p>During the planairy part, the wiring of the breadboard was explained. For easy reference, see the images below.</p>
+
+    <p class="center">
+        <img src="imgs/breadboard.png" alt="A normal breadboard">
+        <img src="imgs/breadboard-open.png" alt="The wirings in the breadboard shown">
+    </p>
+
+
+
+    <p>Connect the electromotor to the breadboard, as has been explained in the plenairy part. Make sure that you make use of jump wires to transfer the current from the long lines at the side to the smaller lines orthogonal to these. Add a small switch to the circuit, so that the electromotor only runs when the switch is pressed.</p>
+
+    <p>Change the wiring of the electromotor, so that what was previously on the negative pole of the current is now on the positive pole. Do you notice any difference in the rotation of the motor? Why do you think this is?</p>
+        
+    <p class="center"><img src="imgs/electromotor-connected.png" alt="The electromotor connected with a switch"></p>
+
+
+    <h2>Part 2: Adding resistors</h2>
+    <p>In order to control the amount of current over a conductor, we need to add resistors to the circuit. Lots of components don't work well when too much current is applied to it – making them too hot so that they eventually would burn out (as would be the case if you were to put an LED in the previous circuit).</p>
+
+    <p>Add a resistor after the switch in your circuit with the electromotor. Do you notice any difference between the workings, when you close the switch?</p>
+
+    <p>Now we know how to work with resistors, we can work with LEDs insteads of an electromotor – which is visually more attractive, less noisy and easier to do. Clear you breadboard completely and connect one LED with the current, using a resistor of about 150 ohm (the exact amount doesn't matter that much in this point, and is dependent on the voltage of the source). Remember that with LED's, the orientation matters: the longer pin of the LED should be connected with the positive pole of the source.</p>
+
+    <p>Now, use jump wire to connect multiple LEDs on the breadboard. In general, there are two ways in which you can connect the LEDs to each other: parallel of in series – have a look a the drawing below. Begin with a few LEDs in series (add one resistor 150 ohm). What happens when you remove one LED from the circuit? Can you explain why that is?</p>
+
+    <p>Now, make a new circuit but this time put the LEDs parallel. Make sure that you use individual resistors for each individual LED (if you're interested in why this is needed, <a href="https://www.youtube.com/watch?v=5BoBNW3swpA">check out this explanation by SimplyPut</a>). Now what happens when you remove one of the LEDs of the circuit. Can you explain the difference?</p>
+
+    <p class="center">
+        <img src="imgs/leds-in-series.png" alt="LEDs connected in series">
+        <img src="imgs/leds-in-parallel.png" alt="LEDs connected parallel">
+    </p>
+
+    <p>Finally, add a variable restistor between your power supply and the LEDs. You can use a potentiometer for that, but (more interesing) some kind of sensor (several are provided in your kit). Experiment with different values of these sensors – do you notice what is happening?</p>
+
+    <p class="center">
+        <img src="imgs/multiple-leds.png" alt="multiple LEDs in series on the breadboard">
+        <img src="imgs/leds-with-sensor.png" alt="LEDs in series with a sensor in the circuit">
+    </p>
+
+
+
+
+    <h2>Part 3: Capacitors</h2>
+
+    <h2>Part 4: Semi-conductors and transistors</h2>
 
   </section>
 
   <section id="assignment">
     <h1>Assignment</h1>
 
+    <h2>Option 1: make a blinking LED</h2>
+
+    <h2>Option 2: make a four-bit adder</h2>
+
+    <h2>Option 3: make a memory-cell</h2>
+
   </section>
 
 
-    
 </body>
+<script src="imgs.js"></script>
 </html>
