@@ -123,22 +123,69 @@
     </p>
 
 
-
-
     <h2>Part 3: Capacitors</h2>
 
-    <h2>Part 4: Semi-conductors and transistors</h2>
+    <p>In this exercise, we are only showing the general workings of capacitors. In order to do this, we use manual switches to change the state of the capacitor from state 1 (charging) to state 2 (discharging). Later, we will show you how to use connected <i>electronic switches</i> in order to automate this process.</p>
+
+    <p>As has been explained, capacitors store small amounts of energy in their metal plates that are separated by an insulator. They are used to hold this energy until other parts of the circuit needs it. When you connect a capacitor to a battery, this battery keeps pushing electrons to the capacitor until they are fully saturated – the capacitor is said to be <i>completely charged</i>.</p>
+
+    <p>When a capacitor is fully charged, the voltage drop across its plates equals the battery voltage. When you remove the battery, current doesn't flow and charge remains in the capacitor. The capacitor looks like a power source on its own because it has electrical charge stored on its plates.</p>
+
+    <p>So now, we can for example use this energy to light up a LED, if only for a brief amount of time (the charge stored on a capacitor is usually not that large). In order to do this, we have to provide a path between both ends of the capacitor, allowing charge to flow over the LED.</p>
+
+    <p>Look at the schema below and make that on your breadboard. When you press switch <b><i>S1</i></b>, current flows through the capacitor, allowing it to charge. Then, when you release <b><i>S1</i></b> and press <b><i>S2</i></b>, you provide a path between both ends of the capacitor, allowing current to flow and thereby lightning the LED.</p>
+
+    <p class="center">
+        <img src="imgs/manual-blinking-led-schema.png" alt="Schema of the manual blinking LED">
+        <img src="imgs/manual-blinking-led.png" alt="A realisation on the breadboard">
+    </p>
+
+    <p>Experiment with different values for the capacitor; how does that influence the behavior of the circuit? Also check what happens when you press both switches at the same time. Can you explain what is happening?</p>
+
+    <p>As you see, the wire from the LED is also connected to the ground. Would the circuit still work in the same manner if this connection was removed after the capacitor was charged?</p>
+
+
+    <h2>Part 4: Transistors</h2>
+
+    <p>The working of transistors has been explained in the planairy part. To recall, a simple drawing of the pins is provided below. In general, transistors can be used as either a switch or as an amplifier; however, in these exercises we are only going to use them as switches.</p>
+
+    <ul>
+        <li><b><i>V<sub>BC</sub></i></b> &lt; 0.7V &rarr; switch off</li>
+        <li><b><i>V<sub>BC</sub></i></b> &gt; 0.7V AND <b><i>I<sub>B</sub></i></b> small &rarr; switch partially on</li>
+        <li><b><i>V<sub>BC</sub></i></b> &gt; 0.7V AND <b><i>I<sub>B</sub></i></b> = max &rarr; switch on</li>
+    </ul>
+
+    <p class="center"><img src="imgs/transistor.png" alt="A transistor with its pins named"></p>
+
+    <p>Have a look at the circuit below. What do you think will happen if you put current on either point <b><i>A</i></b> or point <b><i>B</i></b>? As you can see in the right picture, we have used dip-switches to put current on the base of either transistor (also note that we have used the same colors for the same functionality – something that is good practice when you start to make more complex circuits). Re-create this circuit on your own breadboard and experiment with the dip-switches.</p>
+
+    <p class="center">
+        <img src="imgs/or-circuit.png" alt="The circuit for an OR-gate">
+        <img src="imgs/or-circuit-breadboard.png" alt="An OR-gate realised on a breadboard">
+    </p>
+
+    <p>As you have seen, the LED goes on when either dip-switch is pressed. You have just created what is known as a OR-gate: the LED turns on when either A OR B is pressed. We can actually summarize the functionality of this small circuit by providing its so-called <i>truth-table</i> (1 means current is present, 0 means current is not present):</p>
+
+    <p class="center">
+        <img src="imgs/or-truth-table.png" alt="The truth-table of an OR-gate">
+    </p>
+
+    <p>Given this OR-gate, can you come up with a circuit that realises an AND-gate: a gate that will output 1 only if <i>both</i> points <b><i>A</i></b> <i>and</i> point <b><i>B</i></b> are 1? And what about <a href="https://en.wikipedia.org/wiki/XOR_gate">an XOR-gate</a>?</p>
+
+
+    <!-- <h2>Part 5: Timing an event</h2> -->
 
   </section>
 
   <section id="assignment">
-    <h1>Assignment</h1>
+    <h1>Assignment: make a basic flip-flop</h1>
 
-    <h2>Option 1: make a blinking LED</h2>
+    <p>Have a look at <a href="https://www.circuits-diy.com/led-flip-flop-circuit-using-bc547-transistors/">this example and the explanation of a basis flip-flop circuit</a>. Though in this case the circuit uses different NPN-transistors than we have, you can realise it with the same transistors that we have used for the gates.</p>
 
-    <h2>Option 2: make a four-bit adder</h2>
+    <p>Re-create this circuit on your own breadboard. Experiment with different values for the resistors and/or the capacitors. Make sure you understand why the circuit is doing what it is doing. Can you replace one (or both) of the resistors with a sensor...?</p>
 
-    <h2>Option 3: make a memory-cell</h2>
+    <p>Document your process using both text and photographs and write a small piece of text of the workings of the circuit. Be sure to upload both the documentation and the explanation on your teams student folder before the next session. As you are working in pairs, upload the documents on both your student folders.</p>
+
 
   </section>
 
