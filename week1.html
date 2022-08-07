@@ -12,6 +12,7 @@
         <h1>Lab course week 1: introduction electronics</h1>
     </header>
 
+    <div id="main">
   <section id="preperation">
     <h1>Preparation</h1>
     <ol>
@@ -22,50 +23,50 @@
     <table>
         <tr class="header">
             <th width="10%">Name</th>
-            <th>Description</th>
+            <th class="extra">Description</th>
             <th width="10%">Unit</th>
             <th width="10%">Symbol</th>
-            <th>Notes</th>
+            <th class="extra">Notes</th>
         </tr>
 
         <tr>
             <th><a href="https://en.wikipedia.org/wiki/Electric_charge">Charge</a></th>
-            <td>The property of matter to experience a force when put in an (electro)magnetic field.</td>
+            <td class="extra">The property of matter to experience a force when put in an (electro)magnetic field.</td>
             <td>Coulomb</td>
             <td><b><i>C</i></b></td>
-            <td>Charge can be positive or negative; elements of the same charge oppose each other, while elements of opposing charge are attracted.</td>
+            <td class="extra">Charge can be positive or negative; elements of the same charge oppose each other, while elements of opposing charge are attracted.</td>
         </tr>
 
         <tr>
             <th><a href="https://en.wikipedia.org/wiki/Electric_current">Current</a></th>
-            <td>The amount of charge that flows through a conductor in a certain amount of time.</td>
+            <td class="extra">The amount of charge that flows through a conductor in a certain amount of time.</td>
             <td>Ampère</td>
             <td><b><i>I</i></b></td>
-            <td>One ampère is actually one coulomb per second.</td>
+            <td class="extra">One ampère is actually one coulomb per second.</td>
         </tr>
 
         <tr>
             <th><a href="">Voltage</a></th>
-            <td>The difference in (electrical) potential between two points in a circuit.</td>
+            <td class="extra">The difference in (electrical) potential between two points in a circuit.</td>
             <td>Volt</td>
             <td><b><i>V</i></b></td>
-            <td>The voltage at any point in a circuit is always relative to the voltage at some other point – usually the negative terminal of the power source.</td>
+            <td class="extra">The voltage at any point in a circuit is always relative to the voltage at some other point – usually the negative terminal of the power source.</td>
         </tr>
 
         <tr>
             <th><a href="https://en.wikipedia.org/wiki/Electric_power">Power</a></th>
-            <td>The rate at which electrical energy is transferred over a conductor.</td>
+            <td class="extra">The rate at which electrical energy is transferred over a conductor.</td>
             <td>Watt</td>
             <td><b><i>P</i></b></td>
-            <td>A watt is actually one joule per second.</td>
+            <td class="extra">A watt is actually one joule per second.</td>
         </tr>
 
         <tr>
             <th><a href="https://en.wikipedia.org/wiki/Electrical_resistivity_and_conductivity">Resistivity</a></th>
-            <td>The ease (or lack thereof) with which conductors carry charge.</td>
+            <td class="extra">The ease (or lack thereof) with which conductors carry charge.</td>
             <td>Ohm</td>
             <td><b><i>&Omega;</i></b></td>
-            <td>An normal wire has a resistivity of almost zero. In general, <a href="https://en.wikipedia.org/wiki/Ohm%27s_law">Ohm's law</a> applies: R=V/I.</td>
+            <td class="extra">An normal wire has a resistivity of almost zero. In general, <a href="https://en.wikipedia.org/wiki/Ohm%27s_law">Ohm's law</a> applies: R=V/I.</td>
         </tr>
     </table>
 
@@ -74,15 +75,11 @@
     </ol>
     <p class="center"><img src="imgs/ohms-law-wheel.png" alt="Ohm's Law Wheel"></p>
     </p>
+  </section><!-- preperation -->
 
-    
-
-
-  </section>
-
-  <section id="excercises">
+  <section id="excercise1">
     <h1>Excercises</h1>
-    <h2>Part 1: Getting to know the breadboard</h2>
+    <h2>Excersise 1: Getting to know the breadboard</h2>
     <p>During the planairy part, the wiring of the breadboard was explained. For easy reference, see the images below.</p>
 
     <p class="center">
@@ -90,16 +87,16 @@
         <img src="imgs/breadboard-open.png" alt="The wirings in the breadboard shown">
     </p>
 
-
-
     <p>Connect the electromotor to the breadboard, as has been explained in the plenairy part. Make sure that you make use of jump wires to transfer the current from the long lines at the side to the smaller lines orthogonal to these. Add a small switch to the circuit, so that the electromotor only runs when the switch is pressed.</p>
 
     <p>Change the wiring of the electromotor, so that what was previously on the negative pole of the current is now on the positive pole. Do you notice any difference in the rotation of the motor? Why do you think this is?</p>
         
     <p class="center"><img src="imgs/electromotor-connected.png" alt="The electromotor connected with a switch"></p>
+  </section> <!-- exercise 1 -->
 
 
-    <h2>Part 2: Adding resistors</h2>
+    <section id="excercise2">
+    <h2>Excercise 2: Adding resistors</h2>
     <p>In order to control the amount of current over a conductor, we need to add resistors to the circuit. Lots of components don't work well when too much current is applied to it – making them too hot so that they eventually would burn out (as would be the case if you were to put an LED in the previous circuit).</p>
 
     <p>Add a resistor after the switch in your circuit with the electromotor. Do you notice any difference between the workings, when you close the switch?</p>
@@ -121,9 +118,10 @@
         <img src="imgs/multiple-leds.png" alt="multiple LEDs in series on the breadboard">
         <img src="imgs/leds-with-sensor.png" alt="LEDs in series with a sensor in the circuit">
     </p>
+    </section><!-- exercise 2 -->
 
-
-    <h2>Part 3: Capacitors</h2>
+    <section id="excercise3">
+    <h2>Excercise 3: Capacitors</h2>
 
     <p>In this exercise, we are only showing the general workings of capacitors. In order to do this, we use manual switches to change the state of the capacitor from state 1 (charging) to state 2 (discharging). Later, we will show you how to use connected <i>electronic switches</i> in order to automate this process.</p>
 
@@ -143,9 +141,10 @@
     <p>Experiment with different values for the capacitor; how does that influence the behavior of the circuit? Also check what happens when you press both switches at the same time. Can you explain what is happening?</p>
 
     <p>As you see, the wire from the LED is also connected to the ground. Would the circuit still work in the same manner if this connection was removed after the capacitor was charged?</p>
+    </section> <!-- exercise 3-->
 
-
-    <h2>Part 4: Transistors</h2>
+    <section id="excercise4">
+    <h2>Excercise 4: Transistors</h2>
 
     <p>The working of transistors has been explained in the planairy part. To recall, a simple drawing of the pins is provided below. In general, transistors can be used as either a switch or as an amplifier; however, in these exercises we are only going to use them as switches.</p>
 
@@ -171,9 +170,10 @@
     </p>
 
     <p>Given this OR-gate, can you come up with a circuit that realises an AND-gate: a gate that will output 1 only if <i>both</i> points <b><i>A</i></b> <i>and</i> point <b><i>B</i></b> are 1? And what about <a href="https://en.wikipedia.org/wiki/XOR_gate">an XOR-gate</a>?</p>
+    </section><!-- exercise 4-->
 
-
-    <h2>Part 5: Timing an event</h2>
+    <section id="excercise5">
+    <h2>Excercise 5: Timing an event</h2>
 
     <p>In this last exercise, we are going to put all the stuff together in order to make a <i>timed event</i>. Timing is an essential part in most computing processes, and the system we are creating here is used in lots of modern day systems (of course in integrated circuits and a bit more acccurate, but still).</p>
 
@@ -187,9 +187,7 @@
     </p>
 
     <p>Re-create this circuit on your own breadboard and see what happens when you close the switch. Can you explain in your own words why the circuit functions as it does? Why is it important that <b><i>R2</i></b> &Gt; <b><i>R1</i></b>? Experiment with different values for the capacitor; can you explain the differences in behavior?</p>
-
-
-  </section>
+    </section><!-- exercise 5-->
 
   <section id="assignment">
     <h1>Assignment: make a basic flip-flop</h1>
@@ -203,9 +201,33 @@
     <p>Re-create this circuit on your own breadboard. Experiment with different values for the resistors and/or the capacitors. Make sure you understand why the circuit is doing what it is doing. Can you replace one (or both) of the resistors with a sensor...?</p>
 
     <p>Document your process using both text and photographs and write a small piece of text of the workings of the circuit. Be sure to upload both the documentation and the explanation on your teams student folder before the next session. As you are working in pairs, upload the documents on both your student folders.</p>
+  </section><!-- assignment -->
+    </div><!-- main -->
 
+    <div id="overview" class="sidebar">
+        <h1>Arduino and electronics</h1>
+        <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><b>Week 1</b></li>
+        <li><a href="week2.html">Week 2</a></li>
+        <li><a href="week3.html">Week 3</a></li>
+        <li><a href="week4.html">Week 4</a></li>
+        </ul>
+    </div>
 
-  </section>
+    <div id="toc" class="sidebar">
+        <h1>This week</h1>
+        <ul>
+           <li><a href="#preperation">preperation</a></li>
+           <li><a href="#excercise1">exercise 1</a></li>
+           <li><a href="#excercise2">exercise 2</a></li>
+           <li><a href="#excercise3">exercise 3</a></li>
+           <li><a href="#excercise4">exercise 4</a></li>
+           <li><a href="#excercise5">exercise 5</a></li>
+           <li><a href="#assignment">assignment</a></li>
+        </ul>
+    </div><!-- TOC -->
+
 
 
 </body>
