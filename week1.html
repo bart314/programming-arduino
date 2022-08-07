@@ -173,7 +173,21 @@
     <p>Given this OR-gate, can you come up with a circuit that realises an AND-gate: a gate that will output 1 only if <i>both</i> points <b><i>A</i></b> <i>and</i> point <b><i>B</i></b> are 1? And what about <a href="https://en.wikipedia.org/wiki/XOR_gate">an XOR-gate</a>?</p>
 
 
-    <!-- <h2>Part 5: Timing an event</h2> -->
+    <h2>Part 5: Timing an event</h2>
+
+    <p>In this last exercise, we are going to put all the stuff together in order to make a <i>timed event</i>. Timing is an essential part in most computing processes, and the system we are creating here is used in lots of modern day systems (of course in integrated circuits and a bit more acccurate, but still).</p>
+
+    <p>Have a look at the circuit below. With the switch open, current flows from the positive source throught R2 to the base of the transistor, thereby allowing current to flow over R3 and the LED back to the ground.</p>
+
+    <p>When we close the switch, current flows over R1 to the capacitor in the middle, allowing it to charge itself. However, as you know a fully charged capacitor can be seen as an open switch, so the previous flow of the current (with the switch open) is restored.</p>
+
+    <p class="center">
+        <img src="imgs/timed-circuit.png" alt="The schema of the timed circuit">
+        <img src="imgs/timed-circuit-breadboard.png" alt="The timed circuit on the breadboard">
+    </p>
+
+    <p>Re-create this circuit on your own breadboard and see what happens when you close the switch. Can you explain in your own words why the circuit functions as it does? Why is it important that <b><i>R2</i></b> &Gt; <b><i>R1</i></b>? Experiment with different values for the capacitor; can you explain the differences in behavior?</p>
+
 
   </section>
 
