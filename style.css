@@ -14,6 +14,9 @@ a:hover { text-decoration:underline; }
 div.sidebar { display:none; }
 td.extra, th.extra { display:none; }
 
+pre.code { font-size:.8rem; line-height:1rem; width:80%; margin:auto; }
+tt { background-color:lightgray;}
+
 @media (min-width:600px) {
     #overview { width:10vw; position:fixed; top:10vh; left:2vw;}
     #toc { width:10vw; position:fixed; top:10vh; left:80vw;}

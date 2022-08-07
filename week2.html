@@ -5,27 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding and Electronics - week 2</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hilightjs/vs.min.css">
 </head>
 <body>
     <header>
         <h1>Lab Course week 2: introduction programming (using processing)</h1>
     </header>
 
+    <div id="main">
     <section id="preperation">
         <h1>Preparation</h1>
-        <p></p>
-    </section>
+        <p>Download and install <a href="https://processing.org/download">processing</a>. Processing is a flexible software sketchbook and a language for learning how to code. It is used intensively throughout the creative industry, because it relatively easy to get things up and running, to create nice and appealing visuals and to add interactivity. <b>Download version 3.5.*</b>, because version 4 is only in beta at the moment. Be sure you have Processing up and running before the lab course, as we will assume that everything works as expected.</p>
+
+        <p>Watch <a href="https://vimeo.com/320513063" target="_blank">this video (4:44)</a> in order to get an idea of the possibilities of processing. Also, study the works <a href="https://www.youtube.com/watch?v=m_eOZuyCnnE" target="_blank">Oasis (Yunsil Heo)</a>, <a href="https://alexvessels.com/Replica" target="_blank">Replica (Alex Vessels and Jeff Howard)</a>, and <a href="http://wearechopchop.com/%E2%80%9Cunnamed-soundsculpture%E2%80%9D/" target="_blank">Unnamed Soundsculture (Daniel Franke)</a>. These are relatively old works, but they are mentioned in the video.</p>
+
+        <p class="center">
+            <img src="imgs/unnamed-soundsculpture.png" alt="Unnamed Soundsculture as an example of the possibilities of Processing">
+        </p>
+
+        <p>Go over the following tutorials. If you are completely new to programming, these will help you getting up to speed with basic methodologies and techniques. If you are already familiar with programming, these will help you getting to know the particularities of Processing.</p>
+
+        <ul>
+            <li><a href="https://processing.org/tutorials/gettingstarted">Getting started with Processing</a></li>
+            <li><a href="https://vimeo.com/16842534">Introduction to processing (video tutorial, 4:58) </a></li>
+        </ul>
+
+    </section><!-- preparation -->
+
 
     <section id="excercises">
         <h1>Excercises</h1>
+
+        <section id="excercise1">
+            <h2>Excercise 1: Basic interaction</h2>
+            <p>As explained, the basic flow of any processing sketch (as programs are called in processing-vernacular) is <tt>setup()</tt> once and <tt>draw()</tt> indefinitely. The first of these methods sets up the stage for your program (size, speed, color, ...) while in the seconds method you do everything that needs to be done while your program is running.</p>
+
+            <p>In the examples, the <tt>draw()</tt>-methods just followed the mouse, drawing lines or circles as it went over the screen. In this first set of excersises we're going to add some interactivity.</p>
+
+            <p>Make a new sketch and copy the following code in the editor. Try to predict and explain what is going on before you run it (have a look at <a href="https://processing.org/reference/" target="_blank">the API-reference</a> if you are wondering about the particulars of the methods).</p>
+
+<pre class="code"><code class="language-processing">int CIRCLE_SIZE = 30;
+
+void setup() {
+  size(600,600);
+  background(82,157,82);
+}
+
+void draw() {
+  background(82,157,82);
+  if (CIRCLE_SIZE > 600) {
+    CIRCLE_SIZE = 30;
+  }
+  
+  strokeWeight(8);
+  stroke(70,200,70);
+  ellipse(300,300,CIRCLE_SIZE, CIRCLE_SIZE);
+  CIRCLE_SIZE = CIRCLE_SIZE + 10;
+}</code></pre>
+
+<p>Make use of the property <tt>mousePressed</tt> to stop the program-flow while the mouse is pressed. Note that there are several ways to do it, most of which are correct.</p>
+
+<p>Remove your elaboration of the previous assignment. Also, remove the automatic growing of the green circle. Next, add code so that the size of the green circle is determined by the x-position of the mouse on the screen. Make use of the property <a href="https://processing.org/reference/mouseX.html"><tt>mouseX</tt></a>, that always contains the current horizontal position of the mouse (top left being point <tt>(0,0)</tt>). Note that the maximum size of the green circle is the same as the size of the screen (yes, we did that on purpose).</p>
+        </section><!-- exercise 1 -->
+
+        <section id="excercise2">
+<h2>Excercise 2: Basic coloring</h2>
+
+<p>Make a new sketch and copy the following code, which creates a new window with four colored boxes on top of it. Study the code in order to get an idea of its workings.</p>
+
+<pre class="code"><code class="language-processing">int[] MOUSEPOS = new int[2];
+
+void setup() {
+  size(800,600);
+  background(255);
+  fill(255,0,0);
+  rect(80,50,100,100);  
+  fill(0,255,0);
+  rect(260,50,100,100);  
+  fill(0,0,255);
+  rect(440,50,100,100);  
+  fill(0,255,255);
+  rect(620,50,100,100);
+}
+
+void draw() {
+  //
+}
+
+void mouseClicked() {
+  MOUSEPOS[0] = mouseX;
+  MOUSEPOS[1] = mouseY;
+  println ("mouse position: (" + mouseX + "," + mouseY + ")");
+}</code></pre>
+
+<p class="center">
+    <img src="imgs/processing-color.png" alt="The base of the second excercise">
+</p>
+
+<p>Now update the code so that the background of the window is whatever color is clicked on (the color of one of the four squares). As has been explained, you cannot easily check whether a click was done on an object, so you'll have to use <tt>mouseX</tt> and <tt>mouseY</tt> in order to see what square (if one at all) the mouse was on when it was clicked.</p>
+
+        </section><!-- excercise 2-->
+
+
+        </section><!-- excercises -->
     </section>
 
     <section id="assignment">
         <h1>Assignment</h1>
     </section>
+    </div> <!-- main -->
 
+    <div id="overview" class="sidebar">
+        <h1>Arduino and electronics</h1>
+        <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="week1.html">Week 1</a></li>
+        <li><b>Week 2</b></li>
+        <li><a href="week3.html">Week 3</a></li>
+        <li><a href="week4.html">Week 4</a></li>
+        </ul>
+    </div>
+
+    <div id="toc" class="sidebar">
+        <h1>This week</h1>
+        <ul>
+           <li><a href="#preperation">preperation</a></li>
+           <li><a href="#excercise1">excercise 1</a></li>
+           <li><a href="#excercise2">excercise 2</a></li>
+           <li><a href="#excercise3">excercise 3</a></li>
+           <li><a href="#excercise4">excercise 4</a></li>
+           <li><a href="#excercise5">excercise 5</a></li>
+           <li><a href="#assignment">assignment</a></li>
+        </ul>
+    </div><!-- TOC -->
 
 
     
 </body>
+<script src="imgs.js"></script>
+<script src="hilightjs/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </html>
