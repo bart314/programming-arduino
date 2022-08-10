@@ -106,6 +106,33 @@ void mouseClicked() {
 
         </section><!-- excercise 2-->
 
+    <section id="excercise3">
+        <h2>Excercise 3: Keeping track with global variables</h2>
+        <p>Open the example <tt>Basics &rarr; Control &rarr; EmbeddedIteration</tt> and study the code. When you run this sketch, you'll get a screen as the following:</p>
+
+        <p class="center">
+            <img src="imgs/embedded_iteration.png" alt="The result of the EmbeddedIteration-example">
+        </p>
+
+        <p>As you see, there are no <tt>setup()</tt> and <tt>draw()</tt> methods in this example: all the code is just on the global scope. Move all this given code to the <tt>setup()</tt> method and add the methods <tt>mouseClicked()</tt> and <tt>draw()</tt>. Keep those two methods empty for the moment – during this excercise,we will give them some body. Save your sketch (examples are marked 'read only', so you cannot edit and save them).</p>
+
+        <p>When you look at the code, you can see that the location where all the white lines converge to is exactly the middle of the screen (have a look at line 20 of the original sketch). Create a <i>global variable</i> that contains these two values (so the type should be <tt>int[2]</tt>). Initialize this variable in <tt>setup()</tt> with the current middle of the screen and make use of this variable in the code. If you run this code again, there should not be any change in functionality.</p>
+
+        <p>Now fill the body of the <tt>mouseClicked()</tt> method, so that when a mouse is clicke, the coordinates of the clicked are stored in the global variabel that you just made.</p>
+
+        <p>Now give the method <tt>draw()</tt> its body. Instead of all the lines converging to the center of the screen, all the lines should go to whereever you have clicked the mouse. </p>
+
+        <p class="center">
+            <img src="imgs/embedded_iteration_clicked.png" alt="The results of exercise 3">
+        </p>
+
+        <p>Why does the variable that keeps the position of the mouse click to be declared in the global scope? Can you also change the code so that the drawing follows the mouse, instead of just updating after a mouse click? Do you still need the global variable for the position of the mouse in that case?</p>
+
+
+
+
+    </section>
+
 
         </section><!-- excercises -->
     </section>
