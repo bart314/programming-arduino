@@ -42,7 +42,7 @@
 
             <p>In the examples, the <tt>draw()</tt>-methods just followed the mouse, drawing lines or circles as it went over the screen. In this first set of excersises we're going to add some interactivity.</p>
 
-            <p>Make a new sketch and copy the following code in the editor (or <a href="file/excercise1.pde">download it here</a>). Try to predict and explain what is going on before you run it (have a look at <a href="https://processing.org/reference/" target="_blank">the API-reference</a> if you are wondering about the particulars of the methods).</p>
+            <p>Make a new sketch and copy the following code in the editor (or <a href="files/excercise1.pde">download it here</a>). Try to predict and explain what is going on before you run it (have a look at <a href="https://processing.org/reference/" target="_blank">the API-reference</a> if you are wondering about the particulars of the methods).</p>
 
 <pre class="code"><code class="language-processing">int CIRCLE_SIZE = 30;
 
@@ -136,24 +136,31 @@ void mouseClicked() {
         <p class="center"><img src="imgs/characterstrings.png" alt="The results of the example CharactersStrings"></p>
 
         <p>Now, we are going to make some sort of todo-list: a small program that allows us to enter a few (max ten) todo-items with a small button that removes the item on top of the list. Have look at the image below to get an idea of the workings of this program. We have already provided the basic design and setup for you: <a href="files/excercise4.pde">you can download here</a>. </p>
+
+        <p class="center"><img src="imgs/todolist.png" alt="An example of the result of excercise 4"></p>
             
         <p>Implement the method <tt>keyTyped()</tt> so that whatever is typed is shown, starting at point <tt>(20, 500)</tt>. Have a look at the previous example to see how you can do that. Whenever you hit the Enter-key, the item that has been typed should be added to the <i>To Do</i> items on the left and the line where you were typing should be emptied again. You should use <tt>key==ENTER || key==RETURN</tt> to check whether the enter-key was pressed.</p>
 
         <p>Now, when you hit the button in the topleft corner, the <i>To Do Item</i> that is on top of the list should go to the <i>Done</i> list on the right. For this, you will need two global variables: one that keeps track of the number of <i>To Do Items</i> and one that keeps track of the <i>Done Items</i>. You don't have to worry about edge cases when either of these variables becomes less than 0 or greater than 9. You also don't have to worry about backspaces, cursor keys or delete keys.</p>
 
-        <p class="center"><img src="imgs/todolist.png" alt="An example of the result of excercise 4"></p>
 
 
 
-    </section><!-- excercise 4-->
+      </section><!-- excercise 4-->
 
 
-        </section><!-- excercises -->
-    </section>
+    </section><!-- excercises -->
 
     <section id="assignment">
         <h1>Assignment</h1>
-    </section>
+        <p>Create a sketch witch a screen of 600 &times; 600 pixels. Draw a line from the top-left to the bottom-right corner. Next, draw another lines that is a bit more steep than the first one, so that they cross in the middle. Repeat this process until the window is completely filled; have look at the image below to get an idea of the required end result. </p>
+
+        <p>Note that this perhaps seems easier than it is; you need to take into account that at some point you need to swap the axis of the value that remains constant and the axis of the value that changes.</p>
+
+        <p class="center"><img src="imgs/processing-assignment.png" alt="An example of the required outcome of the assignment."></p>
+
+        <p>Document your process using both text and screen shots and write a small piece of text explaining your code and your experience while writing it. Be sure to upload both the code and the document on your teams student folder before the next session. As you are working in pairs, upload the documents on both your student folders.</p>
+    </section><!-- assignment -->
     </div> <!-- main -->
 
     <div id="overview" class="sidebar">
