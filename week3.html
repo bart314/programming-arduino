@@ -29,7 +29,11 @@
             </li>
 
 
-            <li>Download <a href="https://www.arduino.cc/en/software" target="_blank">the Arduino Integrated Developen Environment (IDE)</a> and make sure your Arduino is found by this software; you can easily check this by opening <tt>Files &rarr; Examples &rarr; 01.Basics &rarr; Blink</tt> and hitting the <tt>Upload</tt> button on the top-left of the IDE. If the connection between your computer and the Arduino is correct, the code will upload and the small onboard LED will start to blink. </li>
+            <li><p>Download <a href="https://www.arduino.cc/en/software" target="_blank">the Arduino Integrated Developen Environment (IDE)</a> and make sure your Arduino is found by this software; you can easily check this by opening <tt>Files &rarr; Examples &rarr; 01.Basics &rarr; Blink</tt> and hitting the <tt>Upload</tt> button on the top-left of the IDE. If the connection between your computer and the Arduino is correct, the code will upload and the small onboard LED will start to blink. </p>
+            <p>If your computer cannot find the Arduino, you'll get an error message stating something like <tt style="color:red">can't open device</tt>. In that case, use <tt>Tools &rarr; Port</tt> to select another port (those are actually your USB-ports)</p></li>
+
+
+
         </ol>
         <p class="center"><img src="imgs/anatomy-arduino-ide.png" alt="The most important pieces of the Arduino IDE"></p>
 
@@ -40,6 +44,22 @@
 
     <section id="excercises">
         <h1>Excercises</h1>
+        <p>Off course, we need to use our breadboard to actually create interesting stuff, as the pins on the Arduino are too few, too narrow and too error prone to be workable.</p>
+
+        <section id="excercise1">
+        <h2>Excercise 1: expanding on the blink example</h2>
+        <p>Make sure you have the blinking LED example loaded on your Arduino. As has been explained, the pin that corresponds to the buildin LED is 13. Make use of this knowledge to have a LED on the breadboard blink. Next, add a few more LEDs on the same pin (or port, as they are also called regularly). For a nice effect, you can perhaps use different colors of LEDs.</p>
+
+        <p>Can you make use of your knowledge of transistors that we worked on in <a href="week1.html#excercise4">week 1</a> to have an LED on the breadboard blink when the one on the Arduino is off and vice versa, <i>without</i> changing the code on the Arduino? This is called a <i>signal inverter</i>. How about having two LEDs blink one after the other? Note that for this to work, you have to differentiate between the signal (pin 13) and the current (5V of 3.5V).</p>
+
+        <p class="center">
+            <img src="imgs/arduino-multiple-leds.png" alt="Multiple LEDs blinking in unison">
+            <img src="imgs/signal-inverter.png" alt="A signal inverter on the breadboard; note that the LED on the Arduino is off while the green one on the breadboard is on">
+        </p>
+        </section><!-- excercise 1-->
+
+
+        
     </section><!-- excercises -->
 
     <section id="assignment">
