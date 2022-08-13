@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding and Electronics - week 3</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hilightjs/vs.min.css">
 </head>
 <body>
     <header>
@@ -38,7 +39,7 @@
         <p class="center"><img src="imgs/anatomy-arduino-ide.png" alt="The most important pieces of the Arduino IDE"></p>
 
         <ol start="3">
-
+            <li>Have a look at <a href="https://www.youtube.com/watch?v=GcDshWmhF4A">this nice wooden adding machine</a>.</li>
         </ol>
     </section><!-- preperation -->
 
@@ -50,13 +51,58 @@
         <h2>Excercise 1: expanding on the blink example</h2>
         <p>Make sure you have the blinking LED example loaded on your Arduino. As has been explained, the pin that corresponds to the buildin LED is 13. Make use of this knowledge to have a LED on the breadboard blink. Next, add a few more LEDs on the same pin (or port, as they are also called regularly). For a nice effect, you can perhaps use different colors of LEDs.</p>
 
-        <p>Can you make use of your knowledge of transistors that we worked on in <a href="week1.html#excercise4">week 1</a> to have an LED on the breadboard blink when the one on the Arduino is off and vice versa, <i>without</i> changing the code on the Arduino? This is called a <i>signal inverter</i>. How about having two LEDs blink one after the other? Note that for this to work, you have to differentiate between the signal (pin 13) and the current (5V of 3.5V).</p>
+        <p>Can you make use of your knowledge of transistors that <a href="week1.html#excercise4">we worked on in week 1</a> to have an LED on the breadboard blink when the one on the Arduino is off and vice versa, <i>without</i> changing the code on the Arduino? This is called a <i>signal inverter</i>. How about having two LEDs blink one after the other? Note that for this to work, you have to differentiate between the signal (pin 13) and the current (5V of 3.5V).</p>
 
         <p class="center">
             <img src="imgs/arduino-multiple-leds.png" alt="Multiple LEDs blinking in unison">
             <img src="imgs/signal-inverter.png" alt="A signal inverter on the breadboard; note that the LED on the Arduino is off while the green one on the breadboard is on">
         </p>
         </section><!-- excercise 1-->
+
+        <section id="excercise2">
+            <h2>Excercise 2: Input, output and states</h2>
+            <p>In this excercise, we are going to use the Ardiuno to create a four bit full adder with ripple carry out. In order to do this, we need to give the Arduino a <i>state</i>: a sort of memory which it can use to remember what has happened before. We are going to to this is some small steps.</p>
+
+            <h3>Step 1: adding state</h3>
+
+            <p class="first">First, connect an LED to port 12 and a small push button to port 7, using jump wire to put it all on your breadboard. Remember to put a 170 &Omega; resistor between the port and the LED. Next, study and copy the code below (or <a href="files/arduino-excercise2.ino">download it here</a>), and upload it to your Arduino. As you will see, once you hit the push button, the LED will go on <i>and stay on</i>, even when the push button is released again. You can see that this functions as kind of <i>memory</i> for the system: it remembers that the button has been pressed at least once. Make sure you understand why this code is doing what it is doing.</p>
+
+            <pre class="code"><code class="language-arduino">
+                int BUTTON_PINS[4] = {7,6,5,4};
+                int LED_VALUES[4] = {0,0,0,0};
+                int LED_PINS[4] = {12,11,10,9};
+                
+                void setup() {
+                  for (int i=0; i<4; i++) {
+                    pinMode(BUTTON_PINS[i], INPUT_PULLUP);
+                    pinMode(LED_PINS[i], OUTPUT);
+                  }
+                }
+                
+                
+                void loop() {
+                  for (int i=0; i<4; i++) {
+                    if (digitalRead(BUTTON_PINS[i])==0) LED_VALUES[i]=1;
+                  }
+                  setLedValues();
+                  delay(100);
+                }
+                
+                
+                void setLedValues() {
+                  for (int i=0; i<4; i++) {
+                    if (LED_VALUES[i]==1) digitalWrite(LED_PINS[i], HIGH);
+                  }
+                }</code></pre>
+
+                <h3>Step 2: Expanding the circuit</h3>
+                <p class="first">Now, expand the circuit so that you have four push buttons controlling four LEDs. Make sure you use the correct pins for both the buttons and the LEDs (or change the code accordingly).</p>
+
+                <p class="center">
+                    <img src="imgs/one-led-one-switch.png" alt="One LED controlled by one push button">
+                    <img src="imgs/four-leds-fours-switches.png" alt="Four LEDs controlled by four push buttons">
+                </p>
+        </section>
 
 
         
