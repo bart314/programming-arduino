@@ -61,6 +61,66 @@
 
         <section id="exercise2">
             <h2>Exercise 2: Input and output of analog signals</h2>
+            <h3>Step 1: create a walking light</h3>
+
+            <p>Realise a breadboard with four LEDs in parallel (kind of the same circuit <a href="week1.html#exercise2">we created in week 1</a>). Have the positive pin of each of the LEDs wired to a different (but sequential) port on the Arduino (e.g. pins 4, 5, 6, and 7). Next, create a new Arduino-sketch in which you define all those pins as <tt>OUTPUT</tt> (you should do this in the <tt>setup()</tt> method; have a look at the BlinkingLed-example).</p>
+
+            <p class="center"><img src="imgs/walking-leds.png" alt="The setup of four LEDs that blink one after the other"></p>
+
+            <p>Now, in the <tt>loop()</tt> method, you should iterate over all those pins and set them to <tt>HIGH</tt>, wait for a few microseconds, set them to <tt>LOW</tt> again and repeat the process for the next pin. Have a look at the code below to get an idea of this process:</p>
+
+<pre class="code"><code class="language-arduino">void loop() {
+   digitalWrite(4, HIGH);
+   delay(500);
+   digitalWrite(4, LOW);
+   delay(500);
+}
+</code></pre>
+            <p>However, as has been explained last week, in such a case it is better to create an array that keeps all the numbers of the ports where the LEDs are connected. Create such an array and initialize it with the correct pin-values. Next, in your <tt>loop()</tt> iterate over this array and have every pin switch on and off. If all goed well, you have created a walking light. Can you make this light go back and forth as well? Play around with the value of the call to <tt>delay()</tt> to get a feeling of the effects of the changes you make.</p>
+
+            <h3>Step 3: add a variable resistor</h3>
+
+            <p>Add a variable resistor (a <i>potentiometer</i>) to your breadboard. Connect the external pins to the plus and the minus and the middle pin to an analog input of the Arduino; look at the drawing and the image below to see how to do this.</p>
+
+            <p>Next, create a new sketch and copy the code below. If you run this sketch with the serial monitor open, you will see the value that the Arduino is reading from the potentiometer. If you turn it, you will notice that the value that it is reading goes from 0 to 1023, while the second parameter is going from 1 to 255 (this is an edited example from <a href="https://docs.arduino.cc/built-in-examples/analog/AnalogInOutSerial">Arduino.cc itself</a>).</p>
+
+<pre class="code"><code class="language-arduino">const int analogInPin = A0;  // Analog input pin that the potentiometer is attached to
+  int sensorValue = 0;        // value read from the pot
+  int outputValue = 0; // the value we are going to use later on
+  
+  void setup() {
+    Serial.begin(9600);
+  }
+  
+  void loop() {
+    // read the analog in value:
+    sensorValue = analogRead(analogInPin);
+  
+    // map it to the range of the analog out:
+    outputValue = map(sensorValue, 0, 1023, 0, 255);
+  
+    Serial.print("sensor = ");
+    Serial.print(sensorValue);
+    Serial.print("\t output = ");
+    Serial.println(outputValue);
+  
+    delay(2);
+  }
+  </code></pre>
+
+  <p class="center">
+    <img src="imgs/potmeter-wiring.png" alt="The wiring of the potmeter for this experiment">
+    <img src="imgs/potmeter.png" alt="How the potmeter is wired from the breadboard to the Arduino">
+  </p>
+
+  <h3>Step 4: putting it all together</h3>
+  <p>Now use this code above to change the value of the call to <tt>delay()</tt> in your walking light. Have the Arduino read and map the value of the potentiometer on every loop; if all goes well, you are now able to change the speed with which the LEDs are 'walking' by changing the value of the potentiometer.</p>
+
+  <p>For even more effect, replace the potentiometer with some kind of sensor. That way, you can make the speed of the walking LEDs dependent on for example the distance of the breadboard to a wall, or the humidity of the air, or the bending of an arm, or ...</p>
+
+
+
+
 
 
 
