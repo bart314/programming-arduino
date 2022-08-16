@@ -60,7 +60,15 @@
         </section><!-- exercise 1-->
 
         <section id="exercise2">
-            <h2>Exercise 2: Input, output and states</h2>
+            <h2>Exercise 2: Input and output of analog signals</h2>
+
+
+
+
+        </section><!-- exercise 2-->
+
+        <section id="exercise3">
+            <h2>Exercise 3: Input, output and states (challenge)</h2>
             <p>In this exercise, we are going to use the Ardiuno to create a four bit full adder with ripple carry out. In order to do this, we need to give the Arduino a <i>state</i>: a sort of memory which it can use to remember what has happened before. We are going to to this is some small steps.</p>
 
             <h3>Step 1: adding state</h3>
@@ -68,41 +76,61 @@
             <p class="first">First, connect an LED to port 12 and a small push button to port 7, using jump wire to put it all on your breadboard. Remember to put a 170 &Omega; resistor between the port and the LED. Next, study and copy the code below (or <a href="files/arduino-exercise2.ino">download it here</a>), and upload it to your Arduino. As you will see, once you hit the push button, the LED will go on <i>and stay on</i>, even when the push button is released again. You can see that this functions as kind of <i>memory</i> for the system: it remembers that the button has been pressed at least once. Make sure you understand why this code is doing what it is doing.</p>
 
             <pre class="code"><code class="language-arduino">
-                int BUTTON_PINS[4] = {7,6,5,4};
-                int LED_VALUES[4] = {0,0,0,0};
-                int LED_PINS[4] = {12,11,10,9};
-                
-                void setup() {
-                  for (int i=0; i<4; i++) {
-                    pinMode(BUTTON_PINS[i], INPUT_PULLUP);
-                    pinMode(LED_PINS[i], OUTPUT);
-                  }
-                }
-                
-                
-                void loop() {
-                  for (int i=0; i<4; i++) {
-                    if (digitalRead(BUTTON_PINS[i])==0) LED_VALUES[i]=1;
-                  }
-                  setLedValues();
-                  delay(100);
-                }
-                
-                
-                void setLedValues() {
-                  for (int i=0; i<4; i++) {
-                    if (LED_VALUES[i]==1) digitalWrite(LED_PINS[i], HIGH);
-                  }
-                }</code></pre>
+int BUTTON_PINS[4] = {7,6,5,4};
+int LED_VALUES[4] = {0,0,0,0};
+int LED_PINS[4] = {12,11,10,9};
 
-                <h3>Step 2: Expanding the circuit</h3>
+void setup() {
+  for (int i=0; i<4; i++) {
+    pinMode(BUTTON_PINS[i], INPUT_PULLUP);
+    pinMode(LED_PINS[i], OUTPUT);
+  }
+}
+
+
+void loop() {
+  for (int i=0; i<4; i++) {
+    if (digitalRead(BUTTON_PINS[i])==0) LED_VALUES[i]=1;
+  }
+  setLedValues();
+  delay(100);
+}
+
+
+void setLedValues() {
+  for (int i=0; i<4; i++) {
+    if (LED_VALUES[i]==1) digitalWrite(LED_PINS[i], HIGH);
+  }
+}</code></pre>
+
+                <h3>Step 2: expanding the circuit</h3>
                 <p class="first">Now, expand the circuit so that you have four push buttons controlling four LEDs. Make sure you use the correct pins for both the buttons and the LEDs (or change the code accordingly).</p>
 
                 <p class="center">
-                    <img src="imgs/one-led-one-switch.png" alt="One LED controlled by one push button">
+                    <img src="imgs/one-led-one-switch.png" alt="One LED controlled by one push button; note that we have wired through the two horizontal lines of the two parts of the breadboard">
                     <img src="imgs/four-leds-fours-switches.png" alt="Four LEDs controlled by four push buttons">
                 </p>
-        </section>
+
+                <h3>Step 3: adding a <tt>REGISTER</tt> button</h3>
+
+                <p>The next step is to make the states of the four LEDs being updated at once; this way, they will form the <i>register</i> of the first four bits that we will add to a second quarted; for this, we will need another push button that will function as a <tt>REGISTER</tt> button. The idea is that we keep the correct set of push buttons down while at the same time pushing this <tt>REGISTER</tt> button, thereby storing four bits in the memory of the arduino. </p>
+
+                <p>Add this push button to your circuit and update the code so that the storing of the four bits is done in one flow.</p>
+
+                <h3>Step 4: adding an <tt>ADD</tt> button</h3>
+
+                <p>Next, we are going to introduce yet another push button that will function as an <tt>ADD</tt> button. This button adds the next quarted of bits to the bits already stored in memory. As has been explained, binary addition works like an <tt>AND</tt>-gate with two inputs and two output; the truth-table for this port is shown below. The <tt>RCO</tt> of each bit actually forms one of the inputs of the second bit, to the complete circuit for our adder is as follows:</p>
+
+                <p class="center">
+                    <img src="imgs/adder-truth-table.png" alt="The truth table for a binary adder; this is actually a combination of an AND gate and a XOR gate">
+                    <img src="imgs/adder-circuit.png" alt="The general setup of the four bit adder">
+                </p>
+
+
+
+
+
+        </section><!-- exercise 3-->
 
 
         
