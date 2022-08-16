@@ -38,16 +38,16 @@
     </section><!-- preparation -->
 
 
-    <section id="excercises">
-        <h1>Excercises</h1>
+    <section id="exercises">
+        <h1>Exercises</h1>
 
-        <section id="excercise1">
-            <h2>Excercise 1: Basic interaction</h2>
+        <section id="exercise1">
+            <h2>Exercise 1: Basic interaction</h2>
             <p>As explained, the basic flow of any processing sketch (as programs are called in processing-vernacular) is <tt>setup()</tt> once and <tt>draw()</tt> indefinitely. The first of these methods sets up the stage for your program (size, speed, color, ...) while in the seconds method you do everything that needs to be done while your program is running.</p>
 
-            <p>In the examples, the <tt>draw()</tt>-methods just followed the mouse, drawing lines or circles as it went over the screen. In this first set of excersises we're going to add some interactivity.</p>
+            <p>In the examples, the <tt>draw()</tt>-methods just followed the mouse, drawing lines or circles as it went over the screen. In this first set of exersises we're going to add some interactivity.</p>
 
-            <p>Make a new sketch and copy the following code in the editor (or <a href="files/excercise1.pde">download it here</a>). Try to predict and explain what is going on before you run it (have a look at <a href="https://processing.org/reference/" target="_blank">the API-reference</a> if you are wondering about the particulars of the methods).</p>
+            <p>Make a new sketch and copy the following code in the editor (or <a href="files/exercise1.pde">download it here</a>). Try to predict and explain what is going on before you run it (have a look at <a href="https://processing.org/reference/" target="_blank">the API-reference</a> if you are wondering about the particulars of the methods).</p>
 
 <pre class="code"><code class="language-processing">int CIRCLE_SIZE = 30;
 
@@ -73,10 +73,10 @@ void draw() {
 <p>Remove your elaboration of the previous assignment. Also, remove the automatic growing of the green circle. Next, add code so that the size of the green circle is determined by the x-position of the mouse on the screen. Make use of the property <a href="https://processing.org/reference/mouseX.html"><tt>mouseX</tt></a>, that always contains the current horizontal position of the mouse (top left being point <tt>(0,0)</tt>). Note that the maximum size of the green circle is the same as the size of the screen (yes, we did that on purpose).</p>
         </section><!-- exercise 1 -->
 
-        <section id="excercise2">
-<h2>Excercise 2: Basic coloring</h2>
+        <section id="exercise2">
+<h2>Exercise 2: Basic coloring</h2>
 
-<p>Make a new sketch and copy the following code (or <a href="files/excercise2.pde">download it here</a>), which creates a new window with four colored boxes on top of it. Study the code in order to get an idea of its workings.</p>
+<p>Make a new sketch and copy the following code (or <a href="files/exercise2.pde">download it here</a>), which creates a new window with four colored boxes on top of it. Study the code in order to get an idea of its workings.</p>
 
 <pre class="code"><code class="language-processing">int[] MOUSEPOS = new int[2];
 
@@ -104,22 +104,22 @@ void mouseClicked() {
 }</code></pre>
 
 <p class="center">
-    <img src="imgs/processing-color.png" alt="The base of the second excercise">
+    <img src="imgs/processing-color.png" alt="The base of the second exercise">
 </p>
 
 <p>Now update the code so that the background of the window is whatever color is clicked on (the color of one of the four squares). As has been explained, you cannot easily check whether a click was done on an object, so you'll have to use <tt>mouseX</tt> and <tt>mouseY</tt> in order to see what square (if one at all) the mouse was on when it was clicked.</p>
 
-        </section><!-- excercise 2-->
+        </section><!-- exercise 2-->
 
-    <section id="excercise3">
-        <h2>Excercise 3: Keeping track with global variables</h2>
+    <section id="exercise3">
+        <h2>Exercise 3: Keeping track with global variables</h2>
         <p>Open the example <tt>File &rarr; Basics &rarr; Control &rarr; EmbeddedIteration</tt> and study the code. When you run this sketch, you'll get a screen as the following:</p>
 
         <p class="center">
             <img src="imgs/embedded_iteration.png" alt="The result of the EmbeddedIteration-example">
         </p>
 
-        <p>As you see, there are no <tt>setup()</tt> and <tt>draw()</tt> methods in this example: all the code is just on the global scope. Move all this given code to the <tt>setup()</tt> method and add the methods <tt>mouseClicked()</tt> and <tt>draw()</tt>. Keep those two methods empty for the moment – during this excercise,we will give them some body. Save your sketch (examples are marked 'read only', so you cannot edit and save them).</p>
+        <p>As you see, there are no <tt>setup()</tt> and <tt>draw()</tt> methods in this example: all the code is just on the global scope. Move all this given code to the <tt>setup()</tt> method and add the methods <tt>mouseClicked()</tt> and <tt>draw()</tt>. Keep those two methods empty for the moment – during this exercise,we will give them some body. Save your sketch (examples are marked 'read only', so you cannot edit and save them).</p>
 
         <p>When you look at the code, you can see that the location where all the white lines converge to is exactly the middle of the screen (have a look at line 20 of the original sketch). Create a <i>global variable</i> that contains these two values (so the type should be <tt>int[2]</tt>). Initialize this variable in <tt>setup()</tt> with the current middle of the screen and make use of this variable in the code. If you run this code again, there should not be any change in functionality.</p>
 
@@ -132,17 +132,17 @@ void mouseClicked() {
         </p>
 
         <p>Why does the variable that keeps the position of the mouse click to be declared in the global scope? Can you also change the code so that the drawing follows the mouse, instead of just updating after a mouse click? Do you still need the global variable for the position of the mouse in that case?</p>
-    </section><!-- excercise 3-->
+    </section><!-- exercise 3-->
 
-    <section id="excercise4">
-        <h2>Excercise 4: Working with text and arrays (challenging)</h2>
+    <section id="exercise4">
+        <h2>Exercise 4: Working with text and arrays (challenging)</h2>
         <p>Open the example <tt>Basics &rarr; Data &rarr; CharactersStrings</tt> and study the code and (especially) the comment on top of it. When you run this example, you can type some text that is added to the text that is already printed on the screen. Note that the character you are typing is also print on the console.</p>
 
         <p class="center"><img src="imgs/characterstrings.png" alt="The results of the example CharactersStrings"></p>
 
-        <p>Now, we are going to make some sort of todo-list: a small program that allows us to enter a few (max ten) todo-items with a small button that removes the item on top of the list. Have look at the image below to get an idea of the workings of this program. We have already provided the basic design and setup for you: <a href="files/excercise4.pde">you can download here</a>. </p>
+        <p>Now, we are going to make some sort of todo-list: a small program that allows us to enter a few (max ten) todo-items with a small button that removes the item on top of the list. Have look at the image below to get an idea of the workings of this program. We have already provided the basic design and setup for you: <a href="files/exercise4.pde">you can download here</a>. </p>
 
-        <p class="center"><img src="imgs/todolist.png" alt="An example of the result of excercise 4"></p>
+        <p class="center"><img src="imgs/todolist.png" alt="An example of the result of exercise 4"></p>
             
         <p>Implement the method <tt>keyTyped()</tt> so that whatever is typed is shown, starting at point <tt>(20, 500)</tt>. Have a look at the previous example to see how you can do that. Whenever you hit the Enter-key, the item that has been typed should be added to the <i>To Do</i> items on the left and the line where you were typing should be emptied again. You should use <tt>key==ENTER || key==RETURN</tt> to check whether the enter-key was pressed.</p>
 
@@ -151,10 +151,10 @@ void mouseClicked() {
 
 
 
-      </section><!-- excercise 4-->
+      </section><!-- exercise 4-->
 
 
-    </section><!-- excercises -->
+    </section><!-- exercises -->
 
     <section id="assignment">
         <h1>Assignment</h1>
@@ -183,10 +183,10 @@ void mouseClicked() {
         <h1>This week</h1>
         <ul>
            <li><a href="#preperation">preperation</a></li>
-           <li><a href="#excercise1">excercise 1</a></li>
-           <li><a href="#excercise2">excercise 2</a></li>
-           <li><a href="#excercise3">excercise 3</a></li>
-           <li><a href="#excercise4">excercise 4</a></li>
+           <li><a href="#exercise1">exercise 1</a></li>
+           <li><a href="#exercise2">exercise 2</a></li>
+           <li><a href="#exercise3">exercise 3</a></li>
+           <li><a href="#exercise4">exercise 4</a></li>
            <li><a href="#assignment">assignment</a></li>
         </ul>
     </div><!-- TOC -->

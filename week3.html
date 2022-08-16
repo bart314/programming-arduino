@@ -43,29 +43,29 @@
         </ol>
     </section><!-- preperation -->
 
-    <section id="excercises">
-        <h1>Excercises</h1>
+    <section id="exercises">
+        <h1>Exercises</h1>
         <p>Off course, we need to use our breadboard to actually create interesting stuff, as the pins on the Arduino are too few, too narrow and too error prone to be workable.</p>
 
-        <section id="excercise1">
-        <h2>Excercise 1: expanding on the blink example</h2>
+        <section id="exercise1">
+        <h2>Exercise 1: expanding on the blink example</h2>
         <p>Make sure you have the blinking LED example loaded on your Arduino. As has been explained, the pin that corresponds to the buildin LED is 13. Make use of this knowledge to have a LED on the breadboard blink. Next, add a few more LEDs on the same pin (or port, as they are also called regularly). For a nice effect, you can perhaps use different colors of LEDs.</p>
 
-        <p>Can you make use of your knowledge of transistors that <a href="week1.html#excercise4">we worked on in week 1</a> to have an LED on the breadboard blink when the one on the Arduino is off and vice versa, <i>without</i> changing the code on the Arduino? This is called a <i>signal inverter</i>. How about having two LEDs blink one after the other? Note that for this to work, you have to differentiate between the signal (pin 13) and the current (5V of 3.5V).</p>
+        <p>Can you make use of your knowledge of transistors that <a href="week1.html#exercise4">we worked on in week 1</a> to have an LED on the breadboard blink when the one on the Arduino is off and vice versa, <i>without</i> changing the code on the Arduino? This is called a <i>signal inverter</i>. How about having two LEDs blink one after the other? Note that for this to work, you have to differentiate between the signal (pin 13) and the current (5V of 3.5V).</p>
 
         <p class="center">
             <img src="imgs/arduino-multiple-leds.png" alt="Multiple LEDs blinking in unison">
             <img src="imgs/signal-inverter.png" alt="A signal inverter on the breadboard; note that the LED on the Arduino is off while the green one on the breadboard is on">
         </p>
-        </section><!-- excercise 1-->
+        </section><!-- exercise 1-->
 
-        <section id="excercise2">
-            <h2>Excercise 2: Input, output and states</h2>
-            <p>In this excercise, we are going to use the Ardiuno to create a four bit full adder with ripple carry out. In order to do this, we need to give the Arduino a <i>state</i>: a sort of memory which it can use to remember what has happened before. We are going to to this is some small steps.</p>
+        <section id="exercise2">
+            <h2>Exercise 2: Input, output and states</h2>
+            <p>In this exercise, we are going to use the Ardiuno to create a four bit full adder with ripple carry out. In order to do this, we need to give the Arduino a <i>state</i>: a sort of memory which it can use to remember what has happened before. We are going to to this is some small steps.</p>
 
             <h3>Step 1: adding state</h3>
 
-            <p class="first">First, connect an LED to port 12 and a small push button to port 7, using jump wire to put it all on your breadboard. Remember to put a 170 &Omega; resistor between the port and the LED. Next, study and copy the code below (or <a href="files/arduino-excercise2.ino">download it here</a>), and upload it to your Arduino. As you will see, once you hit the push button, the LED will go on <i>and stay on</i>, even when the push button is released again. You can see that this functions as kind of <i>memory</i> for the system: it remembers that the button has been pressed at least once. Make sure you understand why this code is doing what it is doing.</p>
+            <p class="first">First, connect an LED to port 12 and a small push button to port 7, using jump wire to put it all on your breadboard. Remember to put a 170 &Omega; resistor between the port and the LED. Next, study and copy the code below (or <a href="files/arduino-exercise2.ino">download it here</a>), and upload it to your Arduino. As you will see, once you hit the push button, the LED will go on <i>and stay on</i>, even when the push button is released again. You can see that this functions as kind of <i>memory</i> for the system: it remembers that the button has been pressed at least once. Make sure you understand why this code is doing what it is doing.</p>
 
             <pre class="code"><code class="language-arduino">
                 int BUTTON_PINS[4] = {7,6,5,4};
@@ -106,7 +106,7 @@
 
 
         
-    </section><!-- excercises -->
+    </section><!-- exercises -->
 
     <section id="assignment">
         <h1>Assignment</h1>
@@ -130,10 +130,10 @@
         <h1>This week</h1>
         <ul>
            <li><a href="#preperation">preperation</a></li>
-           <li><a href="#excercise1">excercise 1</a></li>
-           <li><a href="#excercise2">excercise 2</a></li>
-           <li><a href="#excercise3">excercise 3</a></li>
-           <li><a href="#excercise4">excercise 4</a></li>
+           <li><a href="#exercise1">exercise 1</a></li>
+           <li><a href="#exercise2">exercise 2</a></li>
+           <li><a href="#exercise3">exercise 3</a></li>
+           <li><a href="#exercise4">exercise 4</a></li>
            <li><a href="#assignment">assignment</a></li>
         </ul>
     </div><!-- TOC -->
