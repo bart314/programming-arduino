@@ -15,7 +15,28 @@
 
     <section id="preperation">
         <h1>Preparation</h1>
-        <p></p>
+        <p>This last week we are going to put together our gained knowledge about hardware, processing and Arduino together to let the computer control the environment and to control the computer by the environment. That way, we can create a connection between the physical and the real. In order to achieve this, we need to understand the way the arduino can send and receive data. </p>
+        <ol>
+          <li>Study <a href="https://techzeero.com/arduino-tutorials/serial-communication-in-arduino/">this guide (popup warning)</a> to get an idea of how serial communication works. </li>
+          <li>In the Arduino program, open <tt>File -> Examples -> 04.Communication -> Dimmer</tt> and study the code. You don't have to run it per se, but make sure you understand what is going on.</li>
+          <li>Have a look at <a href="https://processing.org/reference/map_.html">the documentation for map</a> and <a href="https://processing.org/reference/lerpColor_.html">for lerpColor</a>. Study the code below (or <a href="files/processing-gradient.pde">download it here</a>); make sure you understand at least the basic idea of what is going on here. </li>
+          <li>Copy the code in your Processing application and run it. Move your mouse over the gradient and see the numbers in the console of Processing increasing when you go from left to right.</li>
+        </ol>
+<pre class="code"><code class="language-processing">void setup() {
+    size(600, 300);
+  
+    for (int i = 0; i &lt;= width; i++) {
+      float inter = map(i, 0, width, 0, 1);
+      color c = lerpColor(color(0), color(255), inter);
+      stroke(c);
+      line(i, 0, i, height);
+    }
+  }
+  
+  void draw() {
+    println (mouseX);
+  }
+</code></pre>
     </section>
 
     <section id="exercises">
@@ -58,4 +79,7 @@
 
     
 </body>
+<script src="imgs.js"></script>
+<script src="hilightjs/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </html>
