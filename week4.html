@@ -41,10 +41,74 @@
 
     <section id="exercises">
         <h1>Exercises</h1>
-    </section>
+        <section id="exercise1">
+            <h2>Exercise 1</h2>
+            <p>In this and the next exercise, we are going to use Processing to control the LEDs on the breadboard. To start offf, you need to recreate the example that was presented during the planary part. Upload the Dimmer-example to your Arduino set and make sure you understand what it is doing. Next, recreate the circuit that is drawn and displayed below. </p>
+
+            <p class="center">
+                <img src="imgs/simple-led.png" alt="Simple LED">
+                <img src="imgs/simple-led-circuit.png" alt="Simple LED circuit">
+            </p>
+
+            <p>Add the following to the <tt>setup()</tt> in your Processing code (you probably need to change the number between the squared brackets to match your setup): </p>
+            
+            <p><tt>  serial_port = new Serial (this, Serial.list()[1],  9600); </tt> </p>
+
+            <p>Add the following to the <tt>loop()</tt> method: </p>
+
+            <p><tt>  serial_port.write( (255*mouseX / width)); </tt></p>
+
+            <p>Run the Processing code and move your mouse from the left to the right. Do you see what is happening with the LED...?</p>
+        </section><!-- exercise 1-->
+
+        <section id="exercise2">
+            <h2>Exercise 2</h2>
+            <p>Now, re-open the <a href="week2.html#exercise2">Processing sketch with the four buttons you have been working on in week 2</a>. Remove any code you might have created in order to make the background the same color as the button you clicked on, but keep the click-check.</p>
+
+            <p>Create a circuit on your Arduino board with three LEDs: a green one, a yellow one and a red one. Assign all these LEDs to a different port-number (to make life easier, you should use three ports below number 10). Make use of the example above to have Processing communicate with the Arduino which button (red, yellow or green) has been pressed. You need to create your own communication protocol, e.g. when red is pressed a <tt>1</tt> is send to the Arduino. Now, have the corresponding LEDs go on when the button on Arduino is pressed.</p>
+
+            <p>As has been explained in the planairy part, you cannot just send numbers to (and from) the Arduino. The data is transmitted as hexadecimal ASCII values, so you need the take that in account in your communication protocol.</p>
+
+            <p class="center">
+                <img src="imgs/traffic-light.png" alt="LEDs controlled by Processing">
+            </p>
+
+            <p>Can you enhance this example by having the corresponding LED <i>blink</i>? Extra challenge: can you even do this without changing the Arduino-code, using the knowledge we have gained in week 1?</p>
+        </section><!-- exercise 2-->
+
+    <section id="exercise3">
+        <h2>Exercise 3</h2>
+        <p>In this exercise, we are going to do the communication the other way around. We are going to use data from the Arduino to control events on Processing.</p>
+
+        <p>In processing, open <tt>Files -> Examples -> Math -> SineWave</tt> and study the code. When you run it, you get a nice display of a moving sine wave. Can you see the parameter that is responsible for the <i>height</i> of this wave? Experiment with different values for that parameter to determine its maximum and minimum values.</p>
+
+        <p class="center">
+            <img src="imgs/sine-wave-start.png" alt="The sine wave from the example">
+        </p>
+
+        <p>Study the Arduino example that you can find <a href="https://create.arduino.cc/projecthub/rafiqi_athallah/distance-sensor-7cf060">here</a> and recreate it using your own hardware. There are no buzzers in your set, but some are available in the classroom. Note: there is actually an error in the code given in the example; see if you can spot it...</p>
+
+        <p class="center">
+            <img src="imgs/distance-sensor1.png" alt="The distance sensor on the breadboard">
+            <img src="imgs/distance-sensor2.png" alt="The distance sensor on the breadboard">
+            <img src="imgs/distance-sensor-wiring.png" alt="The wiring of the distance sensor">
+        </p>
+
+        <p>In the example, the Arduino is printing the measured distance to the serial monitor. Change this output so that it is only printing the numbers (without all the other text). Add communication code to the <tt>SineWave</tt>-example (you need to put it somewhere else in orde to be able to save it) so that it listens to the serial port. Have a look <a href="https://processing.org/reference/libraries/serial/Serial_read_.html">at this documentation</a> to get an idea of how this works.</p>
+
+        <p>In the <tt>draw()</tt>-method, make use of the data the Arduino is transmitting to change the parameter that is responsible for the height of the sine wave. Now, when you get closer to the distance sensor, the sine wave will get a bigger amplitude. You probably need to do some math in order to limit this variable to its maximum and minimum values.</p>
+
+        <p class="center">
+            <img src="imgs/sine-wave-high.png" alt="A variable height of the sine wave">
+        </p>
+
+
+    </section><!-- exercise 3-->
+    </section><!-- exercises -->
 
     <section id="assignment">
         <h1>Assignment</h1>
+        <p>As this is the last normal workshow, there is no assignment for next week. However, be sure to work on <a href="assessment.html">the assessment</a> – you will be presenting that in two weeks time.</p>
     </section>
 
     </div>
@@ -69,8 +133,6 @@
            <li><a href="#exercise1">exercise 1</a></li>
            <li><a href="#exercise2">exercise 2</a></li>
            <li><a href="#exercise3">exercise 3</a></li>
-           <li><a href="#exercise4">exercise 4</a></li>
-           <li><a href="#exercise5">exercise 5</a></li>
            <li><a href="#assignment">assignment</a></li>
         </ul>
     </div><!-- TOC -->
