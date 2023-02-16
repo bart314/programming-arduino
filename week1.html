@@ -73,7 +73,7 @@
     <ol start="3">
       <li>Using Ohm's law, we can actually transform all of these units into each other. Using the table above, study this so-called <i>Ohm's Law Wheel</i>.</li>
     </ol>
-    <p class="center"><img src="imgs/ohms-law-wheel.png" alt="Ohm's Law Wheel"></p>
+    <p class="center"><img class="image" src="imgs/ohms-law-wheel.png" alt="Ohm's Law Wheel"></p>
     </p>
   </section><!-- preperation -->
 
@@ -83,15 +83,15 @@
     <p>During the planairy part, the wiring of the breadboard was explained. For easy reference, see the images below.</p>
 
     <p class="center">
-        <img src="imgs/breadboard.png" alt="A normal breadboard">
-        <img src="imgs/breadboard-open.png" alt="The wirings in the breadboard shown">
+        <img class="image" src="imgs/breadboard.png" alt="A normal breadboard">
+        <img class="image" src="imgs/breadboard-open.png" alt="The wirings in the breadboard shown">
     </p>
 
     <p>Connect the electromotor to the breadboard, as has been explained in the plenairy part. Make sure that you make use of jump wires to transfer the current from the long lines at the side to the smaller lines orthogonal to these. Add a small switch to the circuit, so that the electromotor only runs when the switch is pressed.</p>
 
     <p>Change the wiring of the electromotor, so that what was previously on the negative pole of the current is now on the positive pole. Do you notice any difference in the rotation of the motor? Why do you think this is?</p>
         
-    <p class="center"><img src="imgs/electromotor-connected.png" alt="The electromotor connected with a switch"></p>
+    <p class="center"><img class="image" src="imgs/electromotor-connected.png" alt="The electromotor connected with a switch"></p>
   </section> <!-- exercise 1 -->
 
 
@@ -108,15 +108,15 @@
     <p>Now, make a new circuit but this time put the LEDs parallel. Make sure that you use individual resistors for each individual LED (if you're interested in why this is needed, <a href="https://www.youtube.com/watch?v=5BoBNW3swpA">check out this explanation by SimplyPut</a>). Now what happens when you remove one of the LEDs of the circuit. Can you explain the difference?</p>
 
     <p class="center">
-        <img src="imgs/leds-in-series.png" alt="LEDs connected in series">
-        <img src="imgs/leds-in-parallel.png" alt="LEDs connected parallel">
+        <img class="image" src="imgs/leds-in-series.png" alt="LEDs connected in series">
+        <img class="image" src="imgs/leds-in-parallel.png" alt="LEDs connected parallel">
     </p>
 
     <p>Finally, add a variable restistor between your power supply and the LEDs. You can use a potentiometer for that, but (more interesing) some kind of sensor (several are provided in your kit). Experiment with different values of these sensors – do you notice what is happening?</p>
 
     <p class="center">
-        <img src="imgs/multiple-leds.png" alt="multiple LEDs in series on the breadboard">
-        <img src="imgs/leds-with-sensor.png" alt="LEDs in series with a sensor in the circuit">
+        <img class="image" src="imgs/multiple-leds.png" alt="multiple LEDs in series on the breadboard">
+        <img class="image" src="imgs/leds-with-sensor.png" alt="LEDs in series with a sensor in the circuit">
     </p>
     </section><!-- exercise 2 -->
 
@@ -134,8 +134,8 @@
     <p>Look at the schema below and make that on your breadboard. When you press switch <b><i>S1</i></b>, current flows through the capacitor, allowing it to charge. Then, when you release <b><i>S1</i></b> and press <b><i>S2</i></b>, you provide a path between both ends of the capacitor, allowing current to flow and thereby lightning the LED.</p>
 
     <p class="center">
-        <img src="imgs/manual-blinking-led-schema.png" alt="Schema of the manual blinking LED">
-        <img src="imgs/manual-blinking-led.png" alt="A realisation on the breadboard">
+        <img class="image" src="imgs/manual-blinking-led-schema.png" alt="Schema of the manual blinking LED">
+        <img class="image" src="imgs/manual-blinking-led.png" alt="A realisation on the breadboard">
     </p>
 
     <p>Experiment with different values for the capacitor; how does that influence the behavior of the circuit? Also check what happens when you press both switches at the same time. Can you explain what is happening?</p>
@@ -154,19 +154,19 @@
         <li><b><i>V<sub>BC</sub></i></b> &gt; 0.7V AND <b><i>I<sub>B</sub></i></b> = max &rarr; switch on</li>
     </ul>
 
-    <p class="center"><img src="imgs/transistor.png" alt="A transistor with its pins named"></p>
+    <p class="center"><img class="image" src="imgs/transistor.png" alt="A transistor with its pins named"></p>
 
     <p>Have a look at the circuit below. What do you think will happen if you put current on either point <b><i>A</i></b> or point <b><i>B</i></b>? As you can see in the right picture, we have used push button to put current on the base of either transistor (also note that we have used the same colors for the same functionality – something that is good practice when you start to make more complex circuits). Re-create this circuit on your own breadboard and experiment with the push button.</p>
 
     <p class="center">
-        <img src="imgs/or-circuit.png" alt="The circuit for an OR-gate">
-        <img src="imgs/or-circuit-breadboard.png" alt="An OR-gate realised on a breadboard">
+        <img class="image" src="imgs/or-circuit.png" alt="The circuit for an OR-gate">
+        <img class="image" src="imgs/or-circuit-breadboard.png" alt="An OR-gate realised on a breadboard">
     </p>
 
     <p>As you have seen, the LED goes on when either of the push buttons is pressed. You have just created what is known as a OR-gate: the LED turns on when either A OR B is pressed. We can actually summarize the functionality of this small circuit by providing its so-called <i>truth-table</i> (1 means current is present, 0 means current is not present):</p>
 
     <p class="center">
-        <img src="imgs/or-truth-table.png" alt="The truth-table of an OR-gate">
+        <img class="image" src="imgs/or-truth-table.png" alt="The truth-table of an OR-gate">
     </p>
 
     <p>Given this OR-gate, can you come up with a circuit that realises an AND-gate: a gate that will output 1 only if <i>both</i> points <b><i>A</i></b> <i>and</i> point <b><i>B</i></b> are 1? And what about <a href="https://en.wikipedia.org/wiki/XOR_gate">an XOR-gate</a>?</p>
@@ -182,8 +182,8 @@
     <p>When we close the switch, current flows over R1 to the capacitor in the middle, allowing it to charge itself. However, as you know a fully charged capacitor can be seen as an open switch, so the previous flow of the current (with the switch open) is restored.</p>
 
     <p class="center">
-        <img src="imgs/timed-circuit.png" alt="The schema of the timed circuit">
-        <img src="imgs/timed-circuit-breadboard.png" alt="The timed circuit on the breadboard">
+        <img class="image" src="imgs/timed-circuit.png" alt="The schema of the timed circuit">
+        <img class="image" src="imgs/timed-circuit-breadboard.png" alt="The timed circuit on the breadboard">
     </p>
 
     <p>Re-create this circuit on your own breadboard and see what happens when you close the switch. Can you explain in your own words why the circuit functions as it does? Why is it important that <b><i>R2</i></b> &Gt; <b><i>R1</i></b>? Experiment with different values for the capacitor; can you explain the differences in behavior?</p>
@@ -195,7 +195,7 @@
     <p>Have a look at <a href="https://www.circuits-diy.com/led-flip-flop-circuit-using-bc547-transistors/">this example and the explanation of a basis flip-flop circuit</a>. Though in this case the circuit uses different NPN-transistors than we have, you can realise it with the same transistors that we have used for the gates.</p>
 
     <p class="center">
-        <img src="imgs/flip-flop.png" alt="A basic flip-flop (from the site quoted)">
+        <img class="image" src="imgs/flip-flop.png" alt="A basic flip-flop (from the site quoted)">
     </p>
 
     <p>Re-create this circuit on your own breadboard. Experiment with different values for the resistors and/or the capacitors. Make sure you understand why the circuit is doing what it is doing. Can you replace one (or both) of the resistors with a sensor...?</p>
@@ -203,6 +203,10 @@
     <p>Document your process using both text and photographs and write a small piece of text of the workings of the circuit. Be sure to upload both the documentation and the explanation on your teams student folder before the next session. As you are working in pairs, upload the documents on both your student folders.</p>
   </section><!-- assignment -->
     </div><!-- main -->
+
+    <div id="hamburger">
+        <img src="imgs/menu.jpeg" alt="Hamburger-menu">
+    </div><!-- hamburger -->
 
     <div id="overview" class="sidebar">
         <h1>Arduino and electronics</h1>
@@ -232,5 +236,5 @@
 
 
 </body>
-<script src="imgs.js"></script>
+<script src="script.js"></script>
 </html>

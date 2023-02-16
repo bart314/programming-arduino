@@ -1,3 +1,17 @@
+// MENU
+document.querySelectorAll('#hamburger img').forEach (el => el.addEventListener('click', evt => {
+  console.log(evt)
+  const overview = document.getElementById('overview')
+  console.log(overview.style.display)
+  overview.style.display = overview.style.display=='block' ? 'none' : 'block'
+}))
+
+document.getElementById('main').addEventListener('click', () => document.getElementById('overview').style.display='none' )
+document.querySelectorAll('#hamburger a').forEach( el => el.addEventListener('click', () => {
+  document.getElementById('overview').style.display = 'none';
+}))
+
+// IMAGES
 let modal = document.createElement('div')
 modal.setAttribute('id','modal-window')
 modal.setAttribute('class','modal')
@@ -8,7 +22,7 @@ modal.innerHTML = `
 ` 
 document.body.appendChild(modal) 
 
-document.querySelectorAll("img").forEach( (el,idx) => {
+document.querySelectorAll("img.image").forEach( (el,idx) => {
   el.setAttribute('title','Click to enlarge image')
   el.addEventListener ('click', (el) => {
       document.querySelector("#modal-image").src = el.target.currentSrc

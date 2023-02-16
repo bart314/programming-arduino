@@ -46,8 +46,8 @@
             <p>In this and the next exercise, we are going to use Processing to control the LEDs on the breadboard. To start offf, you need to recreate the example that was presented during the planary part. Upload the Dimmer-example to your Arduino set and make sure you understand what it is doing. Next, recreate the circuit that is drawn and displayed below. </p>
 
             <p class="center">
-                <img src="imgs/simple-led.png" alt="Simple LED">
-                <img src="imgs/simple-led-circuit.png" alt="Simple LED circuit">
+                <img class="image" src="imgs/simple-led.png" alt="Simple LED">
+                <img class="image" src="imgs/simple-led-circuit.png" alt="Simple LED circuit">
             </p>
 
             <p>Add the following to the <tt>setup()</tt> in your Processing code (you probably need to change the number between the squared brackets to match your setup): </p>
@@ -70,7 +70,7 @@
             <p>As has been explained in the planairy part, you cannot just send numbers to (and from) the Arduino. The data is transmitted as hexadecimal ASCII values, so you need the take that in account in your communication protocol.</p>
 
             <p class="center">
-                <img src="imgs/traffic-light.png" alt="LEDs controlled by Processing">
+                <img class="image" src="imgs/traffic-light.png" alt="LEDs controlled by Processing">
             </p>
 
             <p>Can you enhance this example by having the corresponding LED <i>blink</i>? Extra challenge: can you even do this without changing the Arduino-code, using the knowledge we have gained in week 1?</p>
@@ -83,15 +83,15 @@
         <p>In processing, open <tt>Files -> Examples -> Math -> SineWave</tt> and study the code. When you run it, you get a nice display of a moving sine wave. Can you see the parameter that is responsible for the <i>height</i> of this wave? Experiment with different values for that parameter to determine its maximum and minimum values.</p>
 
         <p class="center">
-            <img src="imgs/sine-wave-start.png" alt="The sine wave from the example">
+            <img class="image" src="imgs/sine-wave-start.png" alt="The sine wave from the example">
         </p>
 
         <p>Study the Arduino example that you can find <a href="https://create.arduino.cc/projecthub/rafiqi_athallah/distance-sensor-7cf060">here</a> and recreate it using your own hardware. There are no buzzers in your set, but some are available in the classroom. Note: there is actually an error in the code given in the example; see if you can spot it...</p>
 
         <p class="center">
-            <img src="imgs/distance-sensor1.png" alt="The distance sensor on the breadboard">
-            <img src="imgs/distance-sensor2.png" alt="The distance sensor on the breadboard">
-            <img src="imgs/distance-sensor-wiring.png" alt="The wiring of the distance sensor">
+            <img class="image" src="imgs/distance-sensor1.png" alt="The distance sensor on the breadboard">
+            <img class="image" src="imgs/distance-sensor2.png" alt="The distance sensor on the breadboard">
+            <img class="image" src="imgs/distance-sensor-wiring.png" alt="The wiring of the distance sensor">
         </p>
 
         <p>In the example, the Arduino is printing the measured distance to the serial monitor. Change this output so that it is only printing the numbers (without all the other text). Add communication code to the <tt>SineWave</tt>-example (you need to put it somewhere else in orde to be able to save it) so that it listens to the serial port. Have a look <a href="https://processing.org/reference/libraries/serial/Serial_read_.html">at this documentation</a> to get an idea of how this works.</p>
@@ -99,7 +99,7 @@
         <p>In the <tt>draw()</tt>-method, make use of the data the Arduino is transmitting to change the parameter that is responsible for the height of the sine wave. Now, when you get closer to the distance sensor, the sine wave will get a bigger amplitude. You probably need to do some math in order to limit this variable to its maximum and minimum values.</p>
 
         <p class="center">
-            <img src="imgs/sine-wave-high.png" alt="A variable height of the sine wave">
+            <img class="image" src="imgs/sine-wave-high.png" alt="A variable height of the sine wave">
         </p>
 
 
@@ -113,6 +113,9 @@
 
     </div>
 
+    <div id="hamburger">
+        <img src="imgs/menu.jpeg" alt="Hamburger-menu">
+    </div><!-- hamburger -->
 
     <div id="overview" class="sidebar">
         <h1>Arduino and electronics</h1>
@@ -141,7 +144,7 @@
 
     
 </body>
-<script src="imgs.js"></script>
+<script src="script.js"></script>
 <script src="hilightjs/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 </html>

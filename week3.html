@@ -36,7 +36,7 @@
 
 
         </ol>
-        <p class="center"><img src="imgs/anatomy-arduino-ide.png" alt="The most important pieces of the Arduino IDE"></p>
+        <p class="center"><img class="image" src="imgs/anatomy-arduino-ide.png" alt="The most important pieces of the Arduino IDE"></p>
 
         <ol start="3">
             <li>Have a look at <a href="https://www.youtube.com/watch?v=GcDshWmhF4A">this nice wooden adding machine</a>.</li>
@@ -54,8 +54,8 @@
         <p>Can you make use of your knowledge of transistors that <a href="week1.html#exercise4">we worked on in week 1</a> to have an LED on the breadboard blink when the one on the Arduino is off and vice versa, <i>without</i> changing the code on the Arduino? This is called a <i>signal inverter</i>. How about having two LEDs blink one after the other? Note that for this to work, you have to differentiate between the signal (pin 13) and the current (5V of 3.5V).</p>
 
         <p class="center">
-            <img src="imgs/arduino-multiple-leds.png" alt="Multiple LEDs blinking in unison">
-            <img src="imgs/signal-inverter.png" alt="A signal inverter on the breadboard; note that the LED on the Arduino is off while the green one on the breadboard is on">
+            <img class="image" src="imgs/arduino-multiple-leds.png" alt="Multiple LEDs blinking in unison">
+            <img class="image" src="imgs/signal-inverter.png" alt="A signal inverter on the breadboard; note that the LED on the Arduino is off while the green one on the breadboard is on">
         </p>
         </section><!-- exercise 1-->
 
@@ -65,7 +65,7 @@
 
             <p>Realise a breadboard with four LEDs in parallel (kind of the same circuit <a href="week1.html#exercise2">we created in week 1</a>). Have the positive pin of each of the LEDs wired to a different (but sequential) port on the Arduino (e.g. pins 4, 5, 6, and 7). Next, create a new Arduino-sketch in which you define all those pins as <tt>OUTPUT</tt> (you should do this in the <tt>setup()</tt> method; have a look at the BlinkingLed-example).</p>
 
-            <p class="center"><img src="imgs/walking-leds.png" alt="The setup of four LEDs that blink one after the other"></p>
+            <p class="center"><img class="image" src="imgs/walking-leds.png" alt="The setup of four LEDs that blink one after the other"></p>
 
 	    <h3>Step 2: iterate over the LEDs</h3>
 	    <p>Now, in the <tt>loop()</tt> method, you should iterate over all those pins and set them to <tt>HIGH</tt>, wait for a few microseconds, set them to <tt>LOW</tt> again and repeat the process for the next pin. Have a look at the code below to get an idea of this process:</p>
@@ -110,8 +110,8 @@
   </code></pre>
 
   <p class="center">
-    <img src="imgs/potmeter-wiring.png" alt="The wiring of the potmeter for this experiment">
-    <img src="imgs/potmeter.png" alt="How the potmeter is wired from the breadboard to the Arduino">
+    <img class="image" src="imgs/potmeter-wiring.png" alt="The wiring of the potmeter for this experiment">
+    <img class="image" src="imgs/potmeter.png" alt="How the potmeter is wired from the breadboard to the Arduino">
   </p>
 
   <h3>Step 4: putting it all together</h3>
@@ -168,8 +168,8 @@ void setLedValues() {
                 <p class="first">Now, expand the circuit so that you have four push buttons controlling four LEDs. Make sure you use the correct pins for both the buttons and the LEDs (or change the code accordingly).</p>
 
                 <p class="center">
-                    <img src="imgs/one-led-one-switch.png" alt="One LED controlled by one push button; note that we have wired through the two horizontal lines of the two parts of the breadboard">
-                    <img src="imgs/four-leds-fours-switches.png" alt="Four LEDs controlled by four push buttons">
+                    <img class="image" src="imgs/one-led-one-switch.png" alt="One LED controlled by one push button; note that we have wired through the two horizontal lines of the two parts of the breadboard">
+                    <img class="image" src="imgs/four-leds-fours-switches.png" alt="Four LEDs controlled by four push buttons">
                 </p>
 
                 <h3>Step 3: adding a <tt>REGISTER</tt> button</h3>
@@ -183,8 +183,8 @@ void setLedValues() {
                 <p>Next, we are going to introduce yet another push button that will function as an <tt>ADD</tt> button. This button adds the next quarted of bits to the bits already stored in memory. As has been explained, binary addition works like an <tt>AND</tt>-gate with two inputs and two output; the truth-table for this port is shown below. The <tt>RCO</tt> of each bit actually forms one of the inputs of the second bit, to the complete circuit for our adder is as follows:</p>
 
                 <p class="center">
-                    <img src="imgs/adder-truth-table.png" alt="The truth table for a binary adder; this is actually a combination of an AND gate and a XOR gate">
-                    <img src="imgs/adder-circuit.png" alt="The general setup of the four bit adder">
+                    <img class="image" src="imgs/adder-truth-table.png" alt="The truth table for a binary adder; this is actually a combination of an AND gate and a XOR gate">
+                    <img class="image" src="imgs/adder-circuit.png" alt="The general setup of the four bit adder">
                 </p> </section><!-- exercise 3-->
 
 
@@ -202,6 +202,9 @@ void setLedValues() {
     </section><!-- assignment -->
     </div><!-- main -->
 
+    <div id="hamburger">
+        <img src="imgs/menu.jpeg" alt="Hamburger-menu">
+    </div><!-- hamburger -->
 
 
     <div id="overview" class="sidebar">
@@ -232,7 +235,7 @@ void setLedValues() {
 
     
 </body>
-<script src="imgs.js"></script>
+<script src="script.js"></script>
 <script src="hilightjs/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 </html>

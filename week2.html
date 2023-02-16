@@ -22,7 +22,7 @@
         </ol>
 
         <p class="center">
-            <img src="imgs/unnamed-soundsculpture.png" alt="Unnamed Soundsculture as an example of the possibilities of Processing">
+            <img class="image" src="imgs/unnamed-soundsculpture.png" alt="Unnamed Soundsculture as an example of the possibilities of Processing">
         </p>
 
         <ol start="3">
@@ -104,7 +104,7 @@ void mouseClicked() {
 }</code></pre>
 
 <p class="center">
-    <img src="imgs/processing-color.png" alt="The base of the second exercise">
+    <img class="image" src="imgs/processing-color.png" alt="The base of the second exercise">
 </p>
 
 <p>Now update the code so that the background of the window is whatever color is clicked on (the color of one of the four squares). As has been explained, you cannot easily check whether a click was done on an object, so you'll have to use <tt>mouseX</tt> and <tt>mouseY</tt> in order to see what square (if one at all) the mouse was on when it was clicked.</p>
@@ -116,7 +116,7 @@ void mouseClicked() {
         <p>Open the example <tt>File &rarr; Basics &rarr; Control &rarr; EmbeddedIteration</tt> and study the code. When you run this sketch, you'll get a screen as the following:</p>
 
         <p class="center">
-            <img src="imgs/embedded_iteration.png" alt="The result of the EmbeddedIteration-example">
+            <img class="image" src="imgs/embedded_iteration.png" alt="The result of the EmbeddedIteration-example">
         </p>
 
         <p>As you see, there are no <tt>setup()</tt> and <tt>draw()</tt> methods in this example: all the code is just on the global scope. Move all this given code to the <tt>setup()</tt> method and add the methods <tt>mouseClicked()</tt> and <tt>draw()</tt>. Keep those two methods empty for the moment – during this exercise,we will give them some body. Save your sketch (examples are marked 'read only', so you cannot edit and save them).</p>
@@ -128,7 +128,7 @@ void mouseClicked() {
         <p>Now give the method <tt>draw()</tt> its body. Instead of all the lines converging to the center of the screen, all the lines should go to whereever you have clicked the mouse. </p>
 
         <p class="center">
-            <img src="imgs/embedded_iteration_clicked.png" alt="The results of exercise 3">
+            <img class="image" src="imgs/embedded_iteration_clicked.png" alt="The results of exercise 3">
         </p>
 
         <p>Why does the variable that keeps the position of the mouse click to be declared in the global scope? Can you also change the code so that the drawing follows the mouse, instead of just updating after a mouse click? Do you still need the global variable for the position of the mouse in that case?</p>
@@ -138,11 +138,11 @@ void mouseClicked() {
         <h2>Exercise 4: Working with text and arrays (challenging)</h2>
         <p>Open the example <tt>Basics &rarr; Data &rarr; CharactersStrings</tt> and study the code and (especially) the comment on top of it. When you run this example, you can type some text that is added to the text that is already printed on the screen. Note that the character you are typing is also print on the console.</p>
 
-        <p class="center"><img src="imgs/characterstrings.png" alt="The results of the example CharactersStrings"></p>
+        <p class="center"><img class="image" src="imgs/characterstrings.png" alt="The results of the example CharactersStrings"></p>
 
         <p>Now, we are going to make some sort of todo-list: a small program that allows us to enter a few (max ten) todo-items with a small button that removes the item on top of the list. Have look at the image below to get an idea of the workings of this program. We have already provided the basic design and setup for you: <a href="files/exercise4.pde">you can download here</a>. </p>
 
-        <p class="center"><img src="imgs/todolist.png" alt="An example of the result of exercise 4"></p>
+        <p class="center"><img class="image" src="imgs/todolist.png" alt="An example of the result of exercise 4"></p>
             
         <p>Implement the method <tt>keyTyped()</tt> so that whatever is typed is shown, starting at point <tt>(20, 500)</tt>. Have a look at the previous example to see how you can do that. Whenever you hit the Enter-key, the item that has been typed should be added to the <i>To Do</i> items on the left and the line where you were typing should be emptied again. You should use <tt>key==ENTER || key==RETURN</tt> to check whether the enter-key was pressed.</p>
 
@@ -162,11 +162,15 @@ void mouseClicked() {
 
         <p>Note that this perhaps seems easier than it is; you need to take into account that at some point you need to swap the axis of the value that remains constant and the axis of the value that changes.</p>
 
-        <p class="center"><img src="imgs/processing-assignment.png" alt="An example of the required outcome of the assignment."></p>
+        <p class="center"><img class="image" src="imgs/processing-assignment.png" alt="An example of the required outcome of the assignment."></p>
 
         <p>Document your process using both text and screen shots and write a small piece of text explaining your code and your experience while writing it. Be sure to upload both the code and the document on your teams student folder before the next session. As you are working in pairs, upload the documents on both your student folders.</p>
     </section><!-- assignment -->
     </div> <!-- main -->
+
+    <div id="hamburger">
+        <img src="imgs/menu.jpeg" alt="Hamburger-menu">
+    </div><!-- hamburger -->
 
     <div id="overview" class="sidebar">
         <h1>Arduino and electronics</h1>
@@ -195,7 +199,7 @@ void mouseClicked() {
 
     
 </body>
-<script src="imgs.js"></script>
+<script src="script.js"></script>
 <script src="hilightjs/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 </html>
