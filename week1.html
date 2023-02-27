@@ -92,7 +92,12 @@
 
     <p>Change the wiring of the electromotor, so that what was previously on the negative pole of the current is now on the positive pole. Do you notice any difference in the rotation of the motor? Why do you think this is?</p>
         
-    <p class="center"><img class="image" src="imgs/electromotor-connected.png" alt="The electromotor connected with a switch"></p>
+    <p class="center">
+        <img class="image" src="imgs/electromotor-connected.png" alt="The electromotor connected with a switch">
+    </p>
+    <p class="center">
+        <img class="image" src="imgs/electromotor-connected-fritz.png" alt="model of the connected electromotor">
+    </p>
   </section> <!-- exercise 1 -->
 
 
@@ -101,6 +106,8 @@
     <p>In order to control the amount of current over a conductor, we need to add resistors to the circuit. Lots of components don't work well when too much current is applied to it – making them too hot so that they eventually would burn out (as would be the case if you were to put an LED in the previous circuit).</p>
 
     <p>Add a resistor after the switch in your circuit with the electromotor. Do you notice any difference between the workings, when you close the switch? You can determine the resistance of the resistor by looking at its colored bands. Check <a href="https://www.calculator.net/resistor-calculator.html">this site to see how to do that</a>.</p>
+
+    <p class="center"><img class="image" src="imgs/resistors.png" alt="Resistors with different values"></p>
 
     <p>Now we know how to work with resistors, we can work with LEDs insteads of an electromotor – which is visually more attractive, less noisy and easier to do. Clear you breadboard completely and connect one LED with the current, using a resistor of about 150 ohm (the exact amount doesn't matter that much in this point, and is dependent on the voltage of the source). Remember that with LED's, the orientation matters: the longer pin of the LED should be connected with the positive pole of the source.</p>
 
@@ -112,12 +119,18 @@
         <img class="image" src="imgs/leds-in-series.png" alt="LEDs connected in series">
         <img class="image" src="imgs/leds-in-parallel.png" alt="LEDs connected parallel">
     </p>
+    <p class="center">
+        <img class="image" src="imgs/parallel-leds-fritzing.png" alt="Model of the parallel leds">
+    </p>
 
     <p>Finally, add a variable restistor between your power supply and the LEDs. You can use a potentiometer for that, but (more interesing) some kind of sensor (several are provided in your kit). Experiment with different values of these sensors – do you notice what is happening?</p>
 
     <p class="center">
         <img class="image" src="imgs/multiple-leds.png" alt="multiple LEDs in series on the breadboard">
         <img class="image" src="imgs/leds-with-sensor.png" alt="LEDs in series with a sensor in the circuit">
+    </p>
+    <p class="center">
+        <img class="image" src="imgs/parallel-leds-potmeter-fritzing.png" alt="Model of the parallel leds with a variable resistor">
     </p>
     </section><!-- exercise 2 -->
 
@@ -137,6 +150,9 @@
     <p class="center">
         <img class="image" src="imgs/manual-blinking-led-schema.png" alt="Schema of the manual blinking LED">
         <img class="image" src="imgs/manual-blinking-led.png" alt="A realisation on the breadboard">
+    </p>
+    <p class="center">
+        <img class="image" src="imgs/capacitor-led-fritzing.png" alt="Model of the schematic above">
     </p>
 
     <p>Experiment with different values for the capacitor; how does that influence the behavior of the circuit? Also check what happens when you press both switches at the same time. Can you explain what is happening?</p>
@@ -163,6 +179,9 @@
         <img class="image" src="imgs/or-circuit.png" alt="The circuit for an OR-gate">
         <img class="image" src="imgs/or-circuit-breadboard.png" alt="An OR-gate realised on a breadboard">
     </p>
+    <p class="center">
+        <img class="image" src="imgs/or-circuit-fritzing.png" alt="Model of the circuit above">
+    </p>
 
     <p>As you have seen, the LED goes on when either of the push buttons is pressed. You have just created what is known as a OR-gate: the LED turns on when either A OR B is pressed. We can actually summarize the functionality of this small circuit by providing its so-called <i>truth-table</i> (1 means current is present, 0 means current is not present):</p>
 
@@ -175,7 +194,7 @@
         <h2>Assignment: solder an electronic sculpture</h2>
         <p>Until now, we have done all of our work on the breadboard. This is perfect for quick experimenting and rapid prototyping, but in real life you probably want to solder the components together: this makes your work more robust and permanent.</p>
 
-        <p>Obviously, esthetics is seldom a requirement for such an electronic circuit (a notable exception is formed by the (early) Macintosh computers, whose electronic boards were as thoroughly designed as the more visible parts of the hardware). However, in this assignment we <i>are</i> gping to make a beautiful <i>and</i> (more of less) functional sculpture.</p>
+        <p>Obviously, esthetics is seldom a requirement for such an electronic circuit (a notable exception is formed by the (early) Macintosh computers, whose electronic boards were as thoroughly designed as the more visible parts of the hardware). However, in this assignment we <i>are</i> going to make a beautiful <i>and</i> (more of less) functional sculpture.</p>
 
         <p>We did some soldering during class; now it is up to you to make a nice sculpture using at least LEDs, resistors and a battery. Make sure that the circuit you make actually <i>works</i>, but solder it together so that looks nice. You could just make a simple lamp (such as the one we showed during class), or make it more interesing using active components (e.g. have a look <a href="https://www.youtube.com/watch?v=JKoq3q9fAcg" target="_blank">this tutorial</a> for a complex example).
 
@@ -211,7 +230,6 @@
            <li><a href="#exercise2">exercise 2</a></li>
            <li><a href="#exercise3">exercise 3</a></li>
            <li><a href="#exercise4">exercise 4</a></li>
-           <li><a href="#exercise5">exercise 5</a></li>
            <li><a href="#assignment">assignment</a></li>
         </ul>
     </div><!-- TOC -->
