@@ -18,6 +18,13 @@ a:hover { text-decoration:underline; }
 /* div.sidebar { display:none; } */
 td.extra, th.extra { display:none; }
 
+table.truth-table {
+    width:50%;
+    margin:auto;
+}
+
+table.truth-table td { text-align:center; padding:1vh 0; }
+
 #overview {
     position:fixed;
     top:10px;
