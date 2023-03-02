@@ -17,12 +17,39 @@
     <section id="preperation">
         <h1>Preparation</h1>
         <p>Last week, we introduced several basic components: resistors, capacitors and transistors. In this week, we will use this knowledge to have several of these components work together. </p>
-        <b>TBD</b>
+        <ol>
+            <li>Study <a href="https://www.instructables.com/Logic-Gates-with-NPN-transistors/">this site on logical gates</a>. Though we're not going to use them all, it's good to know what each one is and how they work.</li>
+            <li>Have a look at <a href="https://www.youtube.com/watch?v=FDmHVRC6pQk">this video</a> (5:58) explaining the timing aspects of capacitors.</li>
+            <li>Look at the first eleven minutes of <a href="https://www.youtube.com/watch?v=FDmHVRC6pQk">this video</a>, explaining how servo motors work (you can skip over the parts on gears, if you want). The last four minutes of this video are about controlling the servo motor with an arduino, which we are not going to do this week.</li>
+        </ol>
     </section><!-- preparation -->
 
-
     <section id="exercise1">
-        <h2>Exercise 1: Timing an event</h2>
+        <h2>Exercise 1: Signal inversion</h2>
+        Last week, we introduced several logical gates: we made an OR-gate and worked on an AND gate. One of remaining gates is the NOT-gate, whose truth-table can be found below. Basically, this gate functions as a signal-inverter: it returns whatever is NOT inputted.
+
+        <table class="truth-table">
+            <tr><th>A</th><th>NOT A</th></tr>
+            <tr><td>1</td><td>0</td></tr>
+            <tr><td>0</td><td>1</td></tr>
+        </table>
+
+        Just to get your juices flowing at the start of this lab-course, we are going to make this relatively simple circuit. In the assignment for this week, we will be using this signal-inverter in quite some detail (however, we will use an integrated circuit in this case).
+
+        <p class="center">
+            <img class="image" src="imgs/not-gate-schematics.jpeg" alt="Schema of a NOT-gate">
+            <img class="image" src="imgs/not-gate-breadboard.jpeg" alt="A NOT-gate on a breadboard">
+        </p>
+        <p class="center">
+            <img class="image" src="imgs/not-gate_fritzing.png" alt="A model of a NOT-gate">
+        </p>
+
+
+    </section>
+
+
+    <section id="exercise2">
+        <h2>Exercise 2: Timing an event</h2>
         <p>Timing is an essential part in most computing processes, and the system we are creating here is used in lots of modern day systems (of course in integrated circuits and a bit more acccurate, but still).</p>
     
         <p>Have a look at the circuit below. With the switch open, current flows from the positive source throught R2 to the base of the transistor, thereby allowing current to flow over R3 and the LED back to the ground.</p>
@@ -33,23 +60,46 @@
             <img class="image" src="imgs/timed-circuit.png" alt="The schema of the timed circuit">
             <img class="image" src="imgs/timed-circuit-breadboard.png" alt="The timed circuit on the breadboard">
         </p>
+
+        <p class="center">
+            <img class="image" src="imgs/timed-circuit-fritzing.png" alt="A model of the breadboard">
+        </p>
     
         <p>Re-create this circuit on your own breadboard and see what happens when you close the switch. Can you explain in your own words why the circuit functions as it does? Why is it important that <b><i>R2</i></b> &Gt; <b><i>R1</i></b>? Experiment with different values for the capacitor; can you explain the differences in behavior?</p>
-        </section><!-- exercise 1-->
+    </section><!-- exercise 2-->
 
-        <section id="exercise2">
-            <h1>Exercise 2: make a basic flip-flop</h1>
+    <section id="exercise2">
+        <h1>Exercise 3: An astable vibrator</h1>
+
+        <p>Now that we know how to time an event and the effects of capacitors connected to the base of a transistor, we can use that knowledge to have two seperate transistors connected to two seperate capacitors. </p>
+
+        <p>Have a look at the schematic below. The voltage on the left side of C2 controls transistor T1. The voltage on the right side of C1 controls transistor T2. When transistor T1 turns ON, it changes the voltage of C1 so that T2 turns off. After a short while, the voltage of C1 rises back up and turns on the transistor T2. When transistor T2 turns on, it changes the voltage of C2 so that T1 turns off. This keeps repeating.</p>
+
+        <p>So what do you think will happen?</p>
         
-            <p>Have a look at <a href="https://www.circuits-diy.com/led-flip-flop-circuit-using-bc547-transistors/">this example and the explanation of a basis flip-flop circuit</a>. Though in this case the circuit uses different NPN-transistors than we have, you can realise it with the same transistors that we have used for the gates.</p>
+         <p class="center">
+            <img class="image" src="imgs/multivibrator-schematics.jpeg" alt="Scheme of the multivibrator">
+             <img class="image" src="imgs/multivibrator.png" alt="A basic flip-flop">
+         </p>
+
+        <p class="center">
+            <img class="image" src="imgs/flipflop-fritzing.png" alt="A model of the breadboard">
+        </p>
         
-            <p class="center">
-                <img class="image" src="imgs/flip-flop.png" alt="A basic flip-flop (from the site quoted)">
-            </p>
-        
-            <p>Re-create this circuit on your own breadboard. Experiment with different values for the resistors and/or the capacitors. Make sure you understand why the circuit is doing what it is doing. Can you replace one (or both) of the resistors with a sensor...?</p>
-        
-            <p>Document your process using both text and photographs and write a small piece of text of the workings of the circuit. Be sure to upload both the documentation and the explanation on your teams student folder before the next session. As you are working in pairs, upload the documents on both your student folders.</p>
-          </section><!-- exercise 2 -->
+         <p>Re-create this circuit on your own breadboard – you probably need to add some resistors between the high voltage and the LEDs, as is shown in the lower image. When you're done, switch it on (give current to it). If all goes well, you have just created your first <a href="https://en.wikipedia.org/wiki/Multivibrator">astable multivibrator</a>. This is a system that can be in one of two <em>states</em> and is used frequently in all kinds of applications.
+             
+         <p>Now experiment with different values for the resistors and/or the capacitors. Make sure you understand why the circuit is doing what it is doing. Also try to replace one (or both) of the resistors with a sensor. Document your findings using images and text.</p>
+    </section><!-- exercise 3 -->
+
+    <section id="exercise4">
+        <h2>Exercise 4: Hexschmitt inverter and sound</h2>
+
+
+
+
+    </section><!-- exercise 4-->
+
+
     
 
 
