@@ -68,8 +68,8 @@
         <p>Re-create this circuit on your own breadboard and see what happens when you close the switch. Can you explain in your own words why the circuit functions as it does? Why is it important that <b><i>R2</i></b> &Gt; <b><i>R1</i></b>? Experiment with different values for the capacitor; can you explain the differences in behavior?</p>
     </section><!-- exercise 2-->
 
-    <section id="exercise2">
-        <h1>Exercise 3: An astable vibrator</h1>
+    <section id="exercise3">
+        <h2>Exercise 3: An astable vibrator</h2>
 
         <p>Now that we know how to time an event and the effects of capacitors connected to the base of a transistor, we can use that knowledge to have two seperate transistors connected to two seperate capacitors. </p>
 
@@ -86,7 +86,7 @@
             <img class="image" src="imgs/flipflop-fritzing.png" alt="A model of the breadboard">
         </p>
         
-         <p>Re-create this circuit on your own breadboard – you probably need to add some resistors between the high voltage and the LEDs, as is shown in the lower image. When you're done, switch it on (give current to it). If all goes well, you have just created your first <a href="https://en.wikipedia.org/wiki/Multivibrator">astable multivibrator</a>. This is a system that can be in one of two <em>states</em> and is used frequently in all kinds of applications.
+         <p>Re-create this circuit on your own breadboard – you probably need to add some resistors between the high voltage and the LEDs, as is shown in the lower image. When you're done, switch it on (give current to it). If all goes well, you have just created your first <a href="https://en.wikipedia.org/wiki/Multivibrator">astable multivibrator</a>. This is a system that can be in one of two <em>states</em> and is used frequently in all kinds of applications.</p>
              
          <p>Now experiment with different values for the resistors and/or the capacitors. Make sure you understand why the circuit is doing what it is doing. Also try to replace one (or both) of the resistors with a sensor. Document your findings using images and text.</p>
     </section><!-- exercise 3 -->
@@ -94,6 +94,69 @@
     <section id="exercise4">
         <h2>Exercise 4: Hexschmitt inverter and sound</h2>
 
+        <p><b>Introduction</b></p>
+
+        <p>In this last exercise, we are going to integrate all the knowledge we have gained so far. We will use capacitors connected to a signal invertor and a resistor to create some kind of oscillation. And when we have oscillation, we can produce sound...</p>
+
+        <p>This idea is quite simple – have a look a the image below. We know that the signal inverter inverts the signal. So when the <tt>input</tt> is <em>high</em>, the <tt>output</tt> is <em>low</em>. That allows that capacitor to fill with charge: a lot of electrons gather up on the upper plate, until the charge of the capacitor is almost as high as the input.</p>
+
+        <p>When that happens, the charge starts to leave through the resistor to the other side of the inverter. That continues until the capacitor is empty again. But that means that the <tt>input</tt> of the inverter becomes <em>low</em>, thereby making the <tt>output</tt> <em>high</em>. So, charge is going back through the resistor back to the capacitor, until that is completely charged again; and so on and so forth.</p>
+
+        <p class="center">
+        <img class="image" src="imgs/inverter.png" alt="Abstract schema of the oscillator">
+        </p>
+
+        <p>So we have oscillation. We can tap that off at the side of the resistor (because of the resistance of the tapping instrument, we don't do it at the side of the capacitor) and make it visible using an oscilloscope – or better: to make it audible using an amplifier.</p>
+
+        <p><b>Pin layout</b></p>
+        <p>Luckely, we don't have to make all these things ourselves (also because the inverter that we are going to use is subtly different than the inverter we made ourselves). Both for the inverters and the amplification we are going to use some <em>integrated circuits</em>, or IC's.</p>
+
+        <p>As its name suggests, IC's encapsulate a lot of functionality in one (tiny) system. We connect with this functionality through their <em>pins</em>, so you need to be able to read a pin-layout in a document sheet and connect those to the specific pins on the chip. Every IC therefore has a small half moon on one of its sides, to enable the user to determine the numbering of the pins. This principle is shown in time image below (of course, the number of pins on an IC can vary):</p>
+
+        <p class="center">
+            <img class="image" src="imgs/generic-ic.png" alt="IC pin numbering">
+        </p>
+
+        <p><b>Hardware</b></p>
+
+        <p>For this exercise, we are going to use two IC's: the <a href="https://www.ti.com/lit/ds/symlink/cd40106b.pdf">CD40106B CMOS Hex Schmitt-Trigger Inverters</a> (or 40106 for short) and the <a href="https://www.ti.com/product/LM386">LM386 Class-AB audio amplifier</a> (LM386). The 40106 actually has six inverters, but in this exercise we are only going to use one (we'll use the other ones in the assignment). </p>
+
+        <p>Below, you find the pin layout of the 40106. As you can see, pin 2 gives the opposite of pin 1, pin 4 the opposite of pin 3, etc. The chip is powered through pin 14 (<tt>V<sub>DD</sub></tt>) and grounded through pin 7 (<tt>VSS</tt>).</p>
+
+        <p class="center">
+            <img src="imgs/40106-layout.png" alt="Pin layout of the 40106§">
+        </p>
+
+        <p>The next image shows the minimal setup of the LM386. This chip is powered through pin 6 and grounded through pins 2 and 4. The input signal is connected with pin 3, while its (amplified) output is connected with pin 5 (using a few capacitors).</p>
+
+        <p class="center">
+            <img src="imgs/lm386-layout.png" alt="The minimal setup of the LM386">
+        </p>
+
+        <p><b>Create your own beep-machine</b></p>
+
+        <p>Now, you need to use this knowledge to generate a sound (beep) with the 40106 and amplify this with the LM386 – see the images below. In this and next week's assignments, we are going to expand on this project.</p>
+
+        <p class="center">
+            <img class="image" src="imgs/40106-amplified-breadboard.png" alt="The circuit on a breadboard">
+        </p>
+
+        <p class="center">
+            <img class="image" src="imgs/40106-amplified-fritzing.png" alt="The circuit on a breadboard">
+        </p>
+
+        <p>When you are finished, try to replace the resistor with a sensor, for example the light-sensor that is in your kit. See (or: listen) what happens when you shine a light on this sensor... You could also try experimenting with different values for the capacitor.</p>
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
