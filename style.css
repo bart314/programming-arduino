@@ -67,7 +67,7 @@ pre.code { font-size:.8rem; line-height:1rem; width:80%; margin:auto; }
 tt { background-color:lightgray;}
 
 @media (min-width:600px) {
-    #overview { width:10vw; position:fixed; top:10vh; left:2vw; display:block; padding:0; background-color:transparent; font-size:1rem; }
+    #overview { width:10vw; position:fixed; top:10vh; left:2vw; display:block; padding:0; background-color:transparent; font-size:1rem; z-index:0; }
     #overview ul { padding-inline-start:0; }
     #hamburger { display:none; }
     #toc { width:10vw; position:fixed; top:10vh; left:80vw; padding:0; background-color:transparent;}
