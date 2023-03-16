@@ -61,7 +61,7 @@
             <h2>Exercise 2: Input and output of analog signals</h2>
             <h3>Step 1: create a walking light</h3>
 
-            <p>Realise a breadboard with four LEDs in parallel (kind of the same circuit <a href="week1.html#exercise2">we created in week 1</a>). Have the positive pin of each of the LEDs wired to a different (but sequential) port on the Arduino (e.g. pins 4, 5, 6, and 7). Next, create a new Arduino-sketch in which you define all those pins as <tt>OUTPUT</tt> (you should do this in the <tt>setup()</tt> method; have a look at the BlinkingLed-example).</p>
+            <p>Realise a breadboard with four LEDs in parallel. Have the positive pin of each of the LEDs wired to a different (but sequential) port on the Arduino (e.g. pins 4, 5, 6, and 7). Next, create a new Arduino-sketch in which you define all those pins as <tt>OUTPUT</tt> (you should do this in the <tt>setup()</tt> method; have a look at the BlinkingLed-example).</p>
 
             <p class="center"><img class="image" src="imgs/walking-leds.png" alt="The setup of four LEDs that blink one after the other"></p>
 
@@ -75,7 +75,7 @@
    delay(500);
 }
 </code></pre>
-            <p>However, as has been explained last week, in such a case it is better to create an array that keeps all the numbers of the ports where the LEDs are connected. Create such an array and initialize it with the correct pin-values. Next, in your <tt>loop()</tt> iterate over this array and have every pin switch on and off. If all goed well, you have created a walking light. Can you make this light go back and forth as well? Play around with the value of the call to <tt>delay()</tt> to get a feeling of the effects of the changes you make.</p>
+            <p>However, in such a case it is better to create an array that keeps all the numbers of the ports where the LEDs are connected. Create such an array and initialize it with the correct pin-values. Next, in your <tt>loop()</tt> iterate over this array and have every pin switch on and off. If all goed well, you have created a walking light. Can you make this light go back and forth as well? Play around with the value of the call to <tt>delay()</tt> to get a feeling of the effects of the changes you make.</p>
 
             <h3>Step 3: add a variable resistor</h3>
 
@@ -117,88 +117,23 @@
 
   <p>Now replace the potentiometer with some kind of sensor. That way, you can make the speed of the walking LEDs dependent on for example the distance of the breadboard to a wall, or the humidity of the air, or the bending of an arm, or ... There are several sensors in your set.</p>
 
-
-
-
-
-
-
-
-        </section><!-- exercise 2-->
-
-        <section id="exercise3">
-            <h2>Exercise 3: Input, output and states (challenge)</h2>
-            <p>In this exercise, we are going to use the Ardiuno to create a four bit full adder with ripple carry out. In order to do this, we need to give the Arduino a <i>state</i>: a sort of memory which it can use to remember what has happened before. We are going to to this is some small steps.</p>
-
-            <h3>Step 1: adding state</h3>
-
-            <p class="first">First, connect an LED to port 12 and a small push button to port 7, using jump wire to put it all on your breadboard. Remember to put a 170 &Omega; resistor between the port and the LED. Next, study and copy the code below (or <a href="files/arduino-exercise2.ino">download it here</a>), and upload it to your Arduino. As you will see, once you hit the push button, the LED will go on <i>and stay on</i>, even when the push button is released again. You can see that this functions as kind of <i>memory</i> for the system: it remembers that the button has been pressed at least once. Make sure you understand why this code is doing what it is doing.</p>
-
-            <pre class="code"><code class="language-arduino">
-int BUTTON_PINS[4] = {7,6,5,4};
-int LED_VALUES[4] = {0,0,0,0};
-int LED_PINS[4] = {12,11,10,9};
-
-void setup() {
-  for (int i=0; i<4; i++) {
-    pinMode(BUTTON_PINS[i], INPUT_PULLUP);
-    pinMode(LED_PINS[i], OUTPUT);
-  }
-}
-
-
-void loop() {
-  for (int i=0; i<4; i++) {
-    if (digitalRead(BUTTON_PINS[i])==0) LED_VALUES[i]=1;
-  }
-  setLedValues();
-  delay(100);
-}
-
-
-void setLedValues() {
-  for (int i=0; i<4; i++) {
-    if (LED_VALUES[i]==1) digitalWrite(LED_PINS[i], HIGH);
-  }
-}</code></pre>
-
-                <h3>Step 2: expanding the circuit</h3>
-                <p class="first">Now, expand the circuit so that you have four push buttons controlling four LEDs. Make sure you use the correct pins for both the buttons and the LEDs (or change the code accordingly).</p>
-
-                <p class="center">
-                    <img class="image" src="imgs/one-led-one-switch.png" alt="One LED controlled by one push button; note that we have wired through the two horizontal lines of the two parts of the breadboard">
-                    <img class="image" src="imgs/four-leds-fours-switches.png" alt="Four LEDs controlled by four push buttons">
-                </p>
-
-                <h3>Step 3: adding a <tt>REGISTER</tt> button</h3>
-
-                <p>The next step is to make the states of the four LEDs being updated at once; this way, they will form the <i>register</i> of the first four bits that we will add to a second quarted; for this, we will need another push button that will function as a <tt>REGISTER</tt> button. The idea is that we keep the correct set of push buttons down while at the same time pushing this <tt>REGISTER</tt> button, thereby storing four bits in the memory of the arduino. </p>
-
-                <p>Add this push button to your circuit and update the code so that the storing of the four bits is done in one flow.</p>
-
-                <h3>Step 4: adding an <tt>ADD</tt> button</h3>
-
-                <p>Next, we are going to introduce yet another push button that will function as an <tt>ADD</tt> button. This button adds the next quarted of bits to the bits already stored in memory. As has been explained, binary addition works like an <tt>AND</tt>-gate with two inputs and two output; the truth-table for this port is shown below. The <tt>RCO</tt> of each bit actually forms one of the inputs of the second bit, to the complete circuit for our adder is as follows:</p>
-
-                <p class="center">
-                    <img class="image" src="imgs/adder-truth-table.png" alt="The truth table for a binary adder; this is actually a combination of an AND gate and a XOR gate">
-                    <img class="image" src="imgs/adder-circuit.png" alt="The general setup of the four bit adder">
-                </p> </section><!-- exercise 3-->
-
-
-        
-    </section><!-- exercises -->
-
-    <section id="assignment">
-        <h1>Assignment</h1>
+<section id="exercise3">
+        <h1>Exercise 3</h1>
 
 	<p>Use the knowledge you have gained during this workshop to create a circuit that does something when a certain even occurs. You can use your own creativity and skills to come up with a plan. You could think of playing a sound when someone comes too close to your project (distance sensor), blink a light faster when the temperature rises (temperature sensor). Also think about different kinds of actuators: you have a servo-motor, an electron motor and lots of LEDs. Have a look <a href="https://cdn.makezine.com/make/books/Making-Things-Talk-Excerpt-Location-projects.pdf">at this book</a> to get some ideas of the possibilities.</p>
 
         <p>Make such a small project with your partner. Be sure to describe why you have chosen the project that you have made and document the whole process using both text and images. Be sure to upload both the code and the document on your teams student folder before the next session. As you are working in pairs, upload the documents on both your student folders.</p>
 
         <p>We will start our next (and final) session with a small demonstration of the projects you have delivered, so be creative.</p>
-    </section><!-- assignment -->
+    </section><!-- Exercise 3 -->
+
+    <section id="assignment">
+      <h2>Assignment</h2>
+      <p>TBD</p>
+    </section><!-- assignment-->
+
     </div><!-- main -->
+
 
     <div id="hamburger">
         <img src="imgs/menu.jpeg" alt="Hamburger-menu">
@@ -224,7 +159,6 @@ void setLedValues() {
            <li><a href="#exercise1">exercise 1</a></li>
            <li><a href="#exercise2">exercise 2</a></li>
            <li><a href="#exercise3">exercise 3</a></li>
-           <li><a href="#exercise4">exercise 4</a></li>
            <li><a href="#assignment">assignment</a></li>
         </ul>
     </div><!-- TOC -->
