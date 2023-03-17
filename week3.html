@@ -49,24 +49,32 @@
         <h2>Exercise 1: expanding on the blink example</h2>
         <p>Make sure you have the blinking LED example loaded on your Arduino. As has been explained, the pin that corresponds to the buildin LED is 13. Make use of this knowledge to have a LED on the breadboard blink. Next, add a few more LEDs on the same pin (or port, as they are also called regularly). For a nice effect, you can perhaps use different colors of LEDs.</p>
 
-        <p>Can you make use of your knowledge of transistors that <a href="week1.html#exercise4">we worked on in week 1</a> to have an LED on the breadboard blink when the one on the Arduino is off and vice versa, <i>without</i> changing the code on the Arduino? This is called a <i>signal inverter</i>. How about having two LEDs blink one after the other? Note that for this to work, you have to differentiate between the signal (pin 13) and the current (5V of 3.5V).</p>
 
         <p class="center">
             <img class="image" src="imgs/arduino-multiple-leds.png" alt="Multiple LEDs blinking in unison">
-            <img class="image" src="imgs/signal-inverter.png" alt="A signal inverter on the breadboard; note that the LED on the Arduino is off while the green one on the breadboard is on">
         </p>
+
+        <p class="center">
+          <img class="image" src="imgs/parallel-leds-fritzing.png" alt="Model of the setup">
+        </p>
+
+
+        <p>Can you make use of the signal invertor <a href="week2.html#exercise1">that we created at the beginning of last week</a> to have an LED on the breadboard shine when the one on the Arduino is off, <i>without</i> changing the code on the Arduino? How about having two LEDs blink one after the other? Note that for this to work, you have to differentiate between the signal (pin 13) and the current (5V otr 3.5V).</p>
         </section><!-- exercise 1-->
 
-        <section id="exercise2">
-            <h2>Exercise 2: Input and output of analog signals</h2>
-            <h3>Step 1: create a walking light</h3>
+   <section id="exercise2">
+       <h2>Exercise 2: Input and output of analog signals</h2>
+       <h3>Step 1: create a walking light</h3>
 
-            <p>Realise a breadboard with four LEDs in parallel. Have the positive pin of each of the LEDs wired to a different (but sequential) port on the Arduino (e.g. pins 4, 5, 6, and 7). Next, create a new Arduino-sketch in which you define all those pins as <tt>OUTPUT</tt> (you should do this in the <tt>setup()</tt> method; have a look at the BlinkingLed-example).</p>
+       <p>Realise a breadboard with four LEDs in parallel. Have the positive pin of each of the LEDs wired to a different (preferably sequential) port on the Arduino (e.g. pins 4, 5, 6, and 7). Next, create a new Arduino-sketch in which you define all those pins as <tt>OUTPUT</tt> (you should do this in the <tt>setup()</tt> method; have a look at the BlinkingLed-example).</p>
 
-            <p class="center"><img class="image" src="imgs/walking-leds.png" alt="The setup of four LEDs that blink one after the other"></p>
+       <p class="center"><img class="image" src="imgs/walking-leds.png" alt="The setup of four LEDs that blink one after the other"></p>
 
-	    <h3>Step 2: iterate over the LEDs</h3>
-	    <p>Now, in the <tt>loop()</tt> method, you should iterate over all those pins and set them to <tt>HIGH</tt>, wait for a few microseconds, set them to <tt>LOW</tt> again and repeat the process for the next pin. Have a look at the code below to get an idea of this process:</p>
+       <p class="center"><img class="image" src="imgs/walking-leds-fritzing.png" alt="Model of the setup"></p>
+
+    <h3>Step 2: iterate over the LEDs</h3>
+
+    <p>Now, in the <tt>loop()</tt> method, you should iterate over all those pins and set them to <tt>HIGH</tt>, wait for a few microseconds, set them to <tt>LOW</tt> again and repeat the process for the next pin. Have a look at the code below to get an idea of this process:</p>
 
 <pre class="code"><code class="language-arduino">void loop() {
    digitalWrite(4, HIGH);
@@ -75,13 +83,14 @@
    delay(500);
 }
 </code></pre>
-            <p>However, in such a case it is better to create an array that keeps all the numbers of the ports where the LEDs are connected. Create such an array and initialize it with the correct pin-values. Next, in your <tt>loop()</tt> iterate over this array and have every pin switch on and off. If all goed well, you have created a walking light. Can you make this light go back and forth as well? Play around with the value of the call to <tt>delay()</tt> to get a feeling of the effects of the changes you make.</p>
 
-            <h3>Step 3: add a variable resistor</h3>
+     <p>Now, in your <tt>loop()</tt> iterate over all the pins that the LEDs are connected to and have every pin switch on and off. If all goes well, you have created a walking light. Can you make this light go back and forth as well? Play around with the value of the call to <tt>delay()</tt> to get a feeling of the effects of the changes you make.</p>
 
-            <p>Add a variable resistor (a <i>potentiometer</i>) to your breadboard. Connect the external pins to the plus and the minus and the middle pin to an analog input of the Arduino; look at the drawing and the image below to see how to do this.</p>
+     <h3>Step 3: add a variable resistor</h3>
 
-            <p>Next, create a new sketch and copy the code below. If you run this sketch with the serial monitor open, you will see the value that the Arduino is reading from the potentiometer. If you turn it, you will notice that the value that it is reading goes from 0 to 1023, while the second parameter is going from 1 to 255 (this is an edited example from <a href="https://docs.arduino.cc/built-in-examples/analog/AnalogInOutSerial">Arduino.cc itself</a>).</p>
+     <p>Add a variable resistor (a <i>potentiometer</i>) to your breadboard. Connect the external pins to the plus and the minus and the middle pin to an analog input of the Arduino; look at the drawing and the image below to see how to do this.</p>
+
+     <p>Next, create a new sketch and copy the code below. If you run this sketch with the serial monitor open, you will see the value that the Arduino is reading from the potentiometer. If you turn it, you will notice that the value that it is reading goes from 0 to 1023, while the second parameter is going from 1 to 255 (this is an edited example from <a href="https://docs.arduino.cc/built-in-examples/analog/AnalogInOutSerial">Arduino.cc itself</a>).</p>
 
 <pre class="code"><code class="language-arduino">const int analogInPin = A0;  // Analog input pin that the potentiometer is attached to
   int sensorValue = 0;        // value read from the pot
@@ -112,20 +121,60 @@
     <img class="image" src="imgs/potmeter.png" alt="How the potmeter is wired from the breadboard to the Arduino">
   </p>
 
+  <p class="center">
+    <img class="image" src="imgs/potentio-meter-fritzing.png" alt="Model of the setup">
+  </p>
+
   <h3>Step 4: putting it all together</h3>
-  <p>Now use this code above to change the value of the call to <tt>delay()</tt> in your walking light. Have the Arduino read and map the value of the potentiometer on every loop; if all goes well, you are now able to change the speed with which the LEDs are 'walking' by changing the value of the potentiometer.</p>
+  <p>Now add the code above to your walking light code, so that it changes the value of the call to <tt>delay()</tt> in your walking light. Have the Arduino read and map the value of the potentiometer on every loop; if all goes well, you are now able to change the speed with which the LEDs are 'walking' by changing the value of the potentiometer.</p>
 
-  <p>Now replace the potentiometer with some kind of sensor. That way, you can make the speed of the walking LEDs dependent on for example the distance of the breadboard to a wall, or the humidity of the air, or the bending of an arm, or ... There are several sensors in your set.</p>
+  <p>Next week, we will use several diffent sensors to change the speed of this walking light.</p>
 
-<section id="exercise3">
-        <h1>Exercise 3</h1>
+  <section id="exercise3">
+    <h2>Exercise 3</h2>
 
-	<p>Use the knowledge you have gained during this workshop to create a circuit that does something when a certain even occurs. You can use your own creativity and skills to come up with a plan. You could think of playing a sound when someone comes too close to your project (distance sensor), blink a light faster when the temperature rises (temperature sensor). Also think about different kinds of actuators: you have a servo-motor, an electron motor and lots of LEDs. Have a look <a href="https://cdn.makezine.com/make/books/Making-Things-Talk-Excerpt-Location-projects.pdf">at this book</a> to get some ideas of the possibilities.</p>
+    <p>Working with LEDs is fun and all, but sometimes we want some more action than just walking lights. In such a case we use <em>actors</em> instead of <em>sensors</em>. In this exercise, we are going to use a potentiometer to control the angle of rotation of a servo-meter. As always, this is just to introduce you to the general workings in the hope that you can use these techniques in one way or another in your own project.</p>
 
-        <p>Make such a small project with your partner. Be sure to describe why you have chosen the project that you have made and document the whole process using both text and images. Be sure to upload both the code and the document on your teams student folder before the next session. As you are working in pairs, upload the documents on both your student folders.</p>
+    <p>Servos are clever devices. Using just one input pin, they receive the position from the Arduino and they go there. Internally, they have a motor driver and a feedback circuit that makes sure that the servo arm reaches the desired position. But what kind of signal do they receive on the input pin?</p>
 
-        <p>We will start our next (and final) session with a small demonstration of the projects you have delivered, so be creative.</p>
-    </section><!-- Exercise 3 -->
+  <p>It is a square wave. Each cycle in the signal lasts for 20 milliseconds and for most of the time, the value is LOW. At the beginning of each cycle, the signal is HIGH for a time between 1 and 2 milliseconds. At 1 millisecond it represents 0 degrees and at 2 milliseconds it represents 180 degrees. In between, it represents the value from 0–180. This is a very good and reliable method. The graphic below makes it a little easier to understand.</p>
+
+<p class="center">
+  <img src="imgs/pulses-servo.png" alt="Pulses related to the angle of the servo-motor">
+</p>
+
+<p>Luckely, we don't have to create all this machinery by ourselves: Arduino has a build-in library <tt>Servo</tt>, that we can use to our benefit. Have a look at the code below (which you can download <a href="files/servo-exercise.ino">here</a>). Here, we are using this library to rotate the servo to the left and to the right every second.</p>
+
+
+<pre class="code"><code class="language-arduino">// Include the Servo library 
+  #include &lt;Servo.h&gt;
+  // Declare the Servo pin 
+  int servoPin = 3; 
+  // Create a servo object 
+  Servo Servo1; 
+  void setup() { 
+     // We need to attach the servo to the used pin number 
+     Servo1.attach(servoPin); 
+  }
+
+  void loop(){ 
+     // Make servo go to 0 degrees 
+     Servo1.write(0); 
+     delay(1000); 
+     // Make servo go to 90 degrees 
+     Servo1.write(90); 
+     delay(1000); 
+     // Make servo go to 180 degrees 
+     Servo1.write(180); 
+     delay(1000); 
+  }
+  </code></pre>
+
+  <p>Realise the following setup on your breadboard (of course, we don't actually need a breadboard in this case) and upload the code to your Arduino. Make sure you understand what is going on and why the system is doing what it is doing.</p>
+
+  <p>Now, use your knowledge of sensors to add a light sensor to the setup, so that the amount of light on the sensor translates into the rotation of the servo. </p>
+  </section><!-- exercise 3-->
+
 
     <section id="assignment">
       <h2>Assignment</h2>
