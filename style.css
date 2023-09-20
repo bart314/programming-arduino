@@ -92,6 +92,7 @@ tt { background-color:lightgray;}
 /* parts for the modal window of the images */
 /* from https://www.w3schools.com/howto/howto_css_modal_images.asp */
 img { width:20vw; cursor:pointer; }
+img.small { width:10vw; }
 img:hover { opacity:.7; }
 
 #modal-image { cursor:default; opacity:1;}
