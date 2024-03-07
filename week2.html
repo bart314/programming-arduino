@@ -71,32 +71,7 @@
     </section><!-- exercise 2-->
 
     <section id="exercise3">
-        <h2>Exercise 3: An astable vibrator</h2>
-
-        <p>Now that we know how to time an event and the effects of capacitors connected to the base of a transistor, we can use that knowledge to have two seperate transistors connected to two seperate capacitors. </p>
-
-        <p>Have a look at the schematic below. The voltage on the left side of C2 controls transistor T1. The voltage on the right side of C1 controls transistor T2. When transistor T1 turns ON, it changes the voltage of C1 so that T2 turns off. After a short while, the voltage of C1 rises back up and turns on the transistor T2. When transistor T2 turns on, it changes the voltage of C2 so that T1 turns off. This keeps repeating.</p>
-
-        <p>So what do you think will happen?</p>
-        
-         <p class="center">
-            <img class="image" src="imgs/multivibrator-schematics.jpeg" alt="Scheme of the astable vibrator">
-             <img class="image" src="imgs/multivibrator.png" alt="A basic vibrator">
-         </p>
-
-        <p class="center">
-            <img class="image" src="imgs/flipflop-fritzing.png" alt="A model of the breadboard">
-        </p>
-        
-         <p>Re-create this circuit on your own breadboard – you probably need to add some resistors between the high voltage and the LEDs, as is shown in the lower image. As you are basically making the same circuit twice, make sure you use the same components on both sides: same resistor-values, same capacitor values, two of the same transistors (<a href="transistors.html">two of the types you find on this link</a>).</p>
-            
-        <p>When you're done, switch it on (give current to it). If all goes well, you have just created your first <a href="https://en.wikipedia.org/wiki/Multivibrator">astable multivibrator</a>. This is a system that can be in one of two <em>states</em> and is used frequently in all kinds of applications. Refer to <a href="https://www.youtube.com/watch?v=N1WukajJCxM" target="_blank">this video on youtube</a> to get a good explanation of what actually happens.</p>
-             
-         <p>Now experiment with different values for the resistors and/or the capacitors. Make sure you understand why the circuit is doing what it is doing. Also try to replace one (or both) of the resistors with a sensor. Document your findings using images and text.</p>
-    </section><!-- exercise 3 -->
-
-    <section id="exercise4">
-        <h2>Exercise 4: Hexschmitt inverter and sound</h2>
+        <h2>Exercise 3: Hexschmitt inverter and sound</h2>
 
         <p><b>Introduction</b></p>
 
@@ -162,7 +137,45 @@
         
         <p>To get the frequency of your choice, you should use very small capacitors and relatively big resistors; you could start off with a <b>C</b> of 100nF and a <b>R</b> of 10k&Omega;. Check <a href="https://electronics.stackexchange.com/a/16637" target=""_blank">this link</a> to see how the values of those small capacitors is given. </p>
 
-    </section><!-- exercise 4-->
+        <p>Once you have an audible beeping sound, experiment with switches and sensors. You also have a light dependend resistor, that you can use in series with a normal resistor in order to have the frequency depending on the amount of light. In <a href="#assignment">assignment for this week</a> you are asked to come up with interesting examples and ideas.</p>
+
+        <p class="center">
+            <img src="imgs/hexschmitt1.jpeg" alt="Example of a sound machine">
+            <video src="imgs/hexschmitt2.mp4" controls>
+                <source src="imgs/hexschmitt2.mp4" type="video/quicktime">
+                No video support
+            </video>
+
+        </p>
+
+    </section><!-- exercise 3-->
+
+
+    <section id="exercise4">
+        <h2>Extra excercise: An astable vibrator</h2>
+
+        <p>Now that we know how to time an event and the effects of capacitors connected to the base of a transistor, we can use that knowledge to have two seperate transistors connected to two seperate capacitors. </p>
+
+        <p>Have a look at the schematic below. The voltage on the left side of C2 controls transistor T1. The voltage on the right side of C1 controls transistor T2. When transistor T1 turns ON, it changes the voltage of C1 so that T2 turns off. After a short while, the voltage of C1 rises back up and turns on the transistor T2. When transistor T2 turns on, it changes the voltage of C2 so that T1 turns off. This keeps repeating.</p>
+
+        <p>So what do you think will happen?</p>
+        
+         <p class="center">
+            <img class="image" src="imgs/multivibrator-schematics.jpeg" alt="Scheme of the astable vibrator">
+             <img class="image" src="imgs/multivibrator.png" alt="A basic vibrator">
+         </p>
+
+        <p class="center">
+            <img class="image" src="imgs/flipflop-fritzing.png" alt="A model of the breadboard">
+        </p>
+        
+         <p>Re-create this circuit on your own breadboard – you probably need to add some resistors between the high voltage and the LEDs, as is shown in the lower image. As you are basically making the same circuit twice, make sure you use the same components on both sides: same resistor-values, same capacitor values, two of the same transistors (<a href="transistors.html">two of the types you find on this link</a>).</p>
+            
+        <p>When you're done, switch it on (give current to it). If all goes well, you have just created your first <a href="https://en.wikipedia.org/wiki/Multivibrator">astable multivibrator</a>. This is a system that can be in one of two <em>states</em> and is used frequently in all kinds of applications. Refer to <a href="https://www.youtube.com/watch?v=N1WukajJCxM" target="_blank">this video on youtube</a> to get a good explanation of what actually happens.</p>
+             
+         <p>Now experiment with different values for the resistors and/or the capacitors. Make sure you understand why the circuit is doing what it is doing. Also try to replace one (or both) of the resistors with a sensor. Document your findings using images and text.</p>
+    </section><!-- exercise 4 -->
+
 
     <section id="assignment">
         <h2>Assignment</h2>
@@ -204,10 +217,10 @@
         <h1>This week</h1>
         <ul>
            <li><a href="#preperation">preperation</a></li>
-           <li><a href="#exercise1">exercise 1</a></li>
-           <li><a href="#exercise2">exercise 2</a></li>
-           <li><a href="#exercise3">exercise 3</a></li>
-           <li><a href="#exercise4">exercise 4</a></li>
+           <li><a href="#exercise1">1. signal inversion</a></li>
+           <li><a href="#exercise2">2. timing</a></li>
+           <li><a href="#exercise3">3. making sound</a></li>
+           <li><a href="#exercise4">extra. flip flop</a></li>
            <li><a href="#assignment">assignment</a></li>
         </ul>
     </div><!-- TOC -->

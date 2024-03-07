@@ -92,6 +92,7 @@ tt { background-color:lightgray;}
 img { width:20vw; cursor:pointer; }
 img.small { width:10vw; }
 img:hover { opacity:.7; }
+video { width:20vw; }
 
 #modal-image { cursor:default; opacity:1;}
 .modal{display:none;position:fixed;z-index:1;padding-top:100px;left:0;top:0;width:100vw;height:100vh;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.9)}
