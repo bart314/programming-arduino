@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Lab Course week 4: </h1>
-        <h1>More Arduino</h1>
+        <h1>Arduino and Unity</h1>
     </header>
 
   <div id="main">
@@ -26,17 +26,10 @@
         <img src="imgs/menu.jpeg" alt="Hamburger-menu">
     </div><!-- hamburger -->
 
-    <div id="overview" class="sidebar">
-        <h1>Arduino and electronics</h1>
-        <ul>
-        <li><a href="index.html">Overview</a></li>
-        <li><a href="assessment.html">Assessment</a></li>
-        <li><a href="week1.html">Week 1</a></li>
-        <li><a href="week2.html">Week 2</a></li>
-        <li><a href="week3.html">Week 3</a></li>
-        <li><b>Week 4</b></li>
-        </ul>
-    </div>
+    <?php
+      $active = 'week4';
+      include 'menu.php';
+    ?>
 
     <div id="toc" class="sidebar">
         <h1>This week</h1>

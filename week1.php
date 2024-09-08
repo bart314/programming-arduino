@@ -10,7 +10,7 @@
 
     <header>
         <h1>Lab course week 1:</h1>
-        <h1>introduction electronics</h1>
+        <h1>Basic electronics</h1>
     </header>
 
     <div id="main">
@@ -70,12 +70,6 @@
             <td class="extra">An normal wire has a resistivity of almost zero. In general, <a href="https://en.wikipedia.org/wiki/Ohm%27s_law">Ohm's law</a> applies: R=V/I.</td>
         </tr>
     </table>
-
-    <ol start="3">
-      <li>Using Ohm's law, we can actually transform all of these units into each other. Using the table above, study this so-called <i>Ohm's Law Wheel</i>.</li>
-    </ol>
-    <p class="center"><img class="image" src="imgs/ohms-law-wheel.png" alt="Ohm's Law Wheel"></p>
-    </p>
   </section><!-- preperation -->
 
   <section id="exercise1">
@@ -105,13 +99,13 @@
     <h2>Exercise 2: Adding resistors</h2>
     <p>In order to control the amount of current over a conductor, we need to add resistors to the circuit. Lots of components don't work well when too much current is applied to it – making them too hot so that they eventually would burn out (as would be the case if you were to put an LED in the previous circuit).</p>
 
-    <p>Add a resistor after the switch in your circuit with the electromotor. Do you notice any difference between the workings, when you close the switch? You can determine the resistance of the resistor by looking at its colored bands. Check <a href="https://www.calculator.net/resistor-calculator.html">this site to see how to do that</a>.</p>
+    <p>Add a resistor after the switch in your circuit with the electromotor. Do you notice any difference between the workings, when you close the switch? You can determine the resistance of the resistor by looking at its colored bands. Check <a href="https://www.calculator.net/resistor-calculator.html">this site to see how to do that</a>. Note that the direction of the resistor doesn't matter: you can put them either way in the breadboard.</p>
 
     <p class="center"><img class="image" src="imgs/resistors.png" alt="Resistors with different values"></p>
 
-    <p>Now we know how to work with resistors, we can work with LEDs insteads of an electromotor – which is visually more attractive, less noisy and easier to do. Clear you breadboard completely and connect one LED with the current, using a resistor of about 150 ohm (the exact amount doesn't matter that much in this point, and is dependent on the voltage of the source). Remember that with LED's, the orientation matters: the longer pin of the LED should be connected with the positive pole of the source.</p>
+    <p>Now we know how to work with resistors, we can work with LEDs insteads of an electromotor – which is visually more attractive, less noisy and easier to do. Clear you breadboard completely and connect one LED with the current, using a resistor of about 150 ohm (the exact amount doesn't matter that much in this point, and is dependent on the voltage of the source). Remember that with LED's, the orientation <em>does</em> matter: the longer pin of the LED should be connected with the positive pole of the power source.</p>
 
-    <p>Now, use jump wire to connect multiple LEDs on the breadboard. In general, there are two ways in which you can connect the LEDs to each other: parallel of in series – have a look a the drawing below. Begin with a few LEDs in series (add one resistor 150 ohm). What happens when you remove one LED from the circuit? Can you explain why that is?</p>
+    <p>Now, use jump wire to connect multiple LEDs on the breadboard. In general, there are two ways in which you can connect the LEDs to each other: in parallel of in series – have a look a the drawing below. Begin with a few LEDs in series (add one resistor 150 ohm). What happens when you remove one LED from the circuit? Can you explain why that is?</p>
 
     <p>Now, make a new circuit but this time put the LEDs parallel. Make sure that you use individual resistors for each individual LED (if you're interested in why this is needed, <a href="https://www.youtube.com/watch?v=5BoBNW3swpA">check out this explanation by SimplyPut</a>). Now what happens when you remove one of the LEDs of the circuit. Can you explain the difference?</p>
 
@@ -123,7 +117,7 @@
         <img class="image" src="imgs/parallel-leds-fritzing.png" alt="Model of the parallel leds">
     </p>
 
-    <p>Finally, add a variable restistor between your power supply and the LEDs. You can use a potentiometer for that, but (more interesing) some kind of sensor (several are provided in your kit). Experiment with different values of these sensors – do you notice what is happening?</p>
+    <p>Finally, add a variable restistor between your power supply and the LEDs. You can use a potentiometer for that, but (more interesing) some kind of sensor (several types are available in DAT-space). Experiment with different values of these sensors – do you notice what is happening?</p>
 
     <p class="center">
         <img class="image" src="imgs/multiple-leds.png" alt="multiple LEDs in series on the breadboard">
@@ -155,7 +149,7 @@
         <img class="image" src="imgs/capacitor-led-fritzing.png" alt="Model of the schematic above">
     </p>
 
-    <p>Experiment with different values for the capacitor; how does that influence the behavior of the circuit? Also check what happens when you press both switches at the same time. Can you explain what is happening?</p>
+    <p>Experiment with different values for the capacitor – or put several capacitors in series; how does that influence the behavior of the circuit? Also check what happens when you press both switches at the same time. Can you explain what is happening?</p>
 
     <p>As you see, the wire from the LED is also connected to the ground. Would the circuit still work in the same manner if this connection was removed after the capacitor was charged?</p>
     </section> <!-- exercise 3-->
@@ -217,8 +211,7 @@
 
         <p class="center"><img class="image" src="imgs/led-sculpture.png" alt="LED sculpture"></p>
 
-
-        <p>This Tuesday, you can go to the electronics lab for help and assistance on this assignment. We will look at your elaborations at the beginning of the next class on Friday (before we start with <a href="week2.html">the next topics</a>). </p>
+        <p>This week, you can go to the electronics lab for help and assistance on this assignment. We will look at your elaborations at the beginning of the next class on Friday (before we start with <a href="week2.html">the next topics</a>). </p>
     </section><!-- assignment -->
 
     </div><!-- main -->
@@ -227,17 +220,10 @@
         <img src="imgs/menu.jpeg" alt="Hamburger-menu">
     </div><!-- hamburger -->
 
-    <div id="overview" class="sidebar">
-        <h1>Arduino and electronics</h1>
-        <ul>
-        <li><a href="index.html">Overview</a></li>
-        <li><a href="assessment.html">Assessment</a></li>
-        <li><b>Week 1</b></li>
-        <li><a href="week2.html">Week 2</a></li>
-        <li><a href="week3.html">Week 3</a></li>
-        <li><a href="week4.html">Week 4</a></li>
-        </ul>
-    </div>
+    <?php
+        $active = 'week1';
+        include 'menu.php';
+    ?>
 
     <div id="toc" class="sidebar">
         <h1>This week</h1>
