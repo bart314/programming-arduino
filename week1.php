@@ -211,7 +211,7 @@
 
         <p class="center"><img class="image" src="imgs/led-sculpture.png" alt="LED sculpture"></p>
 
-        <p>This week, you can go to the electronics lab for help and assistance on this assignment. We will look at your elaborations at the beginning of the next class on Friday (before we start with <a href="week2.html">the next topics</a>). </p>
+        <p>This week, you can go to the electronics lab for help and assistance on this assignment. We will look at your elaborations at the beginning of the next class on Friday (before we start with <a href="week2.php">the next topics</a>). </p>
     </section><!-- assignment -->
 
     </div><!-- main -->
@@ -227,14 +227,14 @@
 
     <div id="toc" class="sidebar">
         <h1>This week</h1>
-        <ul>
+        <ol>
            <li><a href="#preperation">preperation</a></li>
-           <li><a href="#exercise1">1. the breadboard</a></li>
-           <li><a href="#exercise2">2. resistors</a></li>
-           <li><a href="#exercise3">3. capacitors</a></li>
-           <li><a href="#exercise4">4. transistors</a></li>
+           <li><a href="#exercise1">breadboard</a></li>
+           <li><a href="#exercise2">resistors</a></li>
+           <li><a href="#exercise3">capacitors</a></li>
+           <li><a href="#exercise4">transistors</a></li>
            <li><a href="#assignment">assignment</a></li>
-        </ul>
+        </ol>
     </div><!-- TOC -->
 
 

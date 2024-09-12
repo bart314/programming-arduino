@@ -113,13 +113,13 @@
 
     <div id="toc" class="sidebar">
         <h1>This week</h1>
-        <ul>
+        <ol>
            <li><a href="#preperation">preperation</a></li>
-           <li><a href="#exercise1">1. servo motor</a></li>
-           <li><a href="#exercise2">2. serial communication</a></li>
-           <li><a href="#exercise3">3. sensors and actuators</a></li>
+           <li><a href="#exercise1">servo motor</a></li>
+           <li><a href="#exercise2">serial communication</a></li>
+           <li><a href="#exercise3">sensors and actuators</a></li>
            <li><a href="#assignment">assignment</a></li>
-        </ul>
+        </ol>
     </div><!-- TOC -->
 
 

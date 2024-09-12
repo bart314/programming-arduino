@@ -28,11 +28,13 @@ table.truth-table td { text-align:center; padding:1vh 0; }
 
 #overview {
     position:fixed;
-    top:10px;
-    left:2vw;
+    bottom:5vh;
+    right:2vw;
     width:50%;
     padding:2vh 2vw;
-    background-color:mediumaquamarine;
+    background-color:#ccc;
+    border:solid gray 1px;
+    opacity:0.9;
     font-size:larger;
     display:none;
     z-index:8;
@@ -41,8 +43,8 @@ table.truth-table td { text-align:center; padding:1vh 0; }
 #hamburger {
     position:fixed;
     z-index:9;
-    left:10px;
-    top:10px;
+    left:85vw;
+    top:90vh;
     width:10vw;
     cursor:pointer;
 }
@@ -53,14 +55,15 @@ table.truth-table td { text-align:center; padding:1vh 0; }
     position:fixed;
     top:2px;
     background-color:white;
-    width:80vw;
+    width:100vw;
+    left:0;
     padding-left:10vw;
     overflow-y:scroll;
 }
 
 #toc h1 { display:none; }
-#toc ul { display:flex; list-style-type:none; }
-#toc ul>li { padding:0 1vw; }
+#toc ol { display:flex; list-style-type:none; justify-content:flex-start; align-items:center; padding-left:0; }
+#toc ol>li { padding:0 2vw; }
 
 #rubrics { display:flex; }
 #rubrics td { padding:2vw 2vh; }
@@ -71,13 +74,13 @@ pre.code { font-size:.8rem; line-height:1rem; width:80%; margin:auto; }
 tt { background-color:lightgray;}
 
 @media (min-width:600px) {
-    #overview { width:10vw; position:fixed; top:10vh; left:2vw; display:block; padding:0; background-color:transparent; font-size:1rem; z-index:0; }
+    #overview { width:10vw; position:fixed; top:10vh; left:2vw; display:block; padding:0; background-color:transparent; font-size:1rem; z-index:0; border:none; }
     #overview ul { padding-inline-start:0; }
     #hamburger { display:none; }
     #toc { width:10vw; position:fixed; top:10vh; left:80vw; padding:0; background-color:transparent;}
     #toc h1 { display:block; }
-    #toc ul { display:block; padding-left:0; }
-    #toc ul>li { margin:1vw 0; }
+    #toc ol { display:block; padding-left:0; }
+    #toc ol>li { margin:1vw 0; }
 
     #main { width:60vw; margin-left:15vw; }
     

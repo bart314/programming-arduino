@@ -200,14 +200,14 @@
 
     <div id="toc" class="sidebar">
         <h1>This week</h1>
-        <ul>
+        <ol>
            <li><a href="#preperation">preperation</a></li>
-           <li><a href="#exercise1">1. signal inversion</a></li>
-           <li><a href="#exercise2">2. timing</a></li>
-           <li><a href="#exercise3">3. basic arduino</a></li>
-           <li><a href="#exercise4">4. input and output</a></li>
+           <li><a href="#exercise1">signal inversion</a></li>
+           <li><a href="#exercise2">timing</a></li>
+           <li><a href="#exercise3">basic arduino</a></li>
+           <li><a href="#exercise4">input and output</a></li>
            <li><a href="#assignment">assignment</a></li>
-        </ul>
+        </ol>
     </div><!-- TOC -->
 
 

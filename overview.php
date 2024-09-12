@@ -75,14 +75,14 @@
 
     <div id="toc" class="sidebar">
         <h1>TOC</h1>
-        <ul>
+        <ol>
            <li><a href="#introduction">general description</a></li>
            <li><a href="#assessment">assessment</a></li>
            <li><a href="#schedule">week schedule</a></li>
            <li><a href="#time">time requirements</a></li>
-        </ul>
+        </ol>
     </div><!-- TOC -->
 
-<script src="script.js"></script>
+<script src="js/hamburger.js"></script>
 </body>
 </html>
