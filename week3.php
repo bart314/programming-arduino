@@ -133,7 +133,7 @@ void loop() {
 
 <p><b>Part 2</b></p>
 
-<p>Modify the code so that it is possible to switch more than one LED on, by separating the colors with a comma (','); e.g. when you want to put a red and a green LED on, you type 'red, green' in the Serial Monitor. You can make use of the method <tt>getValue(sting, seperator, index)</tt> that is provided below (just past that code into your Arduino IDE, below the <tt>loop</tt>-method):</p>
+<p>Modify the code so that it is possible to switch more than one LED on, by separating the colors with a comma (','); e.g. when you want to put a red and a green LED on, you type 'red,green' in the Serial Monitor. You can make use of the method <tt>getValue(sting, seperator, index)</tt> that is provided below (just past that code into your Arduino IDE, below (outside of) the <tt>loop</tt>-method):</p>
 
 
 <pre class="code"><code class="language-arduino">
@@ -164,22 +164,26 @@ String getValue(String data, char separator, int index) {
 
 <p class="aside">As you can see, we agree not to allow spaces after the comma. If you want, you can change the method <tt>getValue</tt> to remote the trailing spaces, or use <a href="https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/indexof/">the method <tt>indexOf</tt></a> to check for a string without the commas. This is left as an exercise for the reader 😎.</p>
 
+<p><b>Part 3</b></p>
 
-
-
-
-
-
-
-
-
-
-
-
+<p>Now update your code so that instead of just having the chosen LED burning, it is actually blinking. We will expand on this last step in the next exercise.</p>
   </section><!-- exercise2 -->
+
+
 
   <section id="exercise3">
     <h2>Exercise 3: Sensors and actuators</h2>
+
+    <p>Most sensors work just like a complex potentiometer, with three pins and the middle pin corresponding to the washer of the property being sensed: light, humidity, sound-volume, heat, ... However, there are also lots of sensors that have four (or even more) pins. In this exercise, we are looking at one of those: the distance sensor.</p>
+
+    <p>Please refer to the first image below. As you can see, the first and last pin are the by now familiar plus and ground pins. However, the second and third pin work somewhat different.</p>
+
+    <p>The distance sensor actually consists of a very small speaker and a very small microphone. When you put power to the speaker, it releases a sound of a specific frequency (about 40kHz, so you won't be able to hear it – that's why it's called 'ultrasound'). When you put power to the microphone, it starts listening to the same frequency as the speaker is transmitting. So if you know when the speaker starts tranmitting and you know when the microphone is picking up the sound, you can calculate the distance between the device and some solid object: see the second image below.</p>
+
+    <p class="center">
+      <img class="image" src="imgs/distance-sensor-wiring.png" alt="">
+      <img class="image" src="imgs/calculating-distance.png" alt="">
+    </p>
 
   </section><!-- exercise3 -->
 
