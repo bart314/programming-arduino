@@ -81,11 +81,100 @@
     <img src="imgs/servo-fritzing.png" alt="A model of the setup">
   </p>
 
-  <p>Now, use your knowledge of sensors to add a light sensor to the setup, so that the amount of light on the sensor translates into the rotation of the servo. </p>
+  <p>In the next few exercises we are going to expand on this simple setup.</p>
+
   </section><!-- exercise 1-->
 
   <section id="exercise2">
     <h2>Exercise 2: Serial communication</h2>
+
+    <p><b>Introduction</b></p>
+
+    <p>Serial communication is a method of sending data from one computer to another one one bit at a time over a communication channel or wire, such as a USB (Universal <em>Serial Bus</em>) cable. It is called "serial" because data bits are transmitted one after the other, in a series. As in all communication, we need at least two parties. In this case, we talk about a <em>sender</em> and a <em>receiver</em>. Both the sender and receiver need to agree on how fast to send and receive bits, known as the <em>baud rate</em> (bit rate).</p>
+
+    <p>Last week, we already introduced the Arduino Serial Monitor to display the value of the potentiometer (or the sensor); however, we can also use the Serial Monitor to send data <em>to</em> the Arduino. In this first example, we will use that Arduino just to echo whatever is send to it. Because the Arduino is not doing anything else, we don't need to hook up a breadboard. Just copy-past the code below into your IDE, upload it to the Arduino and type something in the Serial Monitor. Be sure you understand what is going on in the code; have a look at <a href="https://www.arduino.cc/reference/en/language/functions/communication/serial/read/"></a>the documentation for <tt>Serial.read()</tt></a> as well.</p>
+
+<pre class="code"><code class="language-arduino">String inputString = ""; 
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Please type something and hit ENTER");
+}
+
+void loop() {
+  while (Serial.available()) {
+    char inChar = (char)Serial.read();
+
+    if (inChar == '\n' || inChar == '\r') { 
+      Serial.print("Arduino received: ");
+      Serial.println(inputString);
+      inputString = "";
+    } else {
+      inputString += inChar;
+    }
+  }
+} </code></pre>
+
+<p class="aside">Please note that in order for this to work, you need to setup your Serial Monitor in such a way that it sends either newlines (<tt>'\n'</tt>) or carriage returns (<tt>'\r'</tt>) or both at the end of a transmission. Also, the baud rate of the Serial Monitor must be the same as the one you put on the Arduino (in line 4 of the code above). Have a look at the image below to see where and how.</p>
+
+<p class="center">
+  <img class="image" src="imgs/setup-serial-monitor.png" alt="">
+</p>
+
+<p><b>Part 1</b></p>
+
+<p>Now, create a breadboard with a few LEDs of different colors connected to different ports – make use of exercise 4 on ports and LEDs of <a href="wee2.html#exercise4">the previous week</a>. Now alter the code above to that you you can type the color of the LED you wish to put on. If you don't remember, have a look at <a href="https://www.arduino.cc/reference/en/language/structure/control-structure/if/">the documentation for conditionals on the Arduino-API</a>, the most important part of which is copied below.</p>
+
+<pre class="code"><code class="language-arduino">if (condition) {
+  //statement(s)
+}</code></pre>
+
+<p>In this case, the <tt>condition</tt> should check which color is being received by the Arduino and the <tt>statements</tt> should put all but the chosen LED off.</p>
+
+<p><b>Part 2</b></p>
+
+<p>Modify the code so that it is possible to switch more than one LED on, by separating the colors with a comma (','); e.g. when you want to put a red and a green LED on, you type 'red, green' in the Serial Monitor. You can make use of the method <tt>getValue(sting, seperator, index)</tt> that is provided below (just past that code into your Arduino IDE, below the <tt>loop</tt>-method):</p>
+
+
+<pre class="code"><code class="language-arduino">
+String getValue(String data, char separator, int index) {
+  int found = 0;
+  int strIndex[] = {0, -1};
+  int maxIndex = data.length()-1;
+
+  for(int i=0; i<=maxIndex && found<=index; i++){
+    if(data.charAt(i)==separator || i==maxIndex){
+        found++;
+        strIndex[0] = strIndex[1]+1;
+        strIndex[1] = (i == maxIndex) ? i+1 : i;
+    }
+  }
+
+  return found>index ? data.substring(strIndex[0], strIndex[1]) : "";
+}
+
+//source: https://stackoverflow.com/a/29673158/10974490
+
+/* example usage:
+  String demo = "red,green,blue"; // note the absence of spaces
+  getValue(demo, ',', 0) // will return read
+  getValue(demo, ',', 2) // will return blue
+*/
+</code></pre>
+
+<p class="aside">As you can see, we agree not to allow spaces after the comma. If you want, you can change the method <tt>getValue</tt> to remote the trailing spaces, or use <a href="https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/indexof/">the method <tt>indexOf</tt></a> to check for a string without the commas. This is left as an exercise for the reader 😎.</p>
+
+
+
+
+
+
+
+
+
+
+
+
 
   </section><!-- exercise2 -->
 
@@ -124,10 +213,10 @@
 
 
 
-    
-</body>
 <script src="js/hamburger.js"></script>
 <script src="js/images.js"></script>
 <script src="hilightjs/highlight.min.js"></script>
+    
+</body>
 <script>hljs.highlightAll();</script>
 </html>
