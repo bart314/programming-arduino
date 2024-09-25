@@ -131,6 +131,11 @@ void loop() {
 
 <p>In this case, the <tt>condition</tt> should check which color is being received by the Arduino and the <tt>statements</tt> should put all but the chosen LED off.</p>
 
+<p class="center">
+  <img class="image" src="imgs/arduino-serial-green.jpeg" alt="Green Led turned on">
+  <img class="image" src="imgs/arduino-serial-red.jpeg" alt="Red Led turned on">
+</p>
+
 <p><b>Part 2</b></p>
 
 <p>Modify the code so that it is possible to switch more than one LED on, by separating the colors with a comma (','); e.g. when you want to put a red and a green LED on, you type 'red,green' in the Serial Monitor. You can make use of the method <tt>getValue(sting, seperator, index)</tt> that is provided below (just past that code into your Arduino IDE, below (outside of) the <tt>loop</tt>-method):</p>
