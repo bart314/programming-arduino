@@ -59,27 +59,7 @@
 
 
     <section id="exercise2">
-        <h2>Exercise 2: Timing an event</h2>
-        <p>Timing is an essential part in most computing processes, and the system we are creating here is used in lots of modern day systems (of course in integrated circuits and a bit more acccurate, but still).</p>
-    
-        <p>Have a look at the circuit below. With the switch open, current flows from the positive source throught R2 to the base of the transistor, thereby allowing current to flow over R3 and the LED back to the ground.</p>
-    
-        <p>When we close the switch, current flows over R1 to the capacitor in the middle, allowing it to charge itself. However, as you know a fully charged capacitor can be seen as an open switch, so the previous flow of the current (with the switch open) is restored once the capacitor is completely charged.</p>
-    
-        <p class="center">
-            <img class="image" src="imgs/timed-circuit.png" alt="The schema of the timed circuit">
-            <img class="image" src="imgs/timed-circuit-breadboard.png" alt="The timed circuit on the breadboard">
-        </p>
-
-        <p class="center">
-            <img class="image" src="imgs/timed-circuit-fritzing.png" alt="A model of the breadboard">
-        </p>
-    
-        <p>Re-create this circuit on your own breadboard and see what happens when you close the switch. Can you explain in your own words why the circuit functions as it does? Why is it important that <b><i>R2</i></b> &Gt; <b><i>R1</i></b>? Experiment with different values for the capacitor; can you explain the differences in behavior?</p>
-    </section><!-- exercise 2-->
-
-    <section id="exercise3">
-        <h2>Exercise 3: Basic Arduino</h2>
+        <h2>Exercise 2: Basic Arduino</h2>
         <p>The Arduino platform has since its start in 2005 grown to become one of the most recognizable brands in the space of electronics and embedded design. Off course, we need to use our breadboard to actually create interesting stuff, as the pins on the Arduino are too few, too narrow and too error prone to be workable.</p>
 
         <p>Make sure you have the blinking LED example loaded on your Arduino. As has been explained, the pin that corresponds to the buildin LED is 13. Make use of this knowledge to have a LED on the breadboard blink. Next, add a few more LEDs on the same pin (or port, as they are also called regularly). For a nice effect, you can perhaps use different colors of LEDs.</p>
@@ -93,11 +73,10 @@
         </p>
 
         <p>Can you make use of a signal invertor to have an LED on the breadboard shine when the one on the Arduino is off, <i>without</i> changing the code on the Arduino? How about having two LEDs blink one after the other? Note that for this to work, you have to differentiate between the signal (pin 13) and the current (5V otr 3.5V).</p>
-        </section><!-- exercise 3-->
+        </section><!-- exercise 2-->
 
-   <section id="exercise4">
-       <h2>Exercise 4: Input and output of analog signals</h2>
-       <h3>Step 1: create a walking light</h3>
+        <section id="exercise3">
+       <h2>Exercise 3: Create a walking light</h2>
 
        <p>Realise a breadboard with four LEDs in parallel. Have the positive pin of each of the LEDs wired to a different (preferably sequential) port on the Arduino (e.g. pins 4, 5, 6, and 7). Next, create a new Arduino-sketch in which you define all those pins as <tt>OUTPUT</tt> (you should do this in the <tt>setup()</tt> method; have a look at the BlinkingLed-example).</p>
 
@@ -105,9 +84,7 @@
 
        <p class="center"><img class="image" src="imgs/walking-leds-fritzing.png" alt="Model of the setup"></p>
 
-    <h3>Step 2: iterate over the LEDs</h3>
-
-    <p>Now, in the <tt>loop()</tt> method, you should iterate over all those pins and set them to <tt>HIGH</tt>, wait for a few microseconds, set them to <tt>LOW</tt> again and repeat the process for the next pin. Have a look at the code below to get an idea of this process:</p>
+        <p>Now, in the <tt>loop()</tt> method, you should iterate over all those pins and set them to <tt>HIGH</tt>, wait for a few microseconds, set them to <tt>LOW</tt> again and repeat the process for the next pin. Have a look at the code below to get an idea of this process:</p>
 
 <pre class="code"><code class="language-arduino">void loop() {
    digitalWrite(4, HIGH);
@@ -118,8 +95,11 @@
 </code></pre>
 
      <p>In your <tt>loop()</tt>, iterate over all the pins that the LEDs are connected to and have every pin switch on and off. If all goes well, you have created a walking light. Can you make this light go back and forth as well? Play around with the value of the call to <tt>delay()</tt> to get a feeling of the effects of the changes you make.</p>
+        </section><!-- exercise 3 -->
 
-     <h3>Step 3: add a variable resistor</h3>
+   <section id="assignment">
+    <h2>Assignment</h2>
+
 
      <p>Add a variable resistor (a <i>potentiometer</i>) to your breadboard. Connect the external pins to the plus and the minus and the middle pin to an analog input of the Arduino; look at the drawing and the image below to see how to do this.</p>
 
@@ -160,33 +140,12 @@
     <img class="image" src="imgs/potentio-meter-fritzing.png" alt="Model of the setup">
   </p>
 
-  <h3>Step 4: putting it all together</h3>
   <p>Now add the code above to your walking light code, so that it changes the value of the call to <tt>delay()</tt> in your walking light. Have the Arduino read and map the value of the potentiometer on every loop; if all goes well, you are now able to change the speed with which the LEDs are 'walking' by changing the value of the potentiometer.</p>
 
+  <p>Finally, integrate both the LED and the variable resistor in some kind of construction so that we don't have to look at breadboards and Arduino's. Make sure you think about this construction and are able to explain why exactly you decided on this particular form.</p>
+
   <p>Next week, we will use several diffent sensors to change the speed of this walking light.</p>
-</section><!-- exercise4 -->
-
-
-    <section id="assignment">
-        <h2>Assignment</h2>
-
-        <p>In your kit, you'll find an interesting looking LED, one with four pins instead of two. This is a full-color LED: the long leg of this LED is the ground, and the other pins are for the integrated red, green and blue lights. </p>
-
-        <p class="center">
-            <img class="image" src="imgs/rgb-led.jpeg" alt="The wirings of an RGB-LED">
-        </p>
-
-        <p>Refactor the setup of your breadboard so that instead of the four LEDs you use an RGB-LED. Change the Arduino-code so that the LED flashes RED, GREEN and BLUE. Again, make the speed of this flashing dependent on the value of the variable resistor that you added in step 4 of exercise 4.</p>
-
-        <p>Now, have a look at <a target="_blank" href="https://www.arduino.cc/reference/en/language/structure/control-structure/if/">the documentation of the conditional statement in Arduino</a>. Use this knowledge to change the code so that the color of the RGB-LED is dependent on the value of the variable resistor: so the LED is displays e.g. RED when the resistance is between 0% and 33%, GREEN is it is between 33% and 66% and BLUE if it is above 66%. </p>
-
-        <p>Finally, integrate both the LED and the variable resistor in some kind of construction so that we don't have to look at breadboards and Arduino's. Make sure you think about this construction and are able to explain why exactly you decided on this particular form.</p>
-    </section><!-- assignment -->
-
-
-    
-
-
+</section><!-- assignment -->
   </div> <!-- main -->
 
     <div id="hamburger">
@@ -203,9 +162,8 @@
         <ol>
            <li><a href="#preperation">preperation</a></li>
            <li><a href="#exercise1">signal inversion</a></li>
-           <li><a href="#exercise2">timing</a></li>
-           <li><a href="#exercise3">basic arduino</a></li>
-           <li><a href="#exercise4">input and output</a></li>
+           <li><a href="#exercise2">basic arduino</a></li>
+           <li><a href="#exercise3">create a walking light</a></li>
            <li><a href="#assignment">assignment</a></li>
         </ol>
     </div><!-- TOC -->

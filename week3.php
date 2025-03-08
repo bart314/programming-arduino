@@ -17,7 +17,7 @@
     <section id="preperation">
         <h1>Preparation</h1>
         <ol>
-            <li>Look at the first eleven minutes of <a href="https://www.youtube.com/watch?v=FDmHVRC6pQk">this video</a>, explaining how servo motors work (you can skip over the parts on gears, if you want). The last four minutes of this video are about controlling the servo motor with an arduino, which we are not going to do this week.</li>
+            <li>Look at the first eight minutes of <a href="https://www.youtube.com/watch?v=1WnGv-DPexc&t=54s">this video</a>, explaining how servo motors work and how you control these with an Arduino.</li>
             <li>Study the following introductionary texts on the (workings of the) Arduino:
                 <ul>
                     <li><a href="https://docs.arduino.cc/learn/starting-guide/getting-started-arduino#electronic-signals">Electronic signals</a></li>
@@ -26,6 +26,7 @@
                     <li><a href="https://docs.arduino.cc/learn/starting-guide/getting-started-arduino#sensors--actuators">Sensors and actuators</a></li>
                 </ul>
             </li>
+            <li>Study <a href="https://www.arduino.cc/reference/en/language/structure/control-structure/if/">the documentation for conditionals on the Arduino-API</a>.</li>
 
 
         </ol>
@@ -70,7 +71,7 @@ void loop() {
 
 <p><b>Part 1</b></p>
 
-<p>Now, create a breadboard with a few LEDs of different colors connected to different ports – make use of exercise 4 on ports and LEDs of <a href="wee2.html#exercise4">the previous week</a>. Now alter the code above to that you you can type the color of the LED you wish to put on. If you don't remember, have a look at <a href="https://www.arduino.cc/reference/en/language/structure/control-structure/if/">the documentation for conditionals on the Arduino-API</a>, the most important part of which is copied below.</p>
+<p>Now, create a breadboard with a few LEDs of different colors connected to different ports – make use of exercise 4 on ports and LEDs of <a href="week2.php#exercise3">the previous week</a>. Now alter the code above to that you you can type the color of the LED you wish to put on. If you don't remember, have a look at <a href="https://www.arduino.cc/reference/en/language/structure/control-structure/if/">the documentation for conditionals on the Arduino-API</a>, the most important part of which is copied below.</p>
 
 <pre class="code"><code class="language-arduino">if (condition) {
   //statement(s)
