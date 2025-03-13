@@ -110,7 +110,7 @@ String getValue(String data, char separator, int index) {
 
 /* example usage:
   String demo = "red,green,blue"; // note the absence of spaces
-  getValue(demo, ',', 0) // will return read
+  getValue(demo, ',', 0) // will return red
   getValue(demo, ',', 2) // will return blue
 */
 </code></pre>
@@ -163,7 +163,7 @@ String getValue(String data, char separator, int index) {
   }
   </code></pre>
 
-  <p>Realise the following setup on your breadboard (of course, we don't actually need a breadboard in this case) and upload the code to your Arduino. Make sure you understand what is going on and why the system is doing what it is doing.</p>
+  <p>Realise the following setup on your breadboard and upload the code to your Arduino. Make sure you understand what is going on and why the system is doing what it is doing.</p>
 
   <p class="center">
     <img src="imgs/servo-breadboard.jpeg" alt="The servo motor connected to the breadboard">
@@ -191,11 +191,15 @@ String getValue(String data, char separator, int index) {
       <img class="image" src="imgs/calculating-distance.png" alt="">
     </p>
 
+    <p>During the plenary part, a short description is given how to work with this distance sensor. Realise this on your breadboard and have the found distance printed in the Serial Monitor. We will expand on this example next week.</p>
+
   </section><!-- exercise3 -->
 
 
     <section id="assignment">
       <h2>Assignment</h2>
+
+      <p>Use your elaboration of the last exercise to create a three-color traffic light: red, yellow and green. Make use of the distance sensor to determine if anything comes to close to it. If it is too close, the red light should burn, if it is close but not too close, the light should be yellow. Otherwise, the green light should be on.</p>
     </section><!-- assignment-->
 
     </div><!-- main -->
