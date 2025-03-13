@@ -178,7 +178,7 @@ String getValue(String data, char separator, int index) {
 
 
   <section id="exercise3">
-    <h2>Exercise 3: Sensors and actuators</h2>
+    <h2>Exercise 3: Sensing the distance</h2>
 
     <p>Most sensors work just like a complex potentiometer, with three pins and the middle pin corresponding to the washer of the property being sensed: light, humidity, sound-volume, heat, ... However, there are also lots of sensors that have four (or even more) pins. In this exercise, we are looking at one of those: the distance sensor.</p>
 
