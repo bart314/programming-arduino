@@ -133,7 +133,7 @@ String getValue(String data, char separator, int index) {
   <p>It is a square wave. Each cycle in the signal lasts for 20 milliseconds and for most of the time, the value is LOW. At the beginning of each cycle, the signal is HIGH for a time between 1 and 2 milliseconds. At 1 millisecond it represents 0 degrees and at 2 milliseconds it represents 180 degrees. In between, it represents the value from 0–180. This is a very good and reliable method. The graphic below makes it a little easier to understand.</p>
 
 <p class="center">
-  <img src="imgs/pulses-servo.png" alt="Pulses related to the angle of the servo-motor">
+  <img class="image" src="imgs/pulses-servo.png" alt="Pulses related to the angle of the servo-motor">
 </p>
 
 <p>Luckely, we don't have to create all this machinery by ourselves: Arduino has a build-in library <tt>Servo</tt>, that we can use to our benefit. Have a look at the code below (which you can download <a href="files/servo-exercise.ino">here</a>). Here, we are using this library to rotate the servo to the left and to the right every second.</p>
@@ -166,11 +166,11 @@ String getValue(String data, char separator, int index) {
   <p>Realise the following setup on your breadboard and upload the code to your Arduino. Make sure you understand what is going on and why the system is doing what it is doing.</p>
 
   <p class="center">
-    <img src="imgs/servo-breadboard.jpeg" alt="The servo motor connected to the breadboard">
+    <img class="image" src="imgs/servo-breadboard.jpeg" alt="The servo motor connected to the breadboard">
   </p>
 
   <p class="center">
-    <img src="imgs/servo-fritzing.png" alt="A model of the setup">
+    <img class="image" src="imgs/servo-fritzing.png" alt="A model of the setup">
   </p>
 
   </section><!-- exercise 2-->
@@ -184,14 +184,18 @@ String getValue(String data, char separator, int index) {
 
     <p>Please refer to the first image below. As you can see, the first and last pin are the by now familiar plus and ground pins. However, the second and third pin work somewhat different.</p>
 
-    <p>The distance sensor actually consists of a very small speaker and a very small microphone. When you put power to the speaker, it releases a sound of a specific frequency (about 40kHz, so you won't be able to hear it – that's why it's called 'ultrasound'). When you put power to the microphone, it starts listening to the same frequency as the speaker is transmitting. So if you know when the speaker starts tranmitting and you know when the microphone is picking up the sound, you can calculate the distance between the device and some solid object: see the second image below.</p>
+    <p>The distance sensor actually consists of a very small speaker and a very small microphone. When you put power to the speaker, it releases a sound of a specific frequency (about 40kHz, so you won't be able to hear it – that's why it's called 'ultrasound'). When you put power to the microphone, it starts listening to the same frequency as the speaker is transmitting. So if you know when the speaker starts tranmitting and you know when the microphone is picking up the sound, you can calculate the distance between the device and some solid object</p>
+    
+    
+    <p>See the images below to get an idea of how this works. Please note that the pin-numbers at the drawing on the left are arbitrary: they of course depend only on the code that you put on the Arduino.</p>
+
 
     <p class="center">
       <img class="image" src="imgs/distance-sensor-wiring.png" alt="">
       <img class="image" src="imgs/calculating-distance.png" alt="">
     </p>
 
-    <p>During the plenary part, a short description is given how to work with this distance sensor. Realise this on your breadboard and have the found distance printed in the Serial Monitor. We will expand on this example next week.</p>
+    <p>During the plenary part, a short description is given how to work with this distance sensor. Realise this on your breadboard and have the found distance printed in the Serial Monitor. We will expand on this example next week. Have a look at <a href="https://arduinogetstarted.com/tutorials/arduino-ultrasonic-sensor">this description</a> to get started with the exercise.</p>
 
   </section><!-- exercise3 -->
 
