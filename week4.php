@@ -45,6 +45,11 @@
   <p>Explain to your partner what is going on in this small piece of code.</p>
 </section><!-- exercise 1 -->
 
+<section id="exercise1a">
+  <h2>Exercise 1a: check the serial communication</h2>
+  <p>Use <a href="files/SerialPortManager.cs">this script</a> and add it to your Unity setup. If you start to run the program, it should display that a succesful connection with the Serial port was made.</p>
+</section>
+
 <section id="exercise2">
   <h2>Exercise 2: no more typing</h2> 
   <p>Now, <a href="files/SendToSerialOnStart.cs">download this code</a> and add it to your Unity-project. Instead of typing the <tt>A</tt> in the Serial Monitor, this code send the same character of the USB-line when you start up the Unity project.</p>
