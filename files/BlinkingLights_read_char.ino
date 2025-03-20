@@ -1,7 +1,6 @@
 const int led1 = 12;  // Pin for first LED
 const int led2 = 13; // Pin for second LED
 bool running = false; // Flag to check if blinking should happen
-//char command;
 
 void setup() {
   pinMode(led1, OUTPUT);
@@ -11,9 +10,7 @@ void setup() {
 
 void loop() {
   if (Serial.available() > 0) {
-    // String command = Serial.readStringUntil('\n');
-    // command.trim();
-        char command = (char)Serial.read();
+    char command = (char)Serial.read();
     if (command == 'A') {
       running = true;
     } else if (command == 'B') {
