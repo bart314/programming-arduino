@@ -4,7 +4,7 @@ using System.Threading; // we need this library to make a thread to be able to g
 
 
 
-public class SendToSerialOnStart : MonoBehaviour
+public class ReadPot : MonoBehaviour
 {
     private SerialPortManager spManager; // Get access to the serialport defined in the SerialPortManager    
 
