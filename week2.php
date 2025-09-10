@@ -36,7 +36,7 @@
 
     <section id="exercise1">
         <h2>Exercise 1: Signal inversion</h2>
-        <p>Last week, we introduced several logical gates: we made an OR-gate and worked on an AND gate. One of remaining gates is the NOT-gate, whose truth-table can be found below. Basically, this gate functions as a signal-inverter: it returns whatever is NOT inputted.</p>
+        <p>Last week, we introduced several logical gates: we made an OR-gate and worked on an AND gate. One of remaining gates is the NOT-gate, whose truth-table can be found below. Basically, this gate functions as a signal-inverter: it returns whatever is NOT inputted. In your artistic practice, it is likely that at one moment you will need to invert a signal, so it is good that you encountered it here.</p>
 
         <table class="truth-table">
             <tr><th>A</th><th>NOT A</th></tr>
@@ -44,7 +44,7 @@
             <tr><td>0</td><td>1</td></tr>
         </table>
 
-        <p>Just to get your juices flowing at the start of this lab-course, we are going to make this relatively simple circuit. In the assignment for this week, we will be using this signal-inverter in quite some detail (however, we will use an integrated circuit in this case).</p>
+        <p>Just to get your juices flowing at the start of this lab-course, we are going to make this relatively simple circuit.</p>
 
         <p class="center">
             <img class="image" src="imgs/not-gate-schematics.jpeg" alt="Schema of a NOT-gate">
@@ -55,6 +55,7 @@
         </p>
 
         <p>Re-create this circuit on your breadboard and make sure it works. Explain why it is doing what it is. Do you think that this is the best circuit for a signal inverter?</p>
+
     </section><!-- exercise1 -->
 
 
@@ -72,13 +73,13 @@
           <img class="image" src="imgs/parallel-leds-fritzing.png" alt="Model of the setup">
         </p>
 
-        <p>Can you make use of a signal invertor to have an LED on the breadboard shine when the one on the Arduino is off, <i>without</i> changing the code on the Arduino? How about having two LEDs blink one after the other? Note that for this to work, you have to differentiate between the signal (pin 13) and the current (5V otr 3.5V).</p>
+        <p>Can you make use of a signal invertor to have an LED on the breadboard shine when the one on the Arduino is off, <i>without</i> changing the code on the Arduino? How about having two LEDs blink one after the other? Note that for this to work, you have to differentiate between the <i>signal</i> (pin 13) and the <i>current</i> (5V or 3.5V).</p>
         </section><!-- exercise 2-->
 
         <section id="exercise3">
        <h2>Exercise 3: Create a walking light</h2>
 
-       <p>Realise a breadboard with four LEDs in parallel. Have the positive pin of each of the LEDs wired to a different (preferably sequential) port on the Arduino (e.g. pins 4, 5, 6, and 7). Next, create a new Arduino-sketch in which you define all those pins as <tt>OUTPUT</tt> (you should do this in the <tt>setup()</tt> method; have a look at the BlinkingLed-example).</p>
+       <p>Realise a breadboard with four LEDs in parallel. Have the positive pin of each of the LEDs wired to a different (preferably sequential) port on the Arduino (e.g. pins 4, 5, 6, and 7 - there are some things happening at port 0 and 1, so we usually shy away from using those in a more general setup). Next, create a new Arduino-sketch in which you define all those pins as <tt>OUTPUT</tt> (you should do this in the <tt>setup()</tt> method; have a look at the BlinkingLed-example).</p>
 
        <p class="center"><img class="image" src="imgs/walking-leds.png" alt="The setup of four LEDs that blink one after the other"></p>
 
@@ -142,9 +143,9 @@
 
   <p>Now add the code above to your walking light code, so that it changes the value of the call to <tt>delay()</tt> in your walking light. Have the Arduino read and map the value of the potentiometer on every loop; if all goes well, you are now able to change the speed with which the LEDs are 'walking' by changing the value of the potentiometer.</p>
 
-  <p>Finally, integrate both the LED and the variable resistor in some kind of construction so that we don't have to look at breadboards and Arduino's. Make sure you think about this construction and are able to explain why exactly you decided on this particular form.</p>
+  <p>Finally, integrate both the LED and the variable resistor in some kind of construction so that we don't have to look at breadboards and Arduino's. Make sure you think about this construction and are able to explain why exactly you decided on this particular form. You can also build on your soldering-sculpture from last week.</p>
 
-  <p>Next week, we will use several diffent sensors to change the speed of this walking light.</p>
+  <p>It should be possible to have the construction run without connecting it to a computer (i.e. use the battery-power). Next week, we will use a sensors to change the speed of this walking light. You can have <a href="week3.php#assignment">a look at that particular assignment already</a> in order to make your construction already a bit attuned towards that elaboration.</p>
 </section><!-- assignment -->
   </div> <!-- main -->
 

@@ -1,4 +1,4 @@
-body { background-image:url('imgs/background-small.png'); font-family:Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; }
+body { background-image:url('imgs/background-small.png'); background-attachment:fixed; font-family:Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; }
 #main { padding:2vh 3vw;}
 header { margin-top:10vh; text-align:center; }
 section, p, li { font-size:1.1rem; line-height:1.8rem; }
@@ -10,7 +10,7 @@ section h1 { text-align:left; margin-bottom:0; }
 table { width:100%; border-collapse:collapse; }
 td, th { padding:2vh 0; border-bottom:solid blue 1px; vertical-align:top; }
 tr.header { border-bottom:double blue; }
-p.center { display:flex; justify-content:center; }
+p.center { display:flex; justify-content:space-evenly; }
 p.aside { background-color:orange; font-size:smaller; padding:1em; margin:1em; line-height:18px; border:gray; }
 
 a { text-decoration:none; }

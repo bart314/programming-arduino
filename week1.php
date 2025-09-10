@@ -209,7 +209,10 @@
 
         <p>We did some soldering during class; now it is up to you to make a nice sculpture using at least LEDs, resistors and a battery. Make sure that the circuit you make actually <i>works</i>, but solder it together so that looks nice. You could just make a simple lamp (such as the one we showed during class), or make it more interesing using some active components.</p>
 
-        <p class="center"><img class="image" src="imgs/led-sculpture.png" alt="LED sculpture"></p>
+        <p class="center">
+            <img class="image" src="imgs/led-sculpture.png" alt="LED sculpture">
+            <img class="image" src="imgs/soldering-sculpture-2.jpeg" alt="A bug made with wires and a battery">
+        </p>
 
         <p>This week, you can go to the electronics lab for help and assistance on this assignment. We will look at your elaborations at the beginning of the next class on Friday (before we start with <a href="week2.php">the next topics</a>). </p>
     </section><!-- assignment -->

@@ -22,7 +22,7 @@
 
 <p>During the module on Unity, you have learned how to create a virtual world. You know how to make and position objects, how to give them shapes and color, and how to move them around in space. This way, you give meaning to specific parts of space in order to differentiate these parts from the principally endless cartesian space. Paraphrasing <a href="https://en.wikipedia.org/wiki/Espen_Aarseth" target="_blank">Espen Aarseth</a>, we could state that creating a virtual reality is “essentially concerned with spatial representation and negotiation" – both of which we do employing the physical structures we mentioned above.</p>
 <p>On the other hand, we have learned to work with the Arduino. Using this small microprocessor, we were able to use some parts of the physical realm to change the brightness of an LED, make a motor rotate faster or have a microchip emit some kind of sound for us. We have worked with physical sensors to change the state and representation of physical actuators.</p>
-<p>We also showed how we can use serial communication to connect the virtual with the physical. In a way one could state that the Arduino gives us possibilities to finally bridge the gulfs that Norman is talking about. We can finally go through <i>the looking glass</i>.</p>
+<p>We also showed how we can use serial communication to connect the virtual with the physical. In a way one could state that the Arduino gives us possibilities to finally bridge the gulfs that Norman is talking about. We can finally go <i>through the looking glass</i>.</p>
 
 <p class="center">
 <img class="image" src="imgs/ass-ex4.jpeg" alt="A simple example: the position of the physical bar is reflected on the looking glass.">
@@ -39,14 +39,16 @@
 
 <p>Create the virtual part of this world using Unity and use serial communication with the Arduino to connect this virtual part with the physical. Connect sensors to your Arduino in order to bring aspects of the physical into the virtual part of this world, use specific events in Unity to drive actuators in the physical. Changes and effects in one part should have repercussions in the other. In this way, reality becomes one complete whole again, when the difference between the virtual and the physical are obliterated.</p>
 
+<p>During the last half of this module you will get time to work on this assignment. It is imperative that you keep track of your process, using images, movies, and text. In the end, you are asked to write a small report discussing your project: its initialisation, its reason of being, the procedures and developments that you made, and your final reflection. This document is an integral part of the project and will be assessed as well as the product.</p>
+
 <h2 id="assessment">Assessment</h2>
 
 <p>There are four aspects on which your project is reviewed</p>
 <ul>
-<li>The narrative: what is the story you tell with regards to your reality? Why exactly did you choose this form of interaction, why are these parts in Unity and those parts in reality? Why did you choose these sensors, these actuators, these models...?</li>
-<li>Design: is the installation finished? Is the design thought-through, complete and convincing? Is the realisation based on concrete design-decisions? Does the design fit the narrative? </li>
-<li>Technical realisation: does the installation work? Does the realisation fit the narrative?</li>
-<li>Documentation: is the documentation complete and thorough? Can we follow the (creative, intellectual, collaborative) steps you have taken throughout the project?</li>
+<li><u>The <i>Narrative:</i></u> what is the story you tell with regards to your reality? Why exactly did you choose this form of interaction, why are these parts in Unity and those parts in reality? Why did you choose these sensors, these actuators, these models...?</li>
+<li><u>The <i>Design:</i></u> is the installation finished? Is the design thought-through, complete and convincing? Is the realisation based on concrete design-decisions? Does the design fit the narrative? </li>
+<li><u>The <i>Technical realisation:</i></u> does the installation work? Does the realisation fit the narrative?</li>
+<li><u>The <i>Documentation:</i></u> is the documentation complete and thorough? Can we follow the (creative, intellectual, collaborative) steps you have taken throughout the project?</li>
 </ul>
 
 <p class="center">
