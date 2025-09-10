@@ -23,6 +23,8 @@
 </ol>
     </section><!-- preparation -->
 
+<p class="aside"><u>IMPORTANT:</u> In the exercises below, you will get some unity and some arduino code. This is tested and set up for this particular workflow. <i>Do not change it</i> if you do not know what you are doing. Don't ask chatgpt (or the like) to change it if it doesn't work as you expect it to – you <i>will</i> get into more trouble if you go throught that path. Instead, ask one of us to help you if it doesn't work out.</p>
+
     <section id="exercise1">
 <h2>Exercise 1: blinking LEDs again</h2>
 <p>Using you breadboard, hook up two LEDs: one on port 12 and one on port 13. Download <a href="files/BlinkingLights_read_char.ino">this code</a> and upload it to your Arduino. Now, if you type an <tt>A</tt> in the Serial Monitor of the Arduino, the lEDs start blinking.</p>
