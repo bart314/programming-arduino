@@ -79,7 +79,7 @@
         <h4>Part 2</h4>
         <p>Last week, we introduced the variable resistor (potentiometer). We can also hook such a thing on the Arduino, to have the physical communicate with the virtual. In this second step we are going to experiment with it.<p>
 
-<p>Add a potentiometer to the breadboard; connect one of the outer pins to 5V and the other one to the ground. Connect the middle pin, the one that is actually the washer, to one of the <i>Analog input-ports</i> (<pre>A0</pre> - <pre>A4</pre>). </p>
+<p>Add a potentiometer to the breadboard; connect one of the outer pins to 5V and the other one to the ground. Connect the middle pin, the one that is actually the washer, to one of the <i>Analog input-ports</i> (<tt>A0</tt> - <tt>A4</tt>). </p>
 
 <p>During the plenary part, it was shown how to read the value of the potentiometer: the relevant code is repeated below:</p>
 
