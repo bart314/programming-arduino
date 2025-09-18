@@ -63,6 +63,7 @@
         <h2>Exercise 2: Basic Arduino</h2>
         <p>The Arduino platform has since its start in 2005 grown to become one of the most recognizable brands in the space of electronics and embedded design. Off course, we need to use our breadboard to actually create interesting stuff, as the pins on the Arduino are too few, too narrow and too error prone to be workable.</p>
 
+        <h4>Part 1</h4>
         <p>Make sure you have the blinking LED example loaded on your Arduino. As has been explained, the pin that corresponds to the buildin LED is 13. Make use of this knowledge to have a LED on the breadboard blink. Next, add a few more LEDs on the same pin (or port, as they are also called regularly). For a nice effect, you can perhaps use different colors of LEDs.</p>
 
         <p class="center">
@@ -73,8 +74,43 @@
           <img class="image" src="imgs/parallel-leds-fritzing.png" alt="Model of the setup">
         </p>
 
-        <p>Can you make use of a signal invertor to have an LED on the breadboard shine when the one on the Arduino is off, <i>without</i> changing the code on the Arduino? How about having two LEDs blink one after the other? Note that for this to work, you have to differentiate between the <i>signal</i> (pin 13) and the <i>current</i> (5V or 3.5V).</p>
+      <p>Add a push button to your circuit so that the LED only blinks when the button is down. Do you think you need to change the Arduino-code for this?</p>
+
+        <h4>Part 2</h4>
+        <p>Last week, we introduced the variable resistor (potentiometer). We can also hook such a thing on the Arduino, to have the physical communicate with the virtual. In this second step we are going to experiment with it.<p>
+
+<p>Add a potentiometer to the breadboard; connect one of the outer pins to 5V and the other one to the ground. Connect the middle pin, the one that is actually the washer, to one of the <i>Analog input-ports</i> (<pre>A0</pre> - <pre>A4</pre>). </p>
+
+<p>During the plenary part, it was shown how to read the value of the potentiometer: the relevant code is repeated below:</p>
+
+<pre class="code"><code class="language-arduino">
+// above everything:
+// first declare the pin for the potmeter:
+int sensorPin = A0;
+
+// variable to store the value coming from the potmeter
+int sensorValue = 0;
+
+
+// in your loop:
+void loop() {
+  // other code omitted
+  sensorValue = analogRead(sensorPin);
+  if(...) {
+    /// start blinking
+  }
+}
+</code></pre>
+
+<p>Make use of this setup so that the light only starts to blink when the potentiometer is half way or more. You will need a <i>conditional statement</i> for this, which we also demonstrated during the plenary part. If you don't remember, have a look at <a href="https://www.arduino.cc/reference/en/language/structure/control-structure/if/">the documentation for conditionals on the Arduino-API</a>, the most important part of which is copied below.</p>
+
+<pre class="code"><code class="language-arduino">if (condition) {
+  //statement(s)
+}</code></pre>
+        </p>
+
         </section><!-- exercise 2-->
+
 
         <section id="exercise3">
        <h2>Exercise 3: Create a walking light</h2>
