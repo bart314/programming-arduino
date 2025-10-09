@@ -27,7 +27,7 @@
 
     <section id="exercise1">
 <h2>Exercise 1: blinking LEDs again</h2>
-<p>Using you breadboard, hook up two LEDs: one on port 12 and one on port 13. Download <a href="files/BlinkingLights_read_char.ino">this code</a> and upload it to your Arduino. Now, if you type an <tt>A</tt> in the Serial Monitor of the Arduino, the lEDs start blinking.</p>
+<p>Using you breadboard, hook up two LEDs: one on port 12 and one on port 13. Download <a href="files/BlinkingLights_read_char.ino">this code</a> and upload it to your Arduino. Now, if you type an <tt>A</tt> in the Serial Monitor of the Arduino, the LEDs start blinking.</p>
 
 <p>The <tt>loop()</tt>-method actually contains two blocks. The first block is dependent on the value of <tt>Serial.available()</tt>:</p>
 
@@ -85,11 +85,11 @@
   <h2>Exercise 4: two-way interaction</h2>
   <p>Until now, we have only communicated from the computer to the Arduino. However, nothing prohibits us from doing the same thing from the Arduino to Unity.</p>
 
-  <p>For this to work, you need to add a potentiometer to your breadboard and hook up its washer to port <tt>A0</tt>. The code you uploaded to your Arduino already has the reading and sending of the value of the potentiometer in it, so you don't need to upload a new version.</p>
+  <p>For this to work, you need to add a potentiometer to your breadboard and hook up its washer to port <tt>A0</tt>. Make use of the knowledge you gained at <a href="week2.php#exercise2">part 2 of exercise 2 of week 2 😎</a> to have the value of the potentiometer send over the serial port. </p>
 
-  <p>Check the Serial Monitor of the Serial Plotter to ascertain that the potentiometer is working and that the Arduino is sending its value over the USB cable.</p>
+  <p>Check the <i>Serial Monitor</i> or the <i>Serial Plotter</i> of the Arduino IDE to ascertain that the potentiometer is working and that the Arduino is sending the value of the potmeter over the USB cable.</p>
 
-  <p>Now, use <a href="files/ReadPot.cs">this code</a> in Unity to display the value of the potentiometer. Note: in order for this to work you need to close the Serial Monitor: only one process can listen to incoming messages on a serial port at any give time, so if the Serial Monitor is doing that you cannot have Unity listening to it as well.</p>
+  <p>Now, use <a href="files/ReadPot.cs">this code</a> in Unity to display the value of the potentiometer. <b>Note:</b> in order for this to work you need to close the Serial Monitor, as only one process can listen to incoming messages on a serial port at any give time. If the Serial Monitor is doing that, you cannot have Unity listening to it as well.</p>
 </section><!-- exercise4 -->
 
 <section id="assignment">

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SerialPortManager : MonoBehaviour
 {
+    public string messageToSerialOnStop = "B"; // What message to send to the serialPort when the connection to serial stops
     public static SerialPortManager instance;
     public SerialPort serialPort;
     public bool isReady = false;
@@ -57,7 +58,7 @@ public class SerialPortManager : MonoBehaviour
         if (serialPort != null && serialPort.IsOpen)
         {
             // Closes the thread and serial port and turns light off when the game ends
-            serialPort.Write("B");
+            serialPort.Write(messageToSerialOnStop);
             // Close the serial port on exit
 
             serialPort.Close();

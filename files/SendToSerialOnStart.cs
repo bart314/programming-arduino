@@ -5,14 +5,14 @@ using UnityEngine;
 public class SendToSerialOnStart : MonoBehaviour
 {
     private SerialPortManager spManager; // Get access to the serialport defined in the SerialPortManager    
-    string messageToSerial = "A"; // What message to send to the serialPort
+    public string messageToSerialOnStart = "A"; // What message to send to the serialPort
 
     // Start is called before the first frame update
     void Start()
     {   
         spManager = SerialPortManager.instance; // Obtain the serial port from the manager
         StartCoroutine(WaitForSerialPort());  // Start the Coroutine that is waiting for the serial port to be opend, before wecontinue with the script 
-        SendData(messageToSerial); //Sends the message to the serial
+        SendData(messageToSerialOnStart); //Sends the message to the serial
     }
 
     IEnumerator WaitForSerialPort()
