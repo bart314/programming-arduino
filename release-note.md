@@ -13,3 +13,7 @@ Kort overzicht van de aanpassingen die hieraan gedaan zijn. Kun je natuurlijk oo
 
 ## TODO
 huiswerkopdracht voor week 4 maken
+
+
+## 9 oktober 2025
+Kleine aanpassing aan de omschrijving van het Arduino-deel van de opgave in week 4. 
