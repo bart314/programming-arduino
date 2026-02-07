@@ -15,21 +15,28 @@
     <div id="main">
     <section id="introduction">
         <h2>General description</h2>
-        <p>In this module, you will get introduced into methods and techniques you can use for you own project. Though DAT minor is neither a programming nor an electrical engineering course, some basic knowledge of both is required in order to get the most out of this minor: when you are familiar with these basics, you will know what is possible and what not – and how to get help or more information.</p>
+        <p>In this module, you will get introduced into electronic and software methods and techniques you can use for you own project. Though DAT minor is neither a programming nor an electrical engineering course, some basic knowledge of both is required in order to get the most out of this minor: once you are familiar with these subjets, you will know what is possible and what not – and how to get help or more information.</p>
 
-        <p>The module consists of four pressure cooker lab courses on four (hopefully consecutive) Thursday of three hours each, two weeks of working and one planairy demonstration. In groups of three students, you will work with different kinds of hardware and software.</p>
+        <p>The module consists of four pressure cooker lab courses of three hours in four (hopefully consecutive) weeks, followed by two weeks of working on <a href="assessment.php">the end-project</a>, and one planairy demonstration. </p>
 
-        <p>During the classes, general theory and practical applications will be introduced in a planairy format. After this introduction, you will work for ten to thirty minutes on several hands-on exercises, so you can get to grips with these materials (both physical as intellectual). During these minutes, teachers and TA's will walk around to answer (and ask) questions. When the exercises are finished, the course will continue planairy again with the next topic. This cycle is repeated until all the materials have been treated (or, more likely, the time is up).</p>
+        <p>In groups of two to three students, you will work with different kinds of hardware and software. During the classes, general theory and practical applications will be introduced in a planairy format. After this introduction, hands-on exercises are produces and you will work on these for ten to thirty minutes. Teachers and TA's will walk around to answer (and ask) questions. When the exercises are finished, the course will continue planairy again with the next topic. This cycle is repeated until all the materials have been treated (or, more likely, the time is up).</p>
 
         <p>Every lab course has <em>preperations</em> and <em>assignments</em>, both of which are required: we assume you have done the preperation <i>before</i> the lab course and will check your elaborations of the assignments. You need to keep track of your work, using all kinds of media, in your students-directory on MS Teams.</p>
     </section>
 
     <section id="assessment">
         <h1>Assessment</h1>
-        <p>Following the four weeks period, you have a few weeks to create a project for <a href="assessment.html">the assessment</a>. In week 7 of the minor, plenary presentations of all the elaborations will be held. This will actually be the first graded part of the minor and we go for beers afterwards in celebration of this fact.</p>
+        <p>Following the four weeks period, you have a few weeks to create a project for <a href="assessment.php">the assessment</a>. In week 7 of the minor, plenary presentations of all the elaborations will be held. This will actually be the first graded part of the minor and we go for beers afterwards in celebration of this fact.</p>
 
+        <h2>Try-out exhibition</h2>
+        <p>The presentation of the end-projects will have the form of an exhibition. This means you are required to organise not only the works, but also all the other things that usually needs to be done for an exhibition (name, marketing, presentation, ...). However, we will not invite the general public; this exhibition will function as a <i>dry run</i> for the real thing, at the end of the semester.</p>
+
+        <p>The exact date and location of this try-out exhibition will be made clear in due time.</p>
+        
         <h2>Self assessment</h2>
         <p>Apart from the project, you are required to deliver a <em>self-assessment</em>: a form in which you state and reflect on your current position within the field of design, art and technology, how this module has helped you to determine this position, and the following steps that you wish to set in the remainder of the minor.</p>
+
+        <p>This self-assessment will be part of the <i>input</i> for the CGI you will have after the exhibition.</p>
     </section>
 
 
@@ -38,9 +45,9 @@
 
         <table>
             <tr><th>week number</th><th>subject</th></tr>
-            <tr><th>1</th><td>Basic electronics: breadboard, resistors, capacitors, semi-conductors and transistors</td></tr>
-            <tr><th>2</th><td>A bit more hardware; basic Arduino and programming</td></tr>
-            <tr><th>3</th><td>More Arduino: serial communication, sensors and actuators</td></tr>
+            <tr><th>1</th><td>Basic electronics: breadboard, resistors, and LED's. Basic Arduino</td></tr>
+            <tr><th>2</th><td>More Arduino: sensors and actuators</td></tr>
+            <tr><th>3</th><td>More Arduino: serial communication</td></tr>
             <tr><th>4</th><td>Arduino and Unity</td></tr>
             <tr><th>5</th><td>Pitching ideas for the final assignment</td></tr>
             <tr><th>6</th><td>Work on the final assignment</td></tr>

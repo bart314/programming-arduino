@@ -57,12 +57,11 @@ table.truth-table td { text-align:center; padding:1vh 0; }
     background-color:white;
     width:100vw;
     left:0;
-    padding-left:10vw;
     overflow-y:scroll;
 }
 
 #toc h1 { display:none; }
-#toc ol { display:flex; list-style-type:none; justify-content:flex-start; align-items:center; padding-left:0; }
+#toc ol { display:flex; list-style-type:none; justify-content:flex-start; align-items:flex-start; padding-left:0; }
 #toc ol>li { padding:0 2vw; }
 
 #rubrics { display:flex; }

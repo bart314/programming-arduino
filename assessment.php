@@ -30,6 +30,8 @@
 
 <h2 id="assignment">Assignment</h2>
 
+<h3>Create a world</h3>
+
 <p>In this assignment, you are asked to do exactly that. Create a world that contains both virtual and physical elements, taking into consideration the pros and cons of both modalities. Think about reasons why some parts of your world are located in the virtual realm, and other parts in the physical. Things in the virtual parts have find their effects in the physical, and the other way around.</p>
 
 <p class="center">
@@ -39,7 +41,21 @@
 
 <p>Create the virtual part of this world using Unity and use serial communication with the Arduino to connect this virtual part with the physical. Connect sensors to your Arduino in order to bring aspects of the physical into the virtual part of this world, use specific events in Unity to drive actuators in the physical. Changes and effects in one part should have repercussions in the other. In this way, reality becomes one complete whole again, when the difference between the virtual and the physical are obliterated.</p>
 
-<p>During the last half of this module you will get time to work on this assignment. It is imperative that you keep track of your process, using images, movies, and text. In the end, you are asked to write a small report discussing your project: its initialisation, its reason of being, the procedures and developments that you made, and your final reflection. This document is an integral part of the project and will be assessed as well as the product.</p>
+<p>During the last half of this module you will get time to work on this assignment.</p>
+
+<h3>No Game</h3>
+
+
+<p>Though your work must have a narrative, a nice design and an interactive component (something must react on something), it is <i>prohibited</i> to make a <i>game</i> (a game in this case being every interactive installation in which a specific <i>goal</i> is to be reached, and/or in which a certain form of <i>competition</i> is present).</p> 
+
+<p>The interaction with the installation must be its own reward. The design, flow and narrative of the project needs to be such that visitors want to interact with it for the sheer pleasure of interacting.</p>
+
+
+<h3>Documentation</h3>
+
+<p> It is imperative that you keep track of your process, using images, movies, and text. In the end, you are asked to write a small report discussing your project: its initialisation, its reason of being, the procedures and developments that you made, and your final reflection. Integral part of this report is the <i>technical documentation</i> of your project, using schematics and technical drawings.</p>
+    
+<p>This document is an integral part of the project and will be assessed as well as the product.</p>
 
 <h2 id="assessment">Assessment</h2>
 
