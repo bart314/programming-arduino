@@ -13,6 +13,9 @@
     </header>
 
   <div id="main">
+    <div class="aside">
+      <p><b>Work in progress: </b> we are refactoring this module in the spring semester of 2025-2026, so the below is likely to change.
+    </div>
     <section id="preperation">
         <h2>Preparation</h2>
 <p>This final more or less organised week, we are going to connect our Arduino with the software of Unity, thereby <a href="assessment.php">going through the looking glass</a>. We are going to let the physical world enter the real, and vice versa.</p>

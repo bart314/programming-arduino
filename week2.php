@@ -10,110 +10,25 @@
 <body>
     <header>
         <h1>Lab Course week 2: </h1>
-        <h1>More hardware and basic Arduino</h1>
+        <h1>More Arduino</h1>
     </header>
 
   <div id="main">
+    <div class="aside">
+      <p><b>Work in progress: </b> we are refactoring this module in the spring semester of 2025-2026, so the below is likely to change.
+    </div>
     <section id="preperation">
         <h1>Preparation</h1>
-        <p>Last week, we introduced several basic components: resistors, capacitors and transistors. In this week, we will use this knowledge to have several of these components work together. </p>
+        <p>Last week, we introduced the basic workings of the Arduino. We added LEDs and some potmeters. This week and the next, we are going to have the Arduino communicate with our computer (and vice versa) and for that, we need a communication protocol – USB, in fact.</p>
         <ol>
-            <li>Have a look at <a target="_blank" href="https://www.youtube.com/watch?v=FDmHVRC6pQk">this video</a> (5:58) explaining the timing aspects of capacitors.</li>
-            <li>Study the following introductionary texts on the (workings of the) Arduino:
-                <p class="aside"><u>NOTE:</u> these are all links to sections within the same page; you don't have to study the whole page for this week, but only the particular sections that these links refer to.</p>
-                <ol>
-                    <li><a target="_blank" href="https://docs.arduino.cc/learn/starting-guide/getting-started-arduino#anatomy-of-an-arduino-board">The anatomy of an Arduino board</a></li>
-                    <li><a target="_blank" href="https://docs.arduino.cc/learn/starting-guide/getting-started-arduino#basic-operation">Basic operation of the Arduino board</a></li>
-                    <li><a target="_blank" href="https://docs.arduino.cc/learn/starting-guide/getting-started-arduino#circuit-basics">Circuit basics</a></li>
-                </ol>
-            </li>
-            <li><p>Download <a href="https://www.arduino.cc/en/software" target="_blank">the Arduino Integrated Developen Environment (IDE)</a> and make sure your Arduino is found by this software; you can easily check this by opening <tt>Files &rarr; Examples &rarr; 01.Basics &rarr; Blink</tt> and hitting the <tt>Upload</tt> button on the top-left of the IDE. If the connection between your computer and the Arduino is correct, the code will upload and the small onboard LED will start to blink. </p>
-            <p>If your computer cannot find the Arduino, you'll get an error message stating something like <tt style="color:red">can't open device</tt>. In that case, use <tt>Tools &rarr; Port</tt> to select another port (those are actually your USB-ports)</p></li>
-            <li>Have a look at the Arduino IDE, of which you see an image below. Make sure you know and understand the different areas and buttons of this program.</li>
+          <li>Read <a href="https://learn.sparkfun.com/tutorials/serial-communication/all">this article on serial communication at sparkfun.com</a>. You don't have to go over all the stuff, but at least read until you see the headline <i>Wiring and Hardware</i>. Also, don't worry if you do not completely graps everything that is talked about in this article – a small working knowledge of the protocol will be sufficient.</li>
+        <li>Have a look at <a href="https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-serial-monitor/">this tutorial on the serial monitor</a>. You don't have to actually <i>make</i> the setup that they are talking about here, as we are going to work on this during this lab class anyway.</li>
+        <li>Make sure that you have a possibility to hook up the Arduino on your computer (bring a USB-A to USB-C interface to class if necessary).</li>
+        <li>Make sure you have finished and understand all the exercises of week 1.</li>
         </ol>
-        <p class="center"><img class="image" src="imgs/anatomy-arduino-ide.png" alt="The most important pieces of the Arduino IDE"></p>
-    </section><!-- preparation -->
 
     <section id="exercise1">
-        <h2>Exercise 1: Signal inversion</h2>
-        <p>Last week, we introduced several logical gates: we made an OR-gate and worked on an AND gate. One of remaining gates is the NOT-gate, whose truth-table can be found below. Basically, this gate functions as a signal-inverter: it returns whatever is NOT inputted. In your artistic practice, it is likely that at one moment you will need to invert a signal, so it is good that you encountered it here.</p>
-
-        <table class="truth-table">
-            <tr><th>A</th><th>NOT A</th></tr>
-            <tr><td>1</td><td>0</td></tr>
-            <tr><td>0</td><td>1</td></tr>
-        </table>
-
-        <p>Just to get your juices flowing at the start of this lab-course, we are going to make this relatively simple circuit.</p>
-
-        <p class="center">
-            <img class="image" src="imgs/not-gate-schematics.jpeg" alt="Schema of a NOT-gate">
-            <img class="image" src="imgs/not-gate-breadboard.jpeg" alt="A NOT-gate on a breadboard">
-        </p>
-        <p class="center">
-            <img class="image" src="imgs/not-gate_fritzing.png" alt="A model of a NOT-gate">
-        </p>
-
-        <p>Re-create this circuit on your breadboard and make sure it works. Explain why it is doing what it is. Do you think that this is the best circuit for a signal inverter?</p>
-
-    </section><!-- exercise1 -->
-
-
-    <section id="exercise2">
-        <h2>Exercise 2: Basic Arduino</h2>
-        <p>The Arduino platform has since its start in 2005 grown to become one of the most recognizable brands in the space of electronics and embedded design. Off course, we need to use our breadboard to actually create interesting stuff, as the pins on the Arduino are too few, too narrow and too error prone to be workable.</p>
-
-        <h4>Part 1</h4>
-        <p>Make sure you have the blinking LED example loaded on your Arduino. As has been explained, the pin that corresponds to the buildin LED is 13. Make use of this knowledge to have a LED on the breadboard blink. Next, add a few more LEDs on the same pin (or port, as they are also called regularly). For a nice effect, you can perhaps use different colors of LEDs.</p>
-
-        <p class="center">
-            <img class="image" src="imgs/arduino-multiple-leds.png" alt="Multiple LEDs blinking in unison">
-        </p>
-
-        <p class="center">
-          <img class="image" src="imgs/parallel-leds-fritzing.png" alt="Model of the setup">
-        </p>
-
-      <p>Add a push button to your circuit so that the LED only blinks when the button is down. Do you think you need to change the Arduino-code for this?</p>
-
-        <h4>Part 2</h4>
-        <p>Last week, we introduced the variable resistor (potentiometer). We can also hook such a thing on the Arduino, to have the physical communicate with the virtual. In this second step we are going to experiment with it.<p>
-
-<p>Add a potentiometer to the breadboard; connect one of the outer pins to 5V and the other one to the ground. Connect the middle pin, the one that is actually the washer, to one of the <i>Analog input-ports</i> (<tt>A0</tt> - <tt>A4</tt>). </p>
-
-<p>During the plenary part, it was shown how to read the value of the potentiometer: the relevant code is repeated below:</p>
-
-<pre class="code"><code class="language-arduino">
-// above everything:
-// first declare the pin for the potmeter:
-int sensorPin = A0;
-
-// variable to store the value coming from the potmeter
-int sensorValue = 0;
-
-
-// in your loop:
-void loop() {
-  // other code omitted
-  sensorValue = analogRead(sensorPin);
-  if(...) {
-    /// start blinking
-  }
-}
-</code></pre>
-
-<p>Make use of this setup so that the light only starts to blink when the potentiometer is half way or more. You will need a <i>conditional statement</i> for this, which we also demonstrated during the plenary part. If you don't remember, have a look at <a href="https://www.arduino.cc/reference/en/language/structure/control-structure/if/">the documentation for conditionals on the Arduino-API</a>, the most important part of which is copied below.</p>
-
-<pre class="code"><code class="language-arduino">if (condition) {
-  //statement(s)
-}</code></pre>
-        </p>
-
-        </section><!-- exercise 2-->
-
-
-        <section id="exercise3">
-       <h2>Exercise 3: Create a walking light</h2>
+       <h2>Exercise 1: Create a walking light</h2>
 
        <p>Realise a breadboard with four LEDs in parallel. Have the positive pin of each of the LEDs wired to a different (preferably sequential) port on the Arduino (e.g. pins 4, 5, 6, and 7 - there are some things happening at port 0 and 1, so we usually shy away from using those in a more general setup). Next, create a new Arduino-sketch in which you define all those pins as <tt>OUTPUT</tt> (you should do this in the <tt>setup()</tt> method; have a look at the BlinkingLed-example).</p>
 
@@ -132,11 +47,10 @@ void loop() {
 </code></pre>
 
      <p>In your <tt>loop()</tt>, iterate over all the pins that the LEDs are connected to and have every pin switch on and off. If all goes well, you have created a walking light. Can you make this light go back and forth as well? Play around with the value of the call to <tt>delay()</tt> to get a feeling of the effects of the changes you make.</p>
-        </section><!-- exercise 3 -->
+        </section><!-- exercise1 -->
 
-   <section id="assignment">
-    <h2>Assignment</h2>
-
+   <section id="exercise2">
+    <h2>Exercise 2</h2>
 
      <p>Add a variable resistor (a <i>potentiometer</i>) to your breadboard. Connect the external pins to the plus and the minus and the middle pin to an analog input of the Arduino; look at the drawing and the image below to see how to do this.</p>
 
@@ -179,10 +93,8 @@ void loop() {
 
   <p>Now add the code above to your walking light code, so that it changes the value of the call to <tt>delay()</tt> in your walking light. Have the Arduino read and map the value of the potentiometer on every loop; if all goes well, you are now able to change the speed with which the LEDs are 'walking' by changing the value of the potentiometer.</p>
 
-  <p>Finally, integrate both the LED and the variable resistor in some kind of construction so that we don't have to look at breadboards and Arduino's. Make sure you think about this construction and are able to explain why exactly you decided on this particular form. You can also build on your soldering-sculpture from last week.</p>
+</section><!-- exercise2 -->
 
-  <p>It should be possible to have the construction run without connecting it to a computer (i.e. use the battery-power). Next week, we will use a sensors to change the speed of this walking light. You can have <a href="week3.php#assignment">a look at that particular assignment already</a> in order to make your construction already a bit attuned towards that elaboration.</p>
-</section><!-- assignment -->
   </div> <!-- main -->
 
     <div id="hamburger">

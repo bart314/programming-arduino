@@ -14,6 +14,9 @@
     </header>
 
     <div id="main">
+    <div class="aside">
+      <p><b>Work in progress: </b> we are refactoring this module in the spring semester of 2025-2026, so the below is likely to change.
+    </div>
     <section id="preperation">
         <h1>Preparation</h1>
         <ol>

@@ -5,71 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding and Electronics - week 1</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hilightjs/vs.min.css">
+    <script src="js/mathjax.js"></script>
 </head>
 <body>
 
     <header>
         <h1>Lab course week 1:</h1>
-        <h1>Basic electronics</h1>
+        <h1>Basic electronics and Arduino</h1>
     </header>
 
     <div id="main">
   <section id="preperation">
     <h1>Preparation</h1>
     <ol>
-      <li>In order to prepare for the workshop, read <a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-1/voltage-current/">this introduction on voltages and currents</a>.</li>
-      <li>To give a clear and neat overview of the concepts described in this introduction (and some more), we have provided the following table. Study this table and make sure you understand what is being stated in it.</li>
-    </ol>
-
-    <table>
-        <tr class="header">
-            <th width="10%">Name</th>
-            <th class="extra">Description</th>
-            <th width="10%">Unit</th>
-            <th width="10%">Symbol</th>
-            <th class="extra">Notes</th>
-        </tr>
-
-        <tr>
-            <th><a href="https://en.wikipedia.org/wiki/Electric_charge">Charge</a></th>
-            <td class="extra">The property of matter to experience a force when put in an (electro)magnetic field.</td>
-            <td>Coulomb</td>
-            <td><b><i>C</i></b></td>
-            <td class="extra">Charge can be positive or negative; elements of the same charge oppose each other, while elements of opposing charge are attracted.</td>
-        </tr>
-
-        <tr>
-            <th><a href="https://en.wikipedia.org/wiki/Electric_current">Current</a></th>
-            <td class="extra">The amount of charge that flows through a conductor in a certain amount of time.</td>
-            <td>Ampère</td>
-            <td><b><i>I</i></b></td>
-            <td class="extra">One ampère is actually one coulomb per second.</td>
-        </tr>
-
-        <tr>
-            <th><a href="">Voltage</a></th>
-            <td class="extra">The difference in (electrical) potential between two points in a circuit.</td>
-            <td>Volt</td>
-            <td><b><i>V</i></b></td>
-            <td class="extra">The voltage at any point in a circuit is always relative to the voltage at some other point – usually the negative terminal of the power source.</td>
-        </tr>
-
-        <tr>
-            <th><a href="https://en.wikipedia.org/wiki/Electric_power">Power</a></th>
-            <td class="extra">The rate at which electrical energy is transferred over a conductor.</td>
-            <td>Watt</td>
-            <td><b><i>P</i></b></td>
-            <td class="extra">A watt is actually one joule per second.</td>
-        </tr>
-
-        <tr>
-            <th><a href="https://en.wikipedia.org/wiki/Electrical_resistivity_and_conductivity">Resistivity</a></th>
-            <td class="extra">The ease (or lack thereof) with which conductors carry charge.</td>
-            <td>Ohm</td>
-            <td><b><i>&Omega;</i></b></td>
-            <td class="extra">An normal wire has a resistivity of almost zero. In general, <a href="https://en.wikipedia.org/wiki/Ohm%27s_law">Ohm's law</a> applies: R=V/I.</td>
-        </tr>
-    </table>
+      <li>In order to prepare for the workshop, read <a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-1/voltage-current/">this introduction on voltages and currents</a>. You don't have to go over the <i>complete</i> text, but at least read until the title <i>The Definition of Voltage</i>.</li>
+      <li>Study the following introductionary texts on the (workings of the) Arduino:
+            <p class="aside"><u>NOTE:</u> these are all links to sections within the same page; you don't have to study the whole page for this week, but only the particular sections that these links refer to.</p>
+            <ol>
+                <li><a target="_blank" href="https://docs.arduino.cc/learn/starting-guide/getting-started-arduino#anatomy-of-an-arduino-board">The anatomy of an Arduino board</a></li>
+                <li><a target="_blank" href="https://docs.arduino.cc/learn/starting-guide/getting-started-arduino#basic-operation">Basic operation of the Arduino board</a></li>
+                <li><a target="_blank" href="https://docs.arduino.cc/learn/starting-guide/getting-started-arduino#circuit-basics">Circuit basics</a></li>
+            </ol>
+      </li>
+      <li><p>Download <a href="https://www.arduino.cc/en/software" target="_blank">the Arduino Integrated Developen Environment (IDE)</a> and make sure your Arduino is found by this software; you can easily check this by opening <tt>Files &rarr; Examples &rarr; 01.Basics &rarr; Blink</tt> and hitting the <tt>Upload</tt> button on the top-left of the IDE. If the connection between your computer and the Arduino is correct, the code will upload and the small onboard LED will start to blink. </p>
+            <p>If your computer cannot find the Arduino, you'll get an error message stating something like <tt style="color:red">can't open device</tt>. In that case, use <tt>Tools &rarr; Port</tt> to select another port (those are actually your USB-ports)</p></li>
+      <li>Have a look at the Arduino IDE, of which you see an image below. Make sure you know and understand the different areas and buttons of this program. It is likely that your Arduino IDE will look somewhat different, depending on the version and on your operating system.</li>
+      </ol>
+        <div class="center"><img class="image" src="imgs/anatomy-arduino-ide.png" alt="The most important pieces of the Arduino IDE"><div >
   </section><!-- preperation -->
 
   <section id="exercise1">
@@ -77,21 +40,21 @@
     <h2>Exersise 1: Getting to know the breadboard</h2>
     <p>During the planairy part, the wiring of the breadboard was explained. For easy reference, see the images below.</p>
 
-    <p class="center">
+    <div class="center">
         <img class="image" src="imgs/breadboard.png" alt="A normal breadboard">
         <img class="image" src="imgs/breadboard-open.png" alt="The wirings in the breadboard shown">
-    </p>
+    </div>
 
     <p>Connect the electromotor to the breadboard, as has been explained in the plenairy part. Make sure that you make use of jump wires to transfer the current from the long lines at the side to the smaller lines orthogonal to these. Add a small switch to the circuit, so that the electromotor only runs when the switch is pressed.</p>
 
     <p>Change the wiring of the electromotor, so that what was previously on the negative pole of the current is now on the positive pole. Do you notice any difference in the rotation of the motor? Why do you think this is?</p>
         
-    <p class="center">
+    <div class="center">
         <img class="image" src="imgs/electromotor-connected.png" alt="The electromotor connected with a switch">
-    </p>
-    <p class="center">
+    </div>
+    <div class="center">
         <img class="image" src="imgs/electromotor-connected-fritz.png" alt="model of the connected electromotor">
-    </p>
+      </div>
   </section> <!-- exercise 1 -->
 
 
@@ -101,105 +64,113 @@
 
     <p>Add a resistor after the switch in your circuit with the electromotor. Do you notice any difference between the workings, when you close the switch? You can determine the resistance of the resistor by looking at its colored bands. Check <a href="https://www.calculator.net/resistor-calculator.html">this site to see how to do that</a>. Note that the direction of the resistor doesn't matter: you can put them either way in the breadboard.</p>
 
-    <p class="center"><img class="image" src="imgs/resistors.png" alt="Resistors with different values"></p>
+    <div class="center"><img class="image" src="imgs/resistors.png" alt="Resistors with different values"></div>
 
     <p>Now we know how to work with resistors, we can work with LEDs insteads of an electromotor – which is visually more attractive, less noisy and easier to do. Clear you breadboard completely and connect one LED with the current, using a resistor of about 150 ohm (the exact amount doesn't matter that much in this point, and is dependent on the voltage of the source). Remember that with LED's, the orientation <em>does</em> matter: the longer pin of the LED should be connected with the positive pole of the power source.</p>
 
-    <p>Now, use jump wire to connect multiple LEDs on the breadboard. In general, there are two ways in which you can connect the LEDs to each other: in parallel of in series – have a look a the drawing below. Begin with a few LEDs in series (add one resistor 150 ohm). What happens when you remove one LED from the circuit? Can you explain why that is?</p>
+    <div class="center">
+        <img class="image" src="imgs/some-leds.png" alt="LED's with their different pin-lengths">
+    </div>
 
+    <p>Now, use jump wire to connect multiple LEDs on the breadboard. In general, there are two ways in which you can connect the LEDs to each other: in parallel of in series – have a look a the drawing below. Begin with a few LEDs in series (add a resistor 150 ohm). What happens when you remove one LED from the circuit? Can you explain why that is?</p>
+
+    <div class="aside">
+        <div>Though we are not asking you to calculate the exact value of the resistor, it is, in fact, not that difficult. You only need to know the *voltage drop* of the LED and the required *light intensity*, which is dependent on the amount of *current*. </div>
+        <div>Usually, the *voltage drop* (\(V_f\)) of an LED is 1.7 to 2.0 volts for red LEDs, while the maximum continuous-on current (\(I_{LED}\)) is 20mA (0.020A). So if we power the circuit with a 9V battery, the value of the resistor follows from <a href="Ohm's law - Wikipedia">Ohms law</a>: 
+            <div class="center"> \(R = \frac{9 - 1.7}{0.020} = 365 \Omega\).</div>
+        </div>
+    </div>
+ 
     <p>Now, make a new circuit but this time put the LEDs parallel. Make sure that you use individual resistors for each individual LED (if you're interested in why this is needed, <a href="https://www.youtube.com/watch?v=5BoBNW3swpA">check out this explanation by SimplyPut</a>). Now what happens when you remove one of the LEDs of the circuit. Can you explain the difference?</p>
 
-    <p class="center">
+    <div class="center">
         <img class="image" src="imgs/leds-in-series.png" alt="LEDs connected in series">
         <img class="image" src="imgs/leds-in-parallel.png" alt="LEDs connected parallel">
-    </p>
-    <p class="center">
+    </div>
+    <div class="center">
         <img class="image" src="imgs/parallel-leds-fritzing.png" alt="Model of the parallel leds">
-    </p>
+    </div>
 
-    <p>Finally, add a variable restistor between your power supply and the LEDs. You can use a potentiometer for that, but (more interesing) some kind of sensor (several types are available in DAT-space). Experiment with different values of these sensors – do you notice what is happening?</p>
+    <p>Instead of just a regular resistor, we can also use a <i>variable resistor</i>: this component is like a regular resistor, but with a <i>washer</i> in between so that we can tap in the resistance at any given time. Look at the image below: when the washer is turned completely to the left, all the current from <i><b>A</b></i> over <i><b>B</b></i>, so nothing is happening at pin <i><b>C</b></i>. On the other hand, if the washer is turned completely to the right, all the current needs to go over the complete resisting wire, so almost no current will leave the circuit at pin <i><b>B</b></i>.</p>
 
-    <p class="center">
+    <div class="center">
+        <img src="imgs/werking-potmeter.jpeg" alt="The general structure of a potentiometer">
+    </div>
+
+    <p>Add a variable restistor between your power supply and the LEDs. You can use a potentiometer for that, but (more interesing) some kind of sensor (several types are available in DAT-space). Experiment with different values of these sensors – do you notice what is happening?</p>
+
+    <div class="center">
         <img class="image" src="imgs/multiple-leds.png" alt="multiple LEDs in series on the breadboard">
         <img class="image" src="imgs/leds-with-sensor.png" alt="LEDs in series with a sensor in the circuit">
-    </p>
-    <p class="center">
+    </div>
+    <div class="center">
         <img class="image" src="imgs/parallel-leds-potmeter-fritzing.png" alt="Model of the parallel leds with a variable resistor">
-    </p>
+    </div>
     </section><!-- exercise 2 -->
 
     <section id="exercise3">
-    <h2>Exercise 3: Capacitors</h2>
+        <h2>Exercise 3: Basic Arduino</h2>
+        <h3>Part 1: expanding on the blinking LED </h3>
 
-    <p>In this exercise, we are only showing the general workings of capacitors. In order to do this, we use manual switches to change the state of the capacitor from state 1 (charging) to state 2 (discharging). Later, we will show you how to use connected <i>electronic switches</i> in order to automate this process.</p>
+        <p>The Arduino platform has since its start in 2005 grown to become one of the most recognizable brands in the space of electronics and embedded design. Off course, we need to use our breadboard to actually create interesting stuff, as the pins on the Arduino are too few, too narrow and too error prone to be workable.</p>
 
-    <p>As has been explained, capacitors store small amounts of energy in their metal plates that are separated by an insulator. They are used to hold this energy until other parts of the circuit needs it. When you connect a capacitor to a battery, this battery keeps pushing electrons to the capacitor until they are fully saturated – the capacitor is said to be <i>completely charged</i>.</p>
+        <p>Make sure you have the blinking LED example loaded on your Arduino. As has been explained, the pin that corresponds to the buildin LED is 13. Make use of this knowledge to have a LED on the breadboard blink. Next, add a few more LEDs on the same pin (or port, as they are also called regularly). For a nice effect, you can perhaps use different colors of LEDs.</p>
 
-    <p>When a capacitor is fully charged, the voltage drop across its plates equals the battery voltage. When you remove the battery, current doesn't flow and charge remains in the capacitor. The capacitor looks like a power source on its own because it has electrical charge stored on its plates.</p>
+        <div class="center">
+            <img class="image" src="imgs/arduino-multiple-leds.png" alt="Multiple LEDs blinking in unison">
+        </div>
 
-    <p>So now, we can for example use this energy to light up a LED, if only for a brief amount of time (the charge stored on a capacitor is usually not that large). In order to do this, we have to provide a path between both ends of the capacitor, allowing charge to flow over the LED.</p>
+        <div class="center">
+          <img class="image" src="imgs/parallel-leds-fritzing.png" alt="Model of the setup">
+        </div>
 
-    <p>Look at the schema below and make that on your breadboard. When you press switch <b><i>S1</i></b>, current flows through the capacitor, allowing it to charge. Then, when you release <b><i>S1</i></b> and press <b><i>S2</i></b>, you provide a path between both ends of the capacitor, allowing current to flow and thereby lightning the LED.</p>
+    <h3>Adding a push button</h3>
+      <p>Now we are going to add a push button to the circuit so that the LED only blinks when this button is down. We can actually do this in two different ways: we can just use the switch to stop the flow of the current, or we can use some internal logic on the Arduino. The first way is actually quite ease, so we're going to work on the second option.</p>
 
-    <p class="center">
-        <img class="image" src="imgs/manual-blinking-led-schema.png" alt="Schema of the manual blinking LED">
-        <img class="image" src="imgs/manual-blinking-led.png" alt="A realisation on the breadboard">
-    </p>
-    <p class="center">
-        <img class="image" src="imgs/capacitor-led-fritzing.png" alt="Model of the schematic above">
-    </p>
+      <p>For this to work, you will need a <i>conditional statement</i>, which we also demonstrated during the plenary part. If you don't remember, have a look at <a href="https://www.arduino.cc/reference/en/language/structure/control-structure/if/">the documentation for conditionals on the Arduino-API</a>, the most important part of which is copied below.</p>
 
-    <p>Experiment with different values for the capacitor – or put several capacitors in series; how does that influence the behavior of the circuit? Also check what happens when you press both switches at the same time. Can you explain what is happening?</p>
+<pre class="code"><code class="language-arduino">if (condition) {
+    //statement(s)
+}</code></pre>
 
-    <p>As you see, the wire from the LED is also connected to the ground. Would the circuit still work in the same manner if this connection was removed after the capacitor was charged?</p>
-    </section> <!-- exercise 3-->
+    <p>Connect the one part of the push button to the \(V_{CC}\) and the other pin to some port on your Arduino. In your <tt>setup</tt> method, define this pin as <i>input</i> (<tt>pinMode(YOUR_PINNR, INPUT;)</tt>, also have a look at <a href="https://docs.arduino.cc/language-reference/en/functions/digital-io/pinMode/" target="_blank">the documentation</a>). Next, have your <tt>loop</tt> method continously check for the value of the <tt>PINNR</tt>, using <tt>digitalRead(PINNR);</tt>. When this value is <tt>HIGH</tt>, start the blinking. </p>
 
+    <p>Have a look at <a href="https://docs.arduino.cc/built-in-examples/digital/Button/">this example</a> to get a basic idea.</p>
+
+    </section><!-- exercise3 -->
+
+    
     <section id="exercise4">
-    <h2>Exercise 4: Transistors</h2>
+        <h2>Exercise 4: adding a potentiometer</h2>
+        <p>We can also hook a potentiometer on the Arduino, to have the physical communicate with the virtual. In this second step we are going to experiment with it.<p>
 
-    <p>There are literary hundreds of types of transistors, all of whom have different specific qualities and workings. In general, transistors can be used as either a switch or as an amplifier; in these exercises, however, we are only going to use them as switches. We will use a very common PNP transistor called 2N2222A. Have a look at <a href="https://www.onsemi.com/pdf/datasheet/p2n2222a-d.pdf">the datasheet of this component</a> if you're interested in its particualrs.</p>
+<p>Add a potentiometer to the breadboard; connect one of the outer pins to 5V and the other one to the ground. Connect the middle pin, the one that is actually the washer, to one of the <i>Analog input-ports</i> (<tt>A0</tt> - <tt>A4</tt>). </p>
 
-    <p>The working of transistors has been explained in the planairy part. To recall, a simple drawing of the pins is provided below</p>
+<p>During the plenary part, it was shown how to read the value of the potentiometer: the relevant code is repeated below:</p>
 
-    <ul>
-        <li><b><i>V<sub>BC</sub></i></b> &lt; 0.7V &rarr; switch off</li>
-        <li><b><i>V<sub>BC</sub></i></b> &gt; 0.7V AND <b><i>I<sub>B</sub></i></b> small &rarr; switch partially on</li>
-        <li><b><i>V<sub>BC</sub></i></b> &gt; 0.7V AND <b><i>I<sub>B</sub></i></b> = max &rarr; switch on</li>
-    </ul>
+<pre class="code"><code class="language-arduino">
+// above everything:
+// first declare the pin for the potmeter:
+int sensorPin = A0;
 
-    <p class="center"><img class="image" src="imgs/transistor.png" alt="A transistor with its pins named"></p>
+// variable to store the value coming from the potmeter
+int sensorValue = 0;
 
-    <p>Have a look at the circuit below. What do you think will happen if you put current on either point <b><i>A</i></b> or point <b><i>B</i></b>? As you can see in the right picture, we have used push button to put current on the base of either transistor (also note that we have used the same colors for the same functionality – something that is good practice when you start to make more complex circuits). Re-create this circuit on your own breadboard and experiment with the push button.</p>
 
-    <p class="center">
-        <img class="image" src="imgs/or-circuit.png" alt="The circuit for an OR-gate">
-        <img class="image" src="imgs/or-circuit-breadboard.png" alt="An OR-gate realised on a breadboard">
-    </p>
-    <p class="center">
-        <img class="image" src="imgs/or-circuit-fritzing.png" alt="Model of the circuit above">
-    </p>
+// in your loop:
+void loop() {
+  // other code omitted
+  sensorValue = analogRead(sensorPin);
+  if(...) {
+    /// start blinking
+  }
+}
+</code></pre>
 
-    <p>As you have seen, the LED goes on when either of the push buttons is pressed. You have just created what is known as a OR-gate: the LED turns on when either A OR B is pressed. We can actually summarize the functionality of this small circuit by providing its so-called <i>truth-table</i> (1 means current is present, 0 means current is not present):</p>
+<p>Make use of this setup so that the light only starts to blink when the potentiometer is half way or more. As an extra challenge, can you use the potmeter to control the speed with which the LED is blinking...?</p>
 
-    <table class="truth-table">
-        <tr><th>A</th><th>B</th><th>A or B</th></tr>
-        <tr><td>1</td><td>1</td><td>1</td></tr>
-        <tr><td>1</td><td>0</td><td>1</td></tr>
-        <tr><td>0</td><td>1</td><td>1</td></tr>
-        <tr><td>0</td><td>0</td><td>0</td></tr>
-    </table>
+    </section><!-- exercise4 -->
 
-    Now, as an extra challenge, can you come up with a circuit for an AND-gate? A circuit whose working corresponds to the truth-table below?
-
-    <table class="truth-table">
-        <tr><th>A</th><th>B</th><th>A and B</th></tr>
-        <tr><td>1</td><td>1</td><td>1</td></tr>
-        <tr><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td><td>0</td></tr>
-    </table>
-
-    </section><!-- exercise 4-->
 
     <section id="assignment">
         <h2>Assignment: solder an electronic sculpture</h2>
@@ -209,12 +180,12 @@
 
         <p>We did some soldering during class; now it is up to you to make a nice sculpture using at least LEDs, resistors and a battery. Make sure that the circuit you make actually <i>works</i>, but solder it together so that looks nice. You could just make a simple lamp (such as the one we showed during class), or make it more interesing using some active components.</p>
 
-        <p class="center">
+        <div class="center">
             <img class="image" src="imgs/led-sculpture.png" alt="LED sculpture">
             <img class="image" src="imgs/soldering-sculpture-2.jpeg" alt="A bug made with wires and a battery">
-        </p>
+        </div>
 
-        <p>This week, you can go to the electronics lab for help and assistance on this assignment. We will look at your elaborations at the beginning of the next class on Friday (before we start with <a href="week2.php">the next topics</a>). </p>
+        <p>This week, you can go to the electronics lab for help and assistance on this assignment. We will look at your elaborations at the beginning of the next class (before we start with <a href="week2.php">the next topics</a>). </p>
     </section><!-- assignment -->
 
     </div><!-- main -->
@@ -234,15 +205,17 @@
            <li><a href="#preperation">preperation</a></li>
            <li><a href="#exercise1">breadboard</a></li>
            <li><a href="#exercise2">resistors</a></li>
-           <li><a href="#exercise3">capacitors</a></li>
-           <li><a href="#exercise4">transistors</a></li>
+           <li><a href="#exercise3">basic arduino</a></li>
+           <li><a href="#exercise4">potentiometers</a></li>
            <li><a href="#assignment">assignment</a></li>
         </ol>
     </div><!-- TOC -->
 
 
 
-</body>
 <script src="js/hamburger.js"></script>
 <script src="js/images.js"></script>
+<script src="hilightjs/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
 </html>

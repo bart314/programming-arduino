@@ -10,8 +10,8 @@ section h1 { text-align:left; margin-bottom:0; }
 table { width:100%; border-collapse:collapse; }
 td, th { padding:2vh 0; border-bottom:solid blue 1px; vertical-align:top; }
 tr.header { border-bottom:double blue; }
-p.center { display:flex; justify-content:space-evenly; }
-p.aside { background-color:orange; font-size:smaller; padding:1em; margin:1em; line-height:18px; border:gray; }
+div.center, p.center { display:flex; justify-content:space-evenly; }
+div.aside, p.aside { background-color:lightblue; font-size:smaller; padding:1em; margin:1em; line-height:18px; border:gray; }
 
 a { text-decoration:none; }
 a:hover { text-decoration:underline; }
