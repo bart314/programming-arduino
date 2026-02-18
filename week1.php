@@ -133,60 +133,11 @@
     //statement(s)
 }</code></pre>
 
-    <p>Connect the one part of the push button to the \(V_{CC}\) and the other pin to some port on your Arduino. In your <tt>setup</tt> method, define this pin as <i>input</i> (<tt>pinMode(YOUR_PINNR, INPUT;)</tt>, also have a look at <a href="https://docs.arduino.cc/language-reference/en/functions/digital-io/pinMode/" target="_blank">the documentation</a>). Next, have your <tt>loop</tt> method continously check for the value of the <tt>PINNR</tt>, using <tt>digitalRead(PINNR);</tt>. When this value is <tt>HIGH</tt>, start the blinking. </p>
+    <p>Connect the one part of the push button to the \(V_{CC}\) and the other pin to some port on your Arduino. In your <tt>setup</tt> method, define this pin as <i>input</i> (<tt>pinMode(YOUR_PINNR, INPUT;)</tt>; also have a look at <a href="https://docs.arduino.cc/language-reference/en/functions/digital-io/pinMode/" target="_blank">the documentation</a>). Next, have your <tt>loop</tt> method continously check for the value of the <tt>PINNR</tt>, using <tt>digitalRead(PINNR);</tt>. When this value is <tt>HIGH</tt>, start the blinking. </p>
 
     <p>Have a look at <a href="https://docs.arduino.cc/built-in-examples/digital/Button/">this example</a> to get a basic idea.</p>
 
     </section><!-- exercise3 -->
-
-    
-    <section id="exercise4">
-        <h2>Exercise 4: adding a potentiometer</h2>
-        <p>We can also hook a potentiometer on the Arduino, to have the physical communicate with the virtual. In this second step we are going to experiment with it.<p>
-
-<p>Add a potentiometer to the breadboard; connect one of the outer pins to 5V and the other one to the ground. Connect the middle pin, the one that is actually the washer, to one of the <i>Analog input-ports</i> (<tt>A0</tt> - <tt>A4</tt>). </p>
-
-<p>During the plenary part, it was shown how to read the value of the potentiometer: the relevant code is repeated below:</p>
-
-<pre class="code"><code class="language-arduino">
-// above everything:
-// first declare the pin for the potmeter:
-int sensorPin = A0;
-
-// variable to store the value coming from the potmeter
-int sensorValue = 0;
-
-
-// in your loop:
-void loop() {
-  // other code omitted
-  sensorValue = analogRead(sensorPin);
-  if(...) {
-    /// start blinking
-  }
-}
-</code></pre>
-
-<p>Make use of this setup so that the light only starts to blink when the potentiometer is half way or more. As an extra challenge, can you use the potmeter to control the speed with which the LED is blinking...?</p>
-
-    </section><!-- exercise4 -->
-
-
-    <section id="assignment">
-        <h2>Assignment: solder an electronic sculpture</h2>
-        <p>Until now, we have done all of our work on the breadboard. This is perfect for quick experimenting and rapid prototyping, but in real life you probably want to solder the components together: this makes your work more robust and permanent.</p>
-
-        <p>Obviously, esthetics is seldom a requirement for such an electronic circuit (a notable exception is formed by the (early) Macintosh computers, whose electronic boards were as thoroughly designed as the more visible parts of the hardware). However, in this assignment we <i>are</i> going to make a beautiful <i>and</i> (more of less) functional sculpture.</p>
-
-        <p>We did some soldering during class; now it is up to you to make a nice sculpture using at least LEDs, resistors and a battery. Make sure that the circuit you make actually <i>works</i>, but solder it together so that looks nice. You could just make a simple lamp (such as the one we showed during class), or make it more interesing using some active components.</p>
-
-        <div class="center">
-            <img class="image" src="imgs/led-sculpture.png" alt="LED sculpture">
-            <img class="image" src="imgs/soldering-sculpture-2.jpeg" alt="A bug made with wires and a battery">
-        </div>
-
-        <p>This week, you can go to the electronics lab for help and assistance on this assignment. We will look at your elaborations at the beginning of the next class (before we start with <a href="week2.php">the next topics</a>). </p>
-    </section><!-- assignment -->
 
     </div><!-- main -->
 
@@ -206,8 +157,6 @@ void loop() {
            <li><a href="#exercise1">breadboard</a></li>
            <li><a href="#exercise2">resistors</a></li>
            <li><a href="#exercise3">basic arduino</a></li>
-           <li><a href="#exercise4">potentiometers</a></li>
-           <li><a href="#assignment">assignment</a></li>
         </ol>
     </div><!-- TOC -->
 
