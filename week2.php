@@ -18,8 +18,8 @@
         <h1>Preparation</h1>
         <p>Last week, we introduced the basic workings of the Arduino. We added LEDs and some potmeters. This week and the next, we are going to have the Arduino communicate with our computer (and vice versa) and for that, we need a communication protocol – USB, in fact.</p>
         <ol>
-          <li>Read <a href="https://learn.sparkfun.com/tutorials/serial-communication/all">this article on serial communication at sparkfun.com</a>. You don't have to go over all the stuff, but at least read until you see the headline <i>Wiring and Hardware</i>. Also, don't worry if you do not completely graps everything that is talked about in this article – a small working knowledge of the protocol will be sufficient.</li>
-        <li>Have a look at <a href="https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-serial-monitor/">this tutorial on the serial monitor</a>. You don't have to actually <i>make</i> the setup that they are talking about here, as we are going to work on this during this lab class anyway.</li>
+          <li>Read <a href="https://learn.sparkfun.com/tutorials/serial-communication/all" target="_blank">this article on serial communication at sparkfun.com</a>. You don't have to go over all the stuff, but at least read until you see the headline <i>Wiring and Hardware</i>. Also, don't worry if you do not completely graps everything that is talked about in this article – a small working knowledge of the protocol will be sufficient.</li>
+        <li>Have a look at <a href="https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-serial-monitor/" target="_blank">this tutorial on the serial monitor</a>. You don't have to actually <i>make</i> the setup that they are talking about here, as we are going to work on this during this lab class anyway.</li>
         <li>Make sure that you have a possibility to hook up the Arduino on your computer (bring a USB-A to USB-C interface to class if necessary).</li>
         <li>Make sure you have finished and understand all the exercises of week 1.</li>
         </ol>

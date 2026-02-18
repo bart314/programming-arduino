@@ -2,6 +2,11 @@
 
 Kort overzicht van de aanpassingen die hieraan gedaan zijn. Kun je natuurlijk ook via git achterhalen, maar dit overzichtje is misschien makkelijker.
 
+## 18 februari 2026
+- aanpassen van week 2: nu meer hard- en softwareoefeningen.
+- afstandsmeter aan week 2 toevoegd.
+- soldeeropgave is nu ook in week 2.
+
 ## 7 en 8 februari 2026
 - Andere opzet van de hele module: hardware teruggebracht tot weerstanden, LED's en Arduino.
 - Uitleg over potmeters uitgebreid; plaatjes toegevoegd.
