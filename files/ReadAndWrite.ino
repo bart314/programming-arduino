@@ -9,12 +9,14 @@ void setup() {
   pinMode(led1, OUTPUT);
   pinMode(led2, OUTPUT);
   Serial.begin(9600); // Start serial communication
+  delay(2000);              // Wait until USB is stable
+  Serial.println("READY");  // Notify Unity that Arduino is ready
 }
 
 void loop() {
   if (Serial.available() > 0) {
 
-    char command = (char)Serial.read();
+        char command = (char)Serial.read();
     if (command == 'A') {
       running = true;
     } else if (command == 'B') {
