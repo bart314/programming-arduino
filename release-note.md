@@ -2,6 +2,10 @@
 
 Kort overzicht van de aanpassingen die hieraan gedaan zijn. Kun je natuurlijk ook via git achterhalen, maar dit overzichtje is misschien makkelijker.
 
+## 4 maart 2026
+- aanpassingen week 3: nu alleen servo-motoren en meer seriële communicatie (ook naar de Arduino toe).
+- als voorbereiding op de laatste week, wanneer we arduino koppelen aan unity
+
 ## 18 februari 2026
 - aanpassen van week 2: nu meer hard- en softwareoefeningen.
 - afstandsmeter aan week 2 toevoegd.

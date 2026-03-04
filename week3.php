@@ -3,20 +3,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding and Electronics - week 3</title>
+    <title>Arduino and Programming: week 3</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="hilightjs/vs.min.css">
 </head>
 <body>
     <header>
         <h1>Lab Course week 3:</h1>
-        <h1>More Arduino</h1>
+        <h1>Getting out of your Arduino</h1>
     </header>
 
     <div id="main">
-    <div class="aside">
-      <p><b>Work in progress: </b> we are refactoring this module in the spring semester of 2025-2026, so the below is likely to change.
-    </div>
     <section id="preperation">
         <h1>Preparation</h1>
         <ol>
@@ -29,9 +26,6 @@
                     <li><a href="https://docs.arduino.cc/learn/starting-guide/getting-started-arduino#sensors--actuators">Sensors and actuators</a></li>
                 </ul>
             </li>
-            <li>Study <a href="https://www.arduino.cc/reference/en/language/structure/control-structure/if/">the documentation for conditionals on the Arduino-API</a>.</li>
-
-
         </ol>
     </section><!-- preperation -->
 
@@ -89,11 +83,9 @@
 
 
   <section id="exercise2">
-    <h2>Exercise 2: Serial communication</h2>
+    <h2>Exercise 2: More serial communication</h2>
 
     <p><b>Introduction</b></p>
-
-    <p>Serial communication is a method of sending data from one computer to another one one bit at a time over a communication channel or wire, such as a USB (Universal <em>Serial Bus</em>) cable. It is called "serial" because data bits are transmitted one after the other, in a series. As in all communication, we need at least two parties. In this case, we talk about a <em>sender</em> and a <em>receiver</em>. Both the sender and receiver need to agree on how fast to send and receive bits, known as the <em>baud rate</em> (bit rate).</p>
 
     <p>Last week, we already introduced the Arduino Serial Monitor to display the value of the potentiometer (or the sensor); however, we can also use the Serial Monitor to send data <em>to</em> the Arduino. In this first example, we will use that Arduino just to echo whatever is send to it. Because the Arduino is not doing anything else, we don't need to hook up a breadboard. Just copy-past the code below into your IDE (or download it <a href="files/arduino-echo.ino">download it here</a>), upload it to the Arduino and type something in the Serial Monitor. Be sure you understand what is going on in the code; have a look at <a href="https://www.arduino.cc/reference/en/language/functions/communication/serial/read/">the documentation for <tt>Serial.read()</tt></a> as well.</p>
 
@@ -126,7 +118,7 @@ void loop() {
 
 <p><b>Part 1</b></p>
 
-<p>Now, create a breadboard with a few LEDs of different colors connected to different ports – make use of exercise 3 on ports and LEDs of <a href="week2.php#exercise3">the previous week</a>. Now alter the code above to that you you can type the color of the LED you wish to put on. If you don't remember, have a look at <a href="https://www.arduino.cc/reference/en/language/structure/control-structure/if/">the documentation for conditionals on the Arduino-API</a>, the most important part of which is copied below.</p>
+<p>Now, create a breadboard with a few LEDs of different colors connected to different ports – make use of exercise 1 on ports and LEDs of <a href="week2.php#exercise1">the previous week</a>. Now alter the code above to that you you can type the color of the LED you wish to put on. If you don't remember, have a look at <a href="https://www.arduino.cc/reference/en/language/structure/control-structure/if/">the documentation for conditionals on the Arduino-API</a>, the most important part of which is copied below.</p>
 
 <pre class="code"><code class="language-arduino">if (condition) {
   //statement(s)
@@ -191,47 +183,12 @@ String getValue(String data, char separator, int index) {
 
 
 
-  <section id="exercise3">
-    <h2>Exercise 3: Sensing the distance</h2>
-
-    <p>Most sensors work just like a complex potentiometer, with three pins and the middle pin corresponding to the washer of the property being sensed: light, humidity, sound-volume, heat, ... However, there are also lots of sensors that have four (or even more) pins. In this exercise, we are looking at one of those: the distance sensor.</p>
-
-    <p>Please refer to the first image below. As you can see, the first and last pin are the by now familiar plus and ground pins. However, the second and third pin work somewhat different.</p>
-
-    <p>The distance sensor actually consists of a very small speaker and a very small microphone. When you put power to the speaker, it releases a sound of a specific frequency (about 40kHz, so you won't be able to hear it – that's why it's called 'ultrasound'). When you put power to the microphone, it starts listening to the same frequency as the speaker is transmitting. So if you know when the speaker starts tranmitting and you know when the microphone is picking up the sound, you can calculate the distance between the device and some solid object</p>
-    
-    
-    <p>See the images below to get an idea of how this works. Please note that the pin-numbers at the drawing on the left are arbitrary: they of course depend only on the code that you put on the Arduino.</p>
-
-
-    <p class="center">
-      <img class="image" src="imgs/distance-sensor-wiring.png" alt="">
-      <img class="image" src="imgs/calculating-distance.png" alt="">
-    </p>
-
-    <p>During the plenary part, a short description is given how to work with this distance sensor. Realise this on your breadboard and have the found distance printed in the Serial Monitor. Have a look at <a href="https://arduinogetstarted.com/tutorials/arduino-ultrasonic-sensor">this description</a> to get started with the exercise. Next, use the distance-sensor to have a servo-motor rotate to a corresponding angle. Can you see the relation between the <i>sensing</i> and the <i>acting</i>?</p>
-
-     <p>We will expand on this example next week.</p>
-
-  </section><!-- exercise3 -->
 
 
     <section id="assignment">
       <h2>Assignment</h2>
 
-      <h4>Part 1</h4>
-      <p>Using your elaboration of the previous week, replace the potentio-meter with a distance-sensor, so that the speed of the walking light is dependent on the returned value from this sensor. Please note that also in this case a connection with a computer is not necessary (i.e. the Arduino is doing all of the work by itself).</p>
-
-      <h4>Part 2</h4>
-      <p>In your kit you will find a three-color LED. Have a look at the image below to understand how this works. Add this LED to your construction and make it so that the measured distance is also reflected in the color of the LED (e.g. RED if someone is too close and GREEN is someone is far away). Please note that the speed of the walking light (part 1 of this exercise) should still run (so this should be an <i>addition</i>).
-
-      <p class="center">
-        <img src="imgs/rgb-led.jpeg" alt="pin-out of an RGB-LED">
-      </p>
-
-
-    </section><!-- assignment-->
-
+      <p>TBD</p>
     </div><!-- main -->
 
 
