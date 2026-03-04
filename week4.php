@@ -71,29 +71,23 @@
 
 <section id="exercise1a">
   <h2>Exercise 1a: check the serial communication</h2>
-  <p>Use <a href="files/SerialPortManager.cs">this script</a> and add it to your Unity setup. If you start to run the program, it should display that a succesful connection with the Serial port was made.</p>
+	<p>Clone <a href="https://github.com/UnityArduinoCourse2026/UnityArduinoTemplate.git">this</a> UnityArduinoTemplate</a> with your GitHub Desktop or download the zip-file. Add this project to your UnityHub. If necessary download the right editor version. If you do not want to install a new project but adjust your project, you can download <a href="files/SerialCommunication.unitypackage">this</a> package and add it to your project</p>
+  <p>Open the scene <i>Student_Scene</i> from the folder _StudentWorkHere. Addjust the settings from the SerialPortManager in the inspector. Change the Port to the port you have connected your Arduino to and check the Bautrate.</p>
+	<p>Hit the play button, check the Console for what is happening. Check if the serial connection had been made.</p>
+	<p>Is anything changing with your Aduino setup on starting and stopping the Unity Scene?</p>
 </section>
 
 <section id="exercise2">
-  <h2>Exercise 2: no more typing</h2> 
-  <p>Now, <a href="files/SendToSerialOnStart.cs">download this code</a> and add it to your Unity-project. Instead of typing the <tt>A</tt> in the Serial Monitor, this code send the same character of the USB-line when you start up the Unity project.</p>
+  <h2>Exercise 2: two-way interaction - Check out the Demo folder in the Unity Project</h2> 
+	<p>Until now, we have only communicated from the computer to the Arduino. However, nothing prohibits us from doing the same thing from the Arduino to Unity.</p>
+  <p>Open the scene <i>SpeedByPot</i> from the folder SerialCommunication/Demo/Scenes. Addjust the settings from the SerialPortManager in the inspector. Change the Port to the port you have connected your Arduino to and check the Bautrate.</p>
+	<p>Copy the file <i>ReadAndWrite.ino</i> from the folder Docs to a different place on you computer and upload this code to your Arduino</p>
+	<p>For this to work, you need to add a potentiometer to your breadboard and hook up its washer to port <tt>A0</tt>. Make use of the knowledge you gained at <a href="week2.php#exercise2">part 2 of exercise 2 of week 2 😎</a> to have the value of the potentiometer send over the serial port. </p>
+	  <p>Check the <i>Serial Monitor</i> or the <i>Serial Plotter</i> of the Arduino IDE to ascertain that the potentiometer is working and that the Arduino is sending the value of the potmeter over the USB cable.</p>
+	<p><b>Note:</b> in order for this to work you need to close the Serial Monitor, as only one process can listen to incoming messages on a serial port at any give time. If the Serial Monitor is doing that, you cannot have Unity listening to it as well.</p>
+	<p>Check out all the different things that are happening in the scene by turning the potentiometer on your breadboard.</p>
 </section><!-- exercise2 -->
 
-<section id="exercise3">
-  <h2>Exercise 3: interacting with Unity</h2>
-  <p>The <a href="files/SendToSerialOnCollision.cs">next piece of code</a> does more or less the same as the previous, as in that it send a character over the USB line. However, this script doesn't do it on startup, but only when your gam object collides with some other object.</p>
-</section><!-- exercise3 -->
-
-<section id="exercise4">
-  <h2>Exercise 4: two-way interaction</h2>
-  <p>Until now, we have only communicated from the computer to the Arduino. However, nothing prohibits us from doing the same thing from the Arduino to Unity.</p>
-
-  <p>For this to work, you need to add a potentiometer to your breadboard and hook up its washer to port <tt>A0</tt>. Make use of the knowledge you gained at <a href="week2.php#exercise2">part 2 of exercise 2 of week 2 😎</a> to have the value of the potentiometer send over the serial port. </p>
-
-  <p>Check the <i>Serial Monitor</i> or the <i>Serial Plotter</i> of the Arduino IDE to ascertain that the potentiometer is working and that the Arduino is sending the value of the potmeter over the USB cable.</p>
-
-  <p>Now, use <a href="files/ReadPot.cs">this code</a> in Unity to display the value of the potentiometer. <b>Note:</b> in order for this to work you need to close the Serial Monitor, as only one process can listen to incoming messages on a serial port at any give time. If the Serial Monitor is doing that, you cannot have Unity listening to it as well.</p>
-</section><!-- exercise4 -->
 
 <section id="assignment">
   <h2>Assignment</h2>
